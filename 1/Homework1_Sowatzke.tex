@@ -4,18 +4,27 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[nodisplayskipstretch]{setspace}
 
 \title{Homework 1}
 \author{Owen Sowatzke}
 \date{September 6, 2023}
 
 \begin{document}
+
+	\setlength{\abovedisplayskip}{0pt}
+	\setlength{\belowdisplayskip}{0pt}
+	\setlength{\abovedisplayshortskip}{0pt}
+	\setlength{\belowdisplayshortskip}{0pt}
+	\doublespacing
 	\maketitle
-	\begin{enumerate}
+	
+	\begin{enumerate}[nolistsep]
 	
 		\item For each of the following subsets of $\mathbb{F}^3$, determine whether it is a subspace of $\mathbb{F}^3$:
 		
-		\begin{enumerate}
+		\begin{enumerate}[nolistsep]
 		
 			\item ${\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 0 \}}$
 			
@@ -23,9 +32,46 @@
 			
 			Additive Identity:
 			
-			$$ 0 + 2 \cdot 0 + 3 \cdot 0 = 0 \Rightarrow 0 \in U $$
+			$ 0 + 2 \cdot 0 + 3 \cdot 0 = 0 \Rightarrow 0 \in U $
+			
+			Closed Under Addition:
+			
+			Let $u,v \in U$
+			
+			$(u_1 + v_1) + 2(u_2 + v_2) + 3(u_3 + v_3)$
+			
+			$ = u_1 + v_1 + 2u_2 + 2v_2 + 3u_3 + 3v_3$
+			
+			$ = (u_1 + 2u_2 + 3u_3) + (v_1 + 2v_2 + 3v_3)$
+			
+			$ = 0 + 0 = 0 \Rightarrow u + v \in U$
+			
+			Closed Under Scalar Multiplication:
+			
+			Let $u \in U$ and $a \in \mathbb{F}$
+			
+			$(au_1) + 2(au_2) + 3(au_3)$
+			
+			$ = a(u_1 + 2u_2 + 3u_3)$
+			
+			$ = a \cdot 0 = 0 \Rightarrow au \in U$
+			
+			$ \therefore U \subset \mathbb{F}^3$
+			
 			\item ${\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 4 \}}$
+			
+			Let $U = {\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 4 \}}$
+			
+			Additive Identity:
+			
+			$0 + 2 \cdot 0 + 3 \cdot 0 = 0 \neq 4 \Rightarrow 0 \notin U$
+			
+			$\therefore U \not\subset \mathbb{F}$
+			
+			
 			\item ${\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1x_2x_3 = 0 \}}$
+			
+			
 			\item ${\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 = 5x_3 \}}$
 		\end{enumerate}
 	\end{enumerate}
