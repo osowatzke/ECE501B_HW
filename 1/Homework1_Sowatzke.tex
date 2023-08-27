@@ -15,7 +15,7 @@
 
 	\setlength{\abovedisplayskip}{0pt}
 	\setlength{\belowdisplayskip}{0pt}
-	\setlength{\abovedisplayshortskip}{0pt}
+		\setlength{\abovedisplayshortskip}{0pt}
 	\setlength{\belowdisplayshortskip}{0pt}
 	\doublespacing
 	\maketitle
@@ -135,5 +135,28 @@
 		$(1 + 1)^2 = 2^2 = 4 \neq 0 = 0^2 = (1 - 1)^2$
 		
 		$\therefore U$ is not closed under addition, and $U \not\subset \mathbb{R}^2$
+		
+		\item[19.] Prove or give a counterexample: if $U_1, U_2, W$ are subspaces of $V$ such that
+		
+\centerline{$U_1 + W = U_2 + W$,}
+
+then $U_1 = U_2$. 
+		
+		Consider the following counterexample:
+
+		Let $U_1 = \{(x, 0) \in \mathbb{F}^2 : x \in \mathbb{F}\}$ and $U_2 = \{(0, y) \in \mathbb{F}^2 : y \in \mathbb{F}\}$
+		
+		Clearly, $U_1 \neq U_2$.
+		
+		Let $W = \{(x, y) \in \mathbb{F}^2 : x, y \in \mathbb{F}\}$
+		
+		Then $U_1 + W = U_2 + W = \{(x, y) \in \mathbb{F}^2 : x, y \in \mathbb{F}\}$
+		
+		\item[23.] Prove or give a counterexample: if $U_1, U_2, W$ are subspaces of $V$ such that
+		
+		\centerline{$V = U_1 \oplus W$ and $V = U_2 \oplus W$}
+		
+		then $U_1 = U_2$
+		
 	\end{enumerate}
 \end{document}
