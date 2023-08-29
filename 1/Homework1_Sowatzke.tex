@@ -172,15 +172,23 @@
 		
 		Let $U = \{(x_1, x_2) \in \mathbb{R}^2 : x_1^2 = x_2^2\}$
 		
-		Let $u \in U$ and $a \in \mathbb{R}^2$
+		Check whether $U$ is closed under scalar multiplication:
 		
-		$(ax_1)^2 = a^2x_1^2 = a^2x_2^2 = (ax_2)^2 \Rightarrow au \in U$
+		Let $u \in U$ and $a \in \mathbb{R}$
+		
+		$(ax_1)^2 = a^2x_1^2 = a^2x_2^2 = (ax_2)^2$
+		
+		$\therefore au \in U$ (i.e. $U$ is closed under scalar multiplication)
+		
+		Check whether $U$ is closed under addition:
 		
 		Let $u = (1, -1) \in U$ and $v = (1, 1) \in U$.
 		
-		$(1 + 1)^2 = 2^2 = 4 \neq 0 = 0^2 = (1 - 1)^2$
+		$u + v = (1 + 1, -1 + 1) = (2, 0)$
 		
-		$\therefore U$ is not closed under addition, and $U \not\subset \mathbb{R}^2$
+		$2^2 = 4 \neq 0 = 0^2$
+		
+		$\therefore U$ is not closed under addition, and $U$ is not a subspace of $\mathbb{R}^2$
 		
 		\item[19.] Prove or give a counterexample: if $U_1, U_2, W$ are subspaces of $V$ such that
 		
