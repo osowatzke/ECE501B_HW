@@ -22,11 +22,11 @@
 	
 	\begin{enumerate}[nolistsep]
 	
-		\item For each of the following subsets of $\mathbb{F}^3$, determine whether it is a subspace of $\mathbb{F}^3$:
+		\item[1.] For each of the following subsets of $\mathbb{F}^3$, determine whether it is a subspace of $\mathbb{F}^3$:
 		
 		\begin{enumerate}[nolistsep]
 		
-			\item[1.] ${\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 0 \}}$
+			\item ${\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 0 \}}$
 			
 			Let $U = {\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 0 \}}$
 			
@@ -82,20 +82,23 @@
 			
 			$\therefore 0 \notin U$
 			
-			Since $U$ does not contain the additive identity, it is not a subspace of $\mathbb{F}^3$
+			Because $U$ does not contain the additive identity, it is not a subspace of $\mathbb{F}^3$
 
 			\item ${\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1x_2x_3 = 0 \}}$
 			
 			Let $U = {\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1x_2x_3 = 0 \}}$
 			
-			Consider $u = (1, 1, 0)$ and $v = (0, 0, 1)$.
+			Check whether $U$ is closed under addition:
 			
-			$u, v \in U$
+			Consider $u = (1, 1, 0) \in U$ and $v = (0, 0, 1) \in U$.
 			
-			$(u_1 + v_1)(u_2 + v_2)(u_3 + v_3) = 1 \cdot 1 \cdot 1 = 1 \neq 0 \Rightarrow u + v \notin U$
+			$u + v = (1, 1, 1)$
 			
-			$\therefore U$ is not a subspace of $\mathbb{F}^3$
+			$1 \cdot 1 \cdot 1 = 1 \neq 0$
 			
+			$\therefore u + v \notin U$
+			
+			Because $U$ is not closed under addition, it is not a subspace of $\mathbb{F}^3$
 			
 			\item ${\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 = 5x_3 \}}$
 			
@@ -103,22 +106,35 @@
 			
 			Check whether $U$ contains the additive identity:
 			
+			Consider $(x_1, x_2, x_3) = (0, 0, 0)$
 			
-			$0 = 5 \cdot 0 \Rightarrow 0 \in U$
+			$x_1 = 5x_3$
 			
-			Closed Under Addition:
+			$0 = 5 \cdot 0$
+			
+			$\therefore 0 \in U$
+			
+			Check whether $U$ is closed under addition:
 			
 			Let $u, v \in U$
 			
-			$u_1 + v_1 = 5u_3 + 5v_3 = 5(u_3 + v_3) \Rightarrow u + v \in U$
+			Consider $u + v = (u_1, u_2, u_3) + (v_1, v_2, v_3) = (u_1 + v_1, u_2 + v_2, u_3 + v_3)$
 			
-			Closed Under Scalar Multiplication:
+			$u_1 + v_1 = 5u_3 + 5v_3 = 5(u_3 + v_3)$
+			
+			$\therefore u + v \in U$
+			
+			Check whether $U$ is closed under scalar multiplication:
 			
 			Let $u \in U$ and $a \in \mathbb{F}$
 			
-			$au_1 = a(5_u3) = 5(au_3) \Rightarrow au \in U$
+			$au = (au_1, au_2, au_3)$
 			
-			$\therefore U$ is a subspace of $\mathbb{F}^3$
+			$au_1 = a(5_u3) = 5(au_3)$
+			
+			$\therefore au \in U$
+			
+			Because $U$ contains the additive identity, is closed under addition, and is closed under scalar multiplication, $U$ is a subspace of $\mathbb{F}^3$
 			
 		\end{enumerate}
 		
