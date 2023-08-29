@@ -130,7 +130,7 @@
 			
 			$au = (au_1, au_2, au_3)$
 			
-			$au_1 = a(5_u3) = 5(au_3)$
+			$au_1 = a(5u_3) = 5(au_3)$
 			
 			$\therefore au \in U$
 			
@@ -144,15 +144,29 @@
 		
 		Let $u, v \in U$.
 		
-		$u_1 + v_1 \in \mathbb{Z}$ and $u_2 + v_2 \in \mathbb{Z} \Rightarrow U$ is Closed Under Addition
+		$u + v = (u_1, u_2) + (v_1, v_2) = (u_1 + v_1, u_2 + v_2)$
 		
-		$-u_1, -u_2 \in U \Rightarrow U$ is Closed Under Taking Additive Inverses
+		For $u_1, v_1 \in \mathbb{Z}$, $u_1 + v_1 \in \mathbb{Z}$.
 		
-		Consider $a = \frac{1}{2} \in \mathbb{F}$ and $u = (1, 1)$
+		For $u_2, v_2 \in \mathbb{Z}$, $u_2 + v_2 \in \mathbb{Z}$
+		
+		$\therefore u + v \in U$ (i.e. $U$ is closed under addition)
+		
+		$-u = (-u_1, -u_2)$
+		
+		For $u_1 \in \mathbb{Z}$, $-u_1 \in \mathbb{Z}$
+		
+		For $u_2 \in \mathbb{Z}$, $-u_2 \in \mathbb{Z}$
+		
+		$\therefore -u \in U$ (i.e. $U$ is closed under taking additive inverses)
+		
+		Check whether $U$ is closed under scalar multiplication:
+		
+		Consider $a = \frac{1}{2} \in \mathbb{R}$ and $u = (1, 1) \in \mathbb{R}^2$
 		
 		$au = \frac{1}{2}(1, 1) = (\frac{1}{2}, \frac{1}{2}) \not\in U$
 		
-		$\therefore U$ is not closed under scalar multiplication, and $U \not\subset \mathbb{R}^2$
+		$\therefore U$ is not closed under scalar multiplication, and $U$ is not a subspace of $\mathbb{R}^2$
 		
 		\item[8.] Give an example of a nonempty subset of $U$ such that U is closed under scalar multiplication, but $U$ is not a subspace of $\mathbb{R}^2$.
 		
