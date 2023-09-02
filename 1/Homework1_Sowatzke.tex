@@ -66,7 +66,7 @@
 			
 			$\therefore au \in U$
 			
-			\textbf{Because $U$ contains the additive identity, is closed under addition, and is closed under scalar multiplication, $U$ is a subspace of $\mathbb{F}^3$.}
+			Because $U$ contains the additive identity, is closed under addition, and is closed under scalar multiplication, $U$ is a subspace of $\mathbb{F}^3$.
 			
 			\item[(b)] Let $U = {\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 + 2x_2 + 3x_3 = 4 \}}$
 			
@@ -78,7 +78,7 @@
 			
 			$\therefore 0 \notin U$
 			
-			\textbf{Because $U$ does not contain the additive identity, it is not a subspace of $\mathbb{F}^3$.}
+			Because $U$ does not contain the additive identity, it is not a subspace of $\mathbb{F}^3$.
 
 			\item[(c)] Let $U = {\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1x_2x_3 = 0 \}}$
 			
@@ -94,7 +94,7 @@
 			
 			$\Rightarrow u + v \notin U$
 			
-			\textbf{Because $\exists\ u,v \in U$ s.t. $u + v \notin U$, $U$ is not closed under addition and  $U$ is not a subspace of $\mathbb{F}^3$.}
+			Because $\exists\ u,v \in U$ s.t. $u + v \notin U$, $U$ is not closed under addition and  $U$ is not a subspace of $\mathbb{F}^3$.
 			
 			\item[(d)] Let $U = {\{(x_1, x_2, x_3) \in \mathbb{F}^3 : x_1 = 5x_3 \}}$
 			
@@ -128,7 +128,7 @@
 			
 			$\therefore au \in U$
 			
-			\textbf{Because $U$ contains the additive identity, is closed under addition, and is closed under scalar multiplication, $U$ is a subspace of $\mathbb{F}^3$.}
+			Because $U$ contains the additive identity, is closed under addition, and is closed under scalar multiplication, $U$ is a subspace of $\mathbb{F}^3$.
 			
 		\end{enumerate}
 		
@@ -136,21 +136,25 @@
 		
 		Let $U = \{(x_1, x_2) \in \mathbb{R}^2 : x_1, x_2 \in \mathbb{Z}\}$
 		
+		Check whether U is closed under addition:
+		
 		Let $u, v \in U$.
 		
 		$u + v = (u_1, u_2) + (v_1, v_2) = (u_1 + v_1, u_2 + v_2)$
 		
-		For $u_1, v_1 \in \mathbb{Z}$, $u_1 + v_1 \in \mathbb{Z}$.
+		where $u_1, v_1, u_2, v_2 \in \mathbb{Z}$
 		
-		For $u_2, v_2 \in \mathbb{Z}$, $u_2 + v_2 \in \mathbb{Z}$
+		The sum of any two integers, is also an integer. 
 		
-		$\therefore u + v \in U$ (i.e. $U$ is closed under addition)
+		$\therefore (u_1 + v_1), (u_1 + v_1) \in \mathbb{Z}$
+		
+		$\Rightarrow u + v \in U$ (i.e. $U$ is closed under addition)
+		
+		Check whether $U$ is closed under taking additive inverses:
 		
 		$-u = (-u_1, -u_2)$
 		
-		For $u_1 \in \mathbb{Z}$, $-u_1 \in \mathbb{Z}$
-		
-		For $u_2 \in \mathbb{Z}$, $-u_2 \in \mathbb{Z}$
+		For $u_1, u_2 \in \mathbb{Z}$, $-u_1, -u_2 \in \mathbb{Z}$
 		
 		$\therefore -u \in U$ (i.e. $U$ is closed under taking additive inverses)
 		
@@ -160,7 +164,9 @@
 		
 		$au = \frac{1}{2}(1, 1) = (\frac{1}{2}, \frac{1}{2}) \not\in U$
 		
-		$\therefore U$ is not closed under scalar multiplication, and $U$ is not a subspace of $\mathbb{R}^2$
+		$\therefore U$ is not closed under scalar multiplication.
+		
+		Because $U$ is not closed under scalar multiplication, $U$ is not a subspace of $\mathbb{R}^2$
 		
 		\item[8.] Give an example of a nonempty subset of $U$ such that U is closed under scalar multiplication, but $U$ is not a subspace of $\mathbb{R}^2$.
 		
@@ -182,7 +188,9 @@
 		
 		$2^2 = 4 \neq 0 = 0^2$
 		
-		$\therefore U$ is not closed under addition, and $U$ is not a subspace of $\mathbb{R}^2$
+		$\therefore U$ is not closed under addition.
+		
+		Because $U$ is not closed under addition, $U$ is not a subspace of $\mathbb{R}^2$
 		
 		\item[19.] Prove or give a counterexample: if $U_1, U_2, W$ are subspaces of $V$ such that
 		
