@@ -210,36 +210,26 @@ then $U_1 = U_2$.
 		
 		Let $V = \mathbb{R}^2$
 		
-		Let $U_1 = \{(x, 0) \in \mathbb{F}^2 : x \in \mathbb{F}\}$ and $U_2 = \{(0, y) \in \mathbb{F}^2 : y \in \mathbb{F}\}$
+		$U_1 + W$ is a direct sum if and only if $U_1 \cap W = \{0\}$
 		
-		Clearly, $U_1 \neq U_2$.
+		Let $U_1 = \{(x,0) \in \mathbb{R}^2 : x \in \mathbb{R}\}$ and $W = \{(0,y) \in \mathbb{R}^2 : y \in \mathbb{R}\}$		
 		
-		Let $W = \{(z, z) \in \mathbb{F}^2 : z \in \mathbb{F}\}$
+		In this counterexample, $U_1$ is the x-axis and $W$ is the y-axis.
 		
-		Show that $U_1 + W$ is a direct sum:
+		Clearly, $U_1 \cap W = \{0\} \Rightarrow U_1 + W$ is a direct sum.
 		
-		$(x + z, z) = (0, 0)$
+		Furthermore, $U_1 + W = \{(x, y) \in \mathbb{R}^2 : x,y \in \mathbb{R}\} = \mathbb{R}^2 = V$
 		
-		$z = 0$
+		$U_2 + W$ is a direct sum if and only if $U_2 \cap W = \{0\}$
 		
-		$x + z = 0 \Rightarrow x = 0$
+		Let $U_2 = \{(x, x) \in \mathbb{R}^2 : x \in \mathbb{R}\}$
 		
-		$\therefore 0$ can only be written as the sum of $0$ and $0$, so $U_1 + W$ is a direct sum.
+		$U_2$ is the line $y = x$. 
 		
-		Show that $U_2 + W$ is a direct sum:
+		$U_2 \cap W = \{0\} \Rightarrow U_2 + W$ is a direct sum.
 		
-		$(z, y + z) = (0, 0)$
+		Furthermore, $U_2 + W = \{(x, y) \in \mathbb{R}^2 : x,y \in \mathbb{R}\} = \mathbb{R}^2 = V$
 		
-		$z = 0$
-		
-		$y + z = 0 \Rightarrow y = 0$
-		
-		$\therefore 0$ can only be written as the sum of $0$ and $0$, so $U_2 + W$ is a direct sum.
-		
-		$U_1 \oplus W = (x, y) = V$
-		
-		$U_2 \oplus W = (x, y) = V$
-		
-		but $U_1 \neq U_2$.		
+		$\therefore V = U_1 \oplus W$ and $V = U_2 \oplus W$, but $U_1 \neq U_2$
 	\end{enumerate}
 \end{document}
