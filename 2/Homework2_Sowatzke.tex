@@ -18,9 +18,9 @@
 	
 		\item[1.] Prove that $\mathbb{F}^\infty$ is infinite-dimensional.
 		
-		Consider any list of elements of $\mathbb{F}^\infty$. Each element of the list is a vector $v = (v_1, v_2, ...) \in \mathbb{F}^\infty$. Find the largest index $m$, which corresponds to a nonzero coordinate $v_m$ in at least one of the vectors.
+		Consider any list of elements of $\mathbb{F}^\infty$. Each element of the list is a vector $v = (x_1, x_2, ...) \in \mathbb{F}^\infty$. Find the largest index $m$, which corresponds to a nonzero coordinate $x_m$ in at least one of the vectors.
 		
-		 Each element of the list is in the span of the following basis vectors:
+		 Each element of the list is in the span of the following vectors:
 		 
 		 $v_1 = (1, 0, 0, ...)$
 		 
@@ -30,6 +30,13 @@
 		 
 		 $v_m = (0, .., 0, 1, 0, ...)$
 		 
+		 where $v_i$ is the vector where the i-th element is $1$ and all other elements are $0$.
+		 
+		 Now choose a vector $w \in \mathbb{F}^\infty$ where the $m + 1$ element is $1$ and all other elements are $0$.
+		 
+		 $w \not\in \text{span}(v_1, ..., v_m)$.
+		 
+		 $w$ can be added to the list of spanning vectors. Now, $w \in span(v_1, ..., v_m, w)$. However, no matter how many times the list of spanning vectors is extended, there will always be a vector in $\mathbb{F}^\infty$ that is not spanned by the list. $\therefore$ no list spans $\mathbb{F}^\infty$. Because no list spans $\mathbb{F}^\infty$, $\mathbb{F}^\infty$ is infinite-dimensional.
 		
 	\end{enumerate}
 	
