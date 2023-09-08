@@ -1,22 +1,55 @@
-\documentclass{article}
+\documentclass[fleqn]{article}
 
-\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{amsmath, nccmath}
 \usepackage{amssymb}
+\usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage[nodisplayskipstretch]{setspace}
+\usepackage{float}
+
+%\usepackage{amsmath}
+%\usepackage{amssymb, nccmath}
+%\usepackage{enumitem}
+%\usepackage[nodisplayskipstretch]{setspace}
+%\usepackage[nopar]{lipsum}
+
+%\usepackage{geometry}
+%\usepackage{amsmath, nccmath}
+%\usepackage{amssymb}
+%\usepackage{graphicx}
+%\usepackage{enumitem}
+%\usepackage[nodisplayskipstretch]{setspace}
+%\usepackage{float}
 
 \title{Homework 2}
 \author{Owen Sowatzke}
 \date{September 13, 2023}
 
+%\newcommand{\zerodisplayskips}{%
+%  \setlength{\abovedisplayskip}{0pt}%
+%  \setlength{\belowdisplayskip}{0pt}%
+%  \setlength{\abovedisplayshortskip}{0pt}%
+%  \setlength{\belowdisplayshortskip}{0pt}
+%  \setlength{\mathindent}{0pt}}
+  
+%\renewenvironment{singlespace}
+%{\singlespace}
+%{\null}
+	
 \begin{document}
 
+	\doublespacing
+	\setlength{\abovedisplayskip}{0pt}
+	\setlength{\belowdisplayskip}{0pt}
+	\setlength{\abovedisplayshortskip}{0pt}
+	\setlength{\belowdisplayshortskip}{0pt}
+	\setlength{\mathindent}{0pt}
 	\maketitle
-	\doublespace
-	
+				
 	\begin{enumerate}[nolistsep]
 	
-		\item[1.] Prove that $\mathbb{F}^\infty$ is infinite-dimensional.
+		\item[2.A.15] Prove that $\mathbb{F}^\infty$ is infinite-dimensional.
 		
 		Consider any list of elements of $\mathbb{F}^\infty$. Each element of the list is a vector $v = (x_1, x_2, ...) \in \mathbb{F}^\infty$. Find the largest index $m$, which corresponds to a nonzero coordinate $x_m$ in at least one of the vectors.
 		
@@ -38,6 +71,48 @@
 		 
 		 $w$ can be added to the list of spanning vectors. Now, $w \in span(v_1, ..., v_m, w)$. However, no matter how many times the list of spanning vectors is extended, there will always be a vector in $\mathbb{F}^\infty$ that is not spanned by the list. $\therefore$ no list spans $\mathbb{F}^\infty$. Because no list spans $\mathbb{F}^\infty$, $\mathbb{F}^\infty$ is infinite-dimensional.
 		
+		\item[2.B.3]
+		
+		 	\begin{enumerate}[nolistsep]
+		 	
+		 		\item[(a)] Let $U$ be the subspace of $\mathbb{R}^5$ defined by
+		
+				$U = \{(x_1, x_2, x_3, x_4, x_5) \in \mathbb{R}^5 : x_1 = 3x_2\ \text{and}\ x_3 = 7x_4\}$
+		
+				Find a basis of $U$.
+				
+				$U = \{(3x_2, x_2, 7x_4, x_4, x_5) \in \mathbb{R}^5 : x_2, x_4, x_5 \in \mathbb{R}\}$
+				
+				Let $v$ be any vector in $U$.
+				
+				\begin{singlespacing}
+					\setlength{\abovedisplayskip}{0pt}
+					\setlength{\belowdisplayskip}{10pt}
+					\setlength{\abovedisplayshortskip}{0pt}
+					\setlength{\belowdisplayshortskip}{10pt}
+					\setlength{\mathindent}{0pt}
+					\begin{align*}
+					 v = \begin{bmatrix}3x_2 \\ x_2 \\ 7x_4 \\ x_4 \\ x_5 \end{bmatrix}
+					\end{align*}
+				\end{singlespacing}
+				
+				where $x_2, x_4, x_5 \in \mathbb{R}$.
+				
+				$v$ can be represented as a linear combination combination of the following three vectors:
+				
+				\begin{singlespacing}
+					\setlength{\abovedisplayskip}{0pt}
+					\setlength{\belowdisplayskip}{10pt}
+					\setlength{\abovedisplayshortskip}{0pt}
+					\setlength{\belowdisplayshortskip}{10pt}
+					\setlength{\mathindent}{0pt}
+					\begin{align*}
+					v = \begin{bmatrix}3x_2 \\ x_2 \\ 7x_4 \\ x_4 \\ x_5 \end{bmatrix} = x_2 \begin{bmatrix}3 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix}0 \\ 0 \\ 7 \\ 1 \\ 0 \end{bmatrix} + x_5 \begin{bmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}
+					\end{align*}
+				\end{singlespacing}
+									
+					
+			\end{enumerate}
 	\end{enumerate}
 	
 \end{document}
