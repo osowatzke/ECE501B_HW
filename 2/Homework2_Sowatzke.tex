@@ -83,7 +83,7 @@
 				
 				$U = \{(3x_2, x_2, 7x_4, x_4, x_5) \in \mathbb{R}^5 : x_2, x_4, x_5 \in \mathbb{R}\}$
 				
-				Let $v$ be any vector in $U$.
+				Let $v \in U$.
 				
 				\begin{singlespacing}
 					\setlength{\abovedisplayskip}{0pt}
@@ -98,7 +98,7 @@
 				
 				where $x_2, x_4, x_5 \in \mathbb{R}$.
 				
-				$v$ can be represented as a linear combination combination of the following three vectors:
+				$v$ can be expressed as a linear combination of vectors as follows:
 				
 				\begin{singlespacing}
 					\setlength{\abovedisplayskip}{0pt}
@@ -107,11 +107,15 @@
 					\setlength{\belowdisplayshortskip}{10pt}
 					\setlength{\mathindent}{0pt}
 					\begin{align*}
-					v = \begin{bmatrix}3x_2 \\ x_2 \\ 7x_4 \\ x_4 \\ x_5 \end{bmatrix} = x_2 \begin{bmatrix}3 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix}0 \\ 0 \\ 7 \\ 1 \\ 0 \end{bmatrix} + x_5 \begin{bmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}
+					v = \begin{bmatrix}3x_2 \\ x_2 \\ 7x_4 \\ x_4 \\ x_5 \end{bmatrix} = x_2 \begin{bmatrix}3 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix}0 \\ 0 \\ 7 \\ 1 \\ 0 \end{bmatrix} + x_5 \begin{bmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix} = x_2v_1 + x_4v_2 + x_5v_3
 					\end{align*}
 				\end{singlespacing}
+				
+				$\therefore v \in \text{span}(v_1, v_2, v_3) \Rightarrow v_1, v_2, v_3$ span $U$.
 									
-					
+				Furthermore, the only scalars $x_1, x_2, x_3$ that can make $v = 0$ are $x_1 = x_2 = x_3 = 0$. $\therefore v_1, v_2, v_3$ are linearly independent.
+				
+				Because $v_1, v_2, v_3$ are linearly independent and span $U$ they form a basis for $U$.
 			\end{enumerate}
 	\end{enumerate}
 	
