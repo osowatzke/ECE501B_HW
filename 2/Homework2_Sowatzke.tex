@@ -8,34 +8,9 @@
 \usepackage[nodisplayskipstretch]{setspace}
 \usepackage{float}
 
-%\usepackage{amsmath}
-%\usepackage{amssymb, nccmath}
-%\usepackage{enumitem}
-%\usepackage[nodisplayskipstretch]{setspace}
-%\usepackage[nopar]{lipsum}
-
-%\usepackage{geometry}
-%\usepackage{amsmath, nccmath}
-%\usepackage{amssymb}
-%\usepackage{graphicx}
-%\usepackage{enumitem}
-%\usepackage[nodisplayskipstretch]{setspace}
-%\usepackage{float}
-
 \title{Homework 2}
 \author{Owen Sowatzke}
 \date{September 13, 2023}
-
-%\newcommand{\zerodisplayskips}{%
-%  \setlength{\abovedisplayskip}{0pt}%
-%  \setlength{\belowdisplayskip}{0pt}%
-%  \setlength{\abovedisplayshortskip}{0pt}%
-%  \setlength{\belowdisplayshortskip}{0pt}
-%  \setlength{\mathindent}{0pt}}
-  
-%\renewenvironment{singlespace}
-%{\singlespace}
-%{\null}
 	
 \begin{document}
 
@@ -83,7 +58,9 @@
 				
 				$U = \{(3x_2, x_2, 7x_4, x_4, x_5) \in \mathbb{R}^5 : x_2, x_4, x_5 \in \mathbb{R}\}$
 				
-				Let $v \in U$.
+				Every vector $v \in U$ can be expressed as a linear combination of vectors as follows:
+				
+				$v = x_2v_1 + x_4v_2 + x_5v_3$
 				
 				\begin{singlespacing}
 					\setlength{\abovedisplayskip}{0pt}
@@ -92,30 +69,28 @@
 					\setlength{\belowdisplayshortskip}{10pt}
 					\setlength{\mathindent}{0pt}
 					\begin{align*}
-					 v = \begin{bmatrix}3x_2 \\ x_2 \\ 7x_4 \\ x_4 \\ x_5 \end{bmatrix}
+					\begin{bmatrix}3x_2 \\ x_2 \\ 7x_4 \\ x_4 \\ x_5 \end{bmatrix} = x_2 \begin{bmatrix}3 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix}0 \\ 0 \\ 7 \\ 1 \\ 0 \end{bmatrix} + x_5 \begin{bmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}
 					\end{align*}
 				\end{singlespacing}
 				
-				where $x_2, x_4, x_5 \in \mathbb{R}$.
-				
-				$v$ can be expressed as a linear combination of vectors as follows:
-				
-				\begin{singlespacing}
-					\setlength{\abovedisplayskip}{0pt}
-					\setlength{\belowdisplayskip}{10pt}
-					\setlength{\abovedisplayshortskip}{0pt}
-					\setlength{\belowdisplayshortskip}{10pt}
-					\setlength{\mathindent}{0pt}
-					\begin{align*}
-					v = \begin{bmatrix}3x_2 \\ x_2 \\ 7x_4 \\ x_4 \\ x_5 \end{bmatrix} = x_2 \begin{bmatrix}3 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} + x_4 \begin{bmatrix}0 \\ 0 \\ 7 \\ 1 \\ 0 \end{bmatrix} + x_5 \begin{bmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix} = x_2v_1 + x_4v_2 + x_5v_3
-					\end{align*}
-				\end{singlespacing}
-				
-				$\therefore v \in \text{span}(v_1, v_2, v_3) \Rightarrow v_1, v_2, v_3$ span $U$.
+				$\therefore v_1, v_2, v_3$ span $U$.
 									
-				Furthermore, the only scalars $x_1, x_2, x_3$ that can make $v = 0$ are $x_1 = x_2 = x_3 = 0$. $\therefore v_1, v_2, v_3$ are linearly independent.
+				The only way to make $v = 0$ is to set $x_1 = x_2 = x_3 = 0$.
 				
-				Because $v_1, v_2, v_3$ are linearly independent and span $U$ they form a basis for $U$.
+				$\therefore v_1, v_2, v_3$ are linearly independent.
+				
+				Because $v_1, v_2, v_3$ are linearly independent and they span $U$, they form a basis for $U$.
+				
+				\begin{singlespacing}
+					\setlength{\abovedisplayskip}{0pt}
+					\setlength{\belowdisplayskip}{10pt}
+					\setlength{\abovedisplayshortskip}{0pt}
+					\setlength{\belowdisplayshortskip}{10pt}
+					\setlength{\mathindent}{0pt}
+					\begin{align*}
+					\therefore \begin{bmatrix}3 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix},  \begin{bmatrix}0 \\ 0 \\ 7 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix}0 \\ 0 \\ 0 \\ 0 \\ 1 \end{bmatrix} \text{are a basis for} U
+					\end{align*}
+				\end{singlespacing}
 			\end{enumerate}
 	\end{enumerate}
 	
