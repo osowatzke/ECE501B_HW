@@ -76,13 +76,25 @@
 				
 				\item[(b)] Extend the basis in part (a) to a basis of $\mathbb{R}^5$.
 				
-				$(1, 0, 0, 0, 0), (0, 1, 0, 0, 0), (0, 0, 1, 0, 0), (0, 0, 0, 1, 0), (0, 0, 0, 0, 1)$ is a basis of $\mathbb{R}^5$
+				First, extend the basis to a list that spans $\mathbb{R}^5$. This can be done by appending a basis of $\mathbb{R}^5$ onto the end of the basis from part (a).
 				
-				If the $\mathbb{R}^5$ basis is appended to the basis from part (a), the resulting list spans $\mathbb{R}^5$.
-				   
-				Denote each vector in the list as $v_1, v_2, ..., v_8$.
+				Then, reduce the spanning list to form a basis.
 				
-				Now reduce the spanning list to form a basis.
+				Since the basis of $U$ is at the beginning of the list, none of the vectors from the initial basis will be removed. Instead, only appended vectors will be removed from the list.
+				
+				Consider the following basis for $\mathbb{R}^5$:
+				
+				$(1, 0, 0, 0, 0), (0, 1, 0, 0, 0), (0, 0, 1, 0, 0), (0, 0, 0, 1, 0), (0, 0, 0, 0, 1)$
+				
+				After appending the basis for $\mathbb{R}^5$ onto the end of the basis for $U$, the following list of vectors results:
+				
+				$(3, 1, 0, 0, 0), (0, 0, 7, 1, 0), (0, 0, 0, 0, 1), (1, 0, 0, 0, 0), (0, 1, 0, 0, 0), (0, 0, 1, 0, 0),$
+				
+				$(0, 0, 0, 1, 0), (0, 0, 0, 0, 1)$
+				
+				Denote the vectors in the list as $v_1, v_2, ..., v_8$
+				
+				Now the spanning list can be reduced to form a basis.
 				
 				Start with $B$ equal to the list $v_1, v_2, ..., v_8$.
 				
@@ -102,9 +114,7 @@
 				
 				$v_8 = (0, 0, 0, 0, 1) = v_3 \Rightarrow v_8 \in \text{span}(v_1, v_2, v_3, v_4, v_6)$ so remove $v_8$ from $B$
 				 
-				 The remaining list $B$ is a basis for $\mathbb{R}^5$ that has been formed by extending the basis in part (a) to a basis of $\mathbb{R}^5$.
-				 
-				The resulting basis is specifically given by:
+				The remaining list $B$ is a basis for $\mathbb{R}^5$ and is given by:
 				
 				$(3, 1, 0, 0, 0), (0, 0, 7, 1, 0), (0, 0, 0, 0, 1), (1, 0, 0, 0, 0), (0, 0, 1, 0, 0)$
 					
@@ -112,9 +122,19 @@
 				
 				Let $V = \mathbb{R}^5$
 				
-				$u_1, u_2, u_3, w_1, w_2$ is a basis of $V$.
+				From part (b), $u_1, u_2, u_3, w_1, w_2$ is a basis of $V$ where:
 				
-				$\therefore$ for $v \in V$
+				$u_1 = (3, 1, 0, 0, 0)$
+				
+				$u_2 = (0, 0, 7, 1, 0)$
+				
+				$u_3 = (0, 0, 0, 0, 1)$
+				
+				$w_1 = (1, 0, 0, 0, 0)$
+				
+				$w_2 = (0, 0, 1, 0, 0)$
+				
+				For $v \in V$
 				
 				\begin{align*}
 				v = \underbrace{a_1u_1 + a_2u_2 + a_3u_3}_{u} + \underbrace{b_1w_1 + b_2w_2}_{w}
