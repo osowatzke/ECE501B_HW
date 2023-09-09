@@ -109,8 +109,39 @@
 				$(3, 1, 0, 0, 0), (0, 0, 7, 1, 0), (0, 0, 0, 0, 1), (1, 0, 0, 0, 0), (0, 0, 1, 0, 0)$
 					
 				\item[(c)] Find a subspace $W$ of $\mathbb{R}^5$ such that $\mathbb{R}^5 = U \oplus W$.
-				 		
+				
+				Suppose $v \in V$. 
+				
+				$u_1, u_2, u_3, w_1, w_2$ spans $V$   		
 			\end{enumerate}
+			
+		\item[2.C.11] Suppose that $U$ and $W$ are subspaces of $\mathbb{R}^8$ such that $\text{dim}\ U = 3$, $\text{dim}\ W = 5$, and $U + W = \mathbb{R}^8$. Prove that $\mathbb{R}^8 = U \oplus W$.
+		
+		$\text{dim}(U + W) = \text{dim}\ U + \text{dim}\ W - \text{dim}(U \cap W)$
+		
+		$\text{dim}(\mathbb{R}^8) = \text{dim}\ U + \text{dim}\ W - \text{dim}(U \cap W)$
+		
+		$8 = 3 + 5 - \text{dim}(U \cap W)$
+		
+		$\text{dim}(U \cap W) = 0$
+		
+		$\therefore U \cap W = \{0\}$
+		
+		Because $U \cap W = \{0\}$, $U + W$ is a direct sum and $U \oplus W = \mathbb{R}^8$.
+		
+		\item[2.C.12] Suppose $U$ and $W$ are both five-dimensional subspaces of $\mathbb{R}^9$. Prove that $U \cap W \neq \{0\}$.
+		
+		$\text{dim}\ U + \text{dim}\ W - \text{dim}(U \cap W) = \text{dim}(U + W) \leq \text{dim}(R^9)$
+		
+		$5 + 5 - \text{dim}(U \cap W) \leq 9$
+		
+		$10 - \text{dim}(U \cap W) \leq 9$
+		
+		$-\text{dim}(U \cap W) \leq -1$
+		
+		$\text{dim}(U \cap W) \geq 1$
+		
+		$\therefore \text{dim}(U \cap W) \neq 0 \Rightarrow U \cap W \neq \{0\}$.
 	\end{enumerate}
 	
 \end{document}
