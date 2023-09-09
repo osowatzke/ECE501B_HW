@@ -73,6 +73,43 @@
 				Because $v_1, v_2, v_3$ are linearly independent and they span $U$, they form a basis for $U$.
 				
 				$\therefore (3, 1, 0, 0, 0), (0, 0, 7, 1, 0), (0, 0, 0, 0, 1)$ are basis vectors for $U$.
+				
+				\item[(b)] Extend the basis in part (a) to a basis of $\mathbb{R}^5$.
+				
+				$(1, 0, 0, 0, 0), (0, 1, 0, 0, 0), (0, 0, 1, 0, 0), (0, 0, 0, 1, 0), (0, 0, 0, 0, 1)$ is a basis of $\mathbb{R}^5$
+				
+				If the $\mathbb{R}^5$ basis is appended to the basis from part (a), the resulting list spans $\mathbb{R}^5$.
+				   
+				Denote each vector in the list as $v_1, v_2, ..., v_8$.
+				
+				Now reduce the spanning list to form a basis.
+				
+				Start with $B$ equal to the list $v_1, v_2, ..., v_8$.
+				
+				$v_1 = (3, 1, 0, 0, 0) \neq 0$ so leave $B$ unchanged
+				
+				$v_2 = (0, 0, 7, 1, 0) \not\in \text{span}(v_1)$ so leave $B$ unchanged
+				
+				$v_3 = (0, 0, 0, 0, 1) \not\in \text{span}(v_1, v_2)$ so leave $B$ unchanged.
+				
+				$v_4 = (1, 0, 0, 0, 0) \not\in \text{span}(v_1, v_2, v_3)$ so leave $B$ unchanged.
+				
+				$v_5 = (0, 1, 0, 0, 0) = v_1 - 3v_4 \Rightarrow v_5 \in \text{span}(v_1, v_2, v_3, v_4)$ so remove $v_5$ from $B$
+				
+				$v_6 = (0, 0, 1, 0, 0) \not\in \text{span}(v_1, v_2, v_3, v_4)$ so leave $B$ unchanged
+				
+				$v_7 = (0, 0, 0, 1, 0) = v_2 - 7v_6 \Rightarrow v_7 \in \text{span}(v_1, v_2, v_3, v_4, v_6)$ so remove $v_7$ from $B$
+				
+				$v_8 = (0, 0, 0, 0, 1) = v_3 \Rightarrow v_8 \in \text{span}(v_1, v_2, v_3, v_4, v_6)$ so remove $v_8$ from $B$
+				 
+				 The remaining list $B$ is a basis for $\mathbb{R}^5$ that has been formed by extending the basis in part (a) to a basis of $\mathbb{R}^5$.
+				 
+				The resulting basis is specifically given by:
+				
+				$(3, 1, 0, 0, 0), (0, 0, 7, 1, 0), (0, 0, 0, 0, 1), (1, 0, 0, 0, 0), (0, 0, 1, 0, 0)$
+					
+				\item[(c)] Find a subspace $W$ of $\mathbb{R}^5$ such that $\mathbb{R}^5 = U \oplus W$.
+				 		
 			\end{enumerate}
 	\end{enumerate}
 	
