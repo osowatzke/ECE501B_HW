@@ -130,53 +130,37 @@
 					
 				\item[(c)] Find a subspace $W$ of $\mathbb{R}^5$ such that $\mathbb{R}^5 = U \oplus W$.
 				
-				Let $V = \mathbb{R}^5$
+				From part (b), we know that $u_1, u_2, u_3, w_1, w_3$ is a basis of $V$.
 				
-				From part (b), $u_1, u_2, u_3, w_1, w_2$ is a basis of $V$ where:
+				$\therefore$ for $v \in \mathbb{R}^5$
 				
-				$u_1 = (3, 1, 0, 0, 0)$
+				$v = \underbrace{a_1u_1 + a_2u_2 + a_3u_3}_{u} + \underbrace{b_1w_1 + b_3w_3}_{w}$
 				
-				$u_2 = (0, 0, 7, 1, 0)$
-				
-				$u_3 = (0, 0, 0, 0, 1)$
-				
-				$w_1 = (1, 0, 0, 0, 0)$
-				
-				$w_2 = (0, 0, 1, 0, 0)$
-				
-				For $v \in V$
-				
-				\begin{align*}
-				v = \underbrace{a_1u_1 + a_2u_2 + a_3u_3}_{u} + \underbrace{b_1w_1 + b_2w_2}_{w}
-				\end{align*}
-				
-				$v = u + w$ for $u \in U$ and $v \in V$
+				$\Rightarrow v = u + w$ for $u \in U$ and $w \in W$
 				
 				$\Rightarrow v \in U + W$
 				
-				$\Rightarrow V = U + W$
+				$\Rightarrow \mathbb{R}^5 = U + W$
 				
 				Let $v \in U \cap W$
 				
-				$v = a_1u_1 + a_2u_2 + a_3u_3 = b_1w_1 + b_2w_2$
+				$v = a_1u_1 + a_2u_2 + a_3u_3 = b_1w_1 + b_3w_3$
 				
-				Because $u_1, u_2, u_3, w_1, w_2$ is a basis for $V$, it is linearly independent.
+				Because $u_1, u_2, u_3, w_1, w_3$ is a basis for $\mathbb{R}^5$, it is linearly independent.
 				
 				$\therefore$ the only solution to
 				
-				$a_1u_1 + a_2u_2 + a_3u_3 - b_1w_1 - b_2w_2 = 0$
+				$a_1u_1 + a_2u_2 + a_3u_3 - b_1w_1 - b_3w_3 = 0$
 				
-				is $a_1 = a_2 = a_3 = b_1 = b_2 = 0$
+				is $a_1 = a_2 = a_3 = b_1 = b_3 = 0$
 				
 				$\Rightarrow v = 0$.
 				
 				$\therefore U \cap W = \{0\}$
 				
-				We can then conclude that $U \oplus W = V$.
+				We have now found an equation for $W$ such that $\mathbb{R}^5 = U \oplus W$.
 				
-				Now we just need to solve for $W$.
-				
-				$W = \text{span}(w_1, w_2)$
+				Specifically, $W = \text{span}(w_1, w_3)$
 				
 				$\Rightarrow W = \{(x_1, 0, x_3, 0, 0) \in \mathbb{R}^5 : x_1, x_3 \in \mathbb{R}\}$				   		
 			\end{enumerate}
