@@ -60,6 +60,28 @@
 	
 	Combining this information, we can conclude that the only way to make $a_1Tv_1 + \cdots + a_nTv_n = 0$ is by setting $a_1 = \cdots = a_n = 0$.
 	
-	$\therefore Tv_1,...,Tv_n$ is linearly independent in $W$.		
+	$\therefore Tv_1,...,Tv_n$ is linearly independent in $W$.
+	
+		\item[3.] Suppose $v_1,...v_n$ spans $V$ and $T \in \mathcal{L}(V,W)$. Prove that the list\newline $Tv_1,...,Tv_n$ spans $\text{range}\ T$.
+
+		The $\text{range}\ T$ is defined as follows:
+		
+		$\text{range}\ T = \{Tv : v \in V\}$
+		
+		Because $v_1,...,v_n$ spans $V$, every $v \in V$ can be written as a linear combination of the vectors $v_1,...,v_n$:
+		
+		$v = a_1v_1 + \cdots + a_nv_n$ for $a_1,...,a_n \in \mathbb{F}$
+		
+		Using this result, every vector in the $\text{range}\ T$ can be written as follows:
+		
+		$Tv = T(a_1v_1 + \cdots a_nv_n) = a_1Tv_1 + \cdots + a_nTv_n$ for $a_1,...,a_n \in \mathbb{F}$
+		
+		Note that this is equivalent to the definition of a spanning list with every $v_i$ replaced with $Tv_i$ for $i = 1,....n$.
+		
+		$\therefore Tv_1,...,Tv_n$ spans $\text{range}\ T$.
+		
+		
+		
+		
 	\end{enumerate}
 \end{document}
