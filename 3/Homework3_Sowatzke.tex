@@ -52,7 +52,14 @@
 		\pagebreak
 		\item[2.] Suppose $T \in \mathcal{L}(V,W)$ is injective and $v_1,...,v_n$ is linearly independent in $V$. Prove that $Tv_1,...,Tv_n$ is linearly independent in $W$.
 		
-		
-		
+	$T$ is injective iff $\text{null}\ T = \{0\}$.
+	
+	In other words, the only way to make $T(a_1v_1 + \cdots + a_nv_n)$\newline$= a_1Tv_1 + \cdots + a_nTv_n = 0$ is by forcing $a_1v_1 + \cdots + a_nv_n = 0$ 
+	
+	Because $v_1,...,v_n$ is linearly independent in $V$, the only way to make $a_1v_1 + \cdots + a_nv_n = 0$ is by setting $a_1 = \cdots = a_n = 0$.
+	
+	Combining this information, we can conclude that the only way to make $a_1Tv_1 + \cdots + a_nTv_n = 0$ is by setting $a_1 = \cdots = a_n = 0$.
+	
+	$\therefore Tv_1,...,Tv_n$ is linearly independent in $W$.		
 	\end{enumerate}
 \end{document}
