@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage{enumitem}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{amsmath, nccmath}
+\usepackage{amssymb}
+
+\title{Homework 3}
+\author{Owen Sowatze}
+\date{September 25, 2023}
+
+\begin{document}
+	
+	\doublespacing
+	\maketitle
+	
+	\begin{enumerate}[nolistsep]
+		\item[1.] Give an example of a function $\varphi : \mathbb{R}^2 \rightarrow \mathbb{R}$ such that
+		
+		$\varphi(av) = a\varphi(v)$
+		
+		for all $a \in \mathbb{R}$ and all $v \in \mathbb{R}^2$ but $\varphi$ is not linear.
+		
+		[\textit{The exercise above and the next exercise show that neither homogeneity nor additivity alone is enough to imply that a function is a linear map.}]
+		
+		Let $\varphi(v) = \varphi((x,y)) = \sqrt{x^2+y^2}$:
+		
+		$\varphi(av) = \varphi((ax,ay)) = \sqrt{(ax)^2 + (ay)^2} = \sqrt{a^2x^2 + a^2y^2}$
+		
+		$ = \sqrt{a^2(x^2 + y^2)} = a\sqrt{x^2+y^2} = a\varphi((x,y)) = a\varphi(v)$
+		
+		$\therefore \varphi$ satisfies homogeneity.
+		
+		Now check whether it satitisfies additivity:
+		
+		$\varphi(v_1+v_2) = \varphi((x_1+x_2,y_1+y_2)) = \sqrt{(x_1+x_2)^2 + (y_1+y_2)^2}$
+		
+		$\varphi(v_1) + \varphi(v_2) = \varphi((x_1,y_1)) + \varphi((x_2,y_2)) = \sqrt{x_1^2+y_1^2} + \sqrt{x_2^2+y_2^2}$
+		
+		$\varphi(v_1+v_2)$ is not equal to $\varphi(v_1) + \varphi(v_2)$ for all $v_1, v_2 \in \mathbb{R}^2$
+		
+		Consider $v_1 = (1, 0)$ and $v_2 = (0, 1)$:
+		
+		$\varphi(v_1+v_2) = \sqrt{1^2 + 1^2} = \sqrt{2}$
+		
+		$\varphi(v_1) + \varphi(v_2) = \sqrt{1^2 + 0^2} + \sqrt{0^2 + 1^2} = 1 + 1 = 2$
+		
+		$\varphi(v_1+v_2) \neq \varphi(v_1) + \varphi(v_2)$
+		
+		$\therefore \varphi$ does not satisfy additivity so it is not linear.
+		
+		
+		
+	\end{enumerate}
+\end{document}
