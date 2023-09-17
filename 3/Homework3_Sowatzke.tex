@@ -82,6 +82,92 @@
 		
 		\item[4.] Suppose $V$ is finite-dimensional and $S,T \in \mathcal{L}(V)$. Prove that $ST = I$ if any only if $TS = I$.
 		
-		
+	Proof of if ($\Rightarrow$):
+	
+	Let $ST = I$
+	
+	$I$ is invertible because $IA = I$ and $AI = I$, where $A = I$.
+	
+	Because $I$ is invertible, $ST$ is invertible.
+	
+	$\therefore \exists\ U \in L(V)$ such that $U(ST) = I$ and $(ST)U = I$.
+	
+	Let $v \in V$ and $Tv = 0$
+	
+	$v = Iv = U(ST)v = US(Tv) = 0$
+	
+	$\therefore \text{null}\ T = \{0\} \Rightarrow T$ is injective.
+	
+	$\text{dim}\ V = \text{dim null}\ T + \text{dim range}\ T$
+	
+	$\Rightarrow \text{dim range}\ T = \text{dim}\ V \Rightarrow \text{range}\ T = V \Rightarrow T$ is surjective. 
+	
+	Because $T$ is injective and surjective, it is invertible.
+	
+	%Let $w \in V$
+	
+	%$w = Iw = (ST)Uw = S(TUw)$
+	
+	%$w \in \text{range}\ S$
+	
+	%Because $w$ is an arbitrarily chosen vector in $V$, $\text{range}\ S = V$.
+	
+	%$\Rightarrow S$ is surjective.
+	
+	%$\text{dim}\ V = \text{dim null}\ S + \text{dim range}\ S \Rightarrow \text{dim null}\ S = 0$
+	
+	%$\Rightarrow \text{null}\ S = \{0\} \Rightarrow S$ is injective.
+	
+	%Because $S$ is injective and surjective, it is invertible.
+	
+	Since $T$ is invertible, we can write $ST = I$ as
+	
+	$(ST)T^{-1} = IT^{-1}$
+	
+	$S(TT^{-1}) = T^{-1}$
+	
+	$SI = T^{-1}$
+	
+	$S = T^{-1}$
+	
+	$TS = TT^{-1}$
+	
+	$TS = I$
+	
+	Proof of only if ($\Leftarrow$):
+	
+	Let $TS = I$
+	
+	$I$ is invertible because $IA = I$ and $AI = I$, where $A = I$.
+	
+	Because $I$ is invertible, $TS$ is invertible.
+	
+	$\therefore \exists\ U \in L(V)$ such that $U(TS) = I$ and $(TS)U = I$.
+	
+	Let $v \in V$ and $Sv = 0$
+	
+	$v = Iv = U(TS)v = UT(Sv) = 0$
+	
+	$\therefore \text{null}\ S = \{0\} \Rightarrow S$ is injective.
+	
+	$\text{dim}\ V = \text{dim null}\ S + \text{dim range}\ S$
+	
+	$\Rightarrow \text{dim range}\ S = \text{dim}\ V \Rightarrow \text{range}\ S = V \Rightarrow S$ is surjective.
+	
+	Because $S$ is injective and surjective, it is invertible.
+	
+	Since $S$ is invertible, we can write $TS = I$ as
+	
+	$(TS)S^{-1} = IS^{-1}$
+	
+	$T(SS^{-1}) = S^{-1}$
+	
+	$TI = S^{-1}$
+	
+	$T = S^{-1}$
+	
+	$ST = SS^{-1}$
+	
+	$ST = I$
 	\end{enumerate}
 \end{document}
