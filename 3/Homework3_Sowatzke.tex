@@ -4,6 +4,11 @@
 \usepackage[nodisplayskipstretch]{setspace}
 \usepackage{amsmath, nccmath}
 \usepackage{amssymb}
+\usepackage{etoolbox}
+
+\makeatletter
+\preto\equation{\@fleqnfalse}
+\makeatother
 
 \title{Homework 3}
 \author{Owen Sowatze}
@@ -177,17 +182,9 @@
 	
 	\item[5.] \textbf{Linear Filters:} Filters are commonly used in various applications, such as signal processing and communications, to condition the signal(s) for a particular purpose. Linear shift-invariant (LSI) filters, a special subset of filters, are designed to accomplish various spectral filtering operations, e.g., suppressing the high-frequencies in a signal, i.e., a low-pass filter, or rejecting a particular narrow band of frequencies, i.e., a notch-filter. In the continuous time-domain, a LSI filter operation is mathematically expressed as a convolution integral,
 	
-		%\begin{center}
-		%\begin{algin}
-		%\end{fleqn}
-		%\begin{center}
 		\begin{equation}
 			y(t) = \int{h(t-\tau)x(\tau)d\tau}
 		\end{equation}
-		%\end{center}
-		%\begin{fleqn}
-		%end{equation}
-		%\end{center}
 		
 		where $x(t)$ is the input signal, $h(t)$ is the filter’s impulse response function, and $y(t)$ is the filter’s output signal. In the discrete-time setting or in the sampled, digital domain, the LSI filtering operation can be expressed as a convolution sum,
 	
