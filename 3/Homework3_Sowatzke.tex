@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[fleqn]{article}
 
 \usepackage{enumitem}
 \usepackage[nodisplayskipstretch]{setspace}
@@ -11,6 +11,11 @@
 
 \begin{document}
 	
+	\setlength{\abovedisplayskip}{0pt}
+	\setlength{\belowdisplayskip}{0pt}
+	\setlength{\abovedisplayshortskip}{0pt}
+	\setlength{\belowdisplayshortskip}{0pt}
+	\setlength{\mathindent}{0pt}
 	\doublespacing
 	\maketitle
 	
@@ -169,5 +174,66 @@
 	$ST = SS^{-1}$
 	
 	$ST = I$
+	
+	\item[5.] \textbf{Linear Filters:} Filters are commonly used in various applications, such as signal processing and communications, to condition the signal(s) for a particular purpose. Linear shift-invariant (LSI) filters, a special subset of filters, are designed to accomplish various spectral filtering operations, e.g., suppressing the high-frequencies in a signal, i.e., a low-pass filter, or rejecting a particular narrow band of frequencies, i.e., a notch-filter. In the continuous time-domain, a LSI filter operation is mathematically expressed as a convolution integral,
+	
+		\begin{equation}
+			y(t) = \int{h(t-\tau)x(\tau)d\tau}
+		\end{equation}
+		
+		where $x(t)$ is the input signal, $h(t)$ is the filter’s impulse response function, and $y(t)$ is the filter’s output signal. In the discrete-time setting or in the sampled, digital domain, the LSI filtering operation can be expressed as a convolution sum,
+	
+		\begin{equation}
+			y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
+			\label{dt_convolution}
+		\end{equation}
+		
+		where $x(n)$ is an input signal sequence of length N that can be expressed as an N-dimensional vector $x = (x_1, x_2, ..., x_N)^T$, the filter impulse response $h(n)$ is of length $M$, expressed as an M-dimensional vector $h = (h_1, h_2, ..., h_M)$ (typically, $M < N$), and the output signal signal y of length N, $y = (y_1, y_2, ..., y_N)^T$.
+		
+		\pagebreak
+		\begin{enumerate}
+			\item[a)] Show that a LSI filter, as defined in Equation (\ref{dt_convolution}), is a linear map $T : V \rightarrow W$, where $V = W = \mathbb{R}^N$ and $x,y \in \mathbb{R}^N$.
+			
+			For the LSI filter to be a linear map it must satisfy additivity and homogeneity.
+			
+			Let:
+			
+			\begin{align*}
+				T(x) = y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
+			\end{align*}
+			
+			\begin{align*}
+				T(\bar{x}) = \bar{y}(n) = \sum_{k=0}^{N-1}{h(n-k)\bar{x}(k+1)}
+			\end{align*}
+			
+			\begin{align*}
+				T(x + \bar{x}) = \sum_{k=0}^{N-1}{h(n-k)\{x(k+1) + \bar{x}(k+1)\}}
+			\end{align*}
+			
+			\begin{align*}
+				 = \sum_{k=0}^{N-1}{h(n-k)x(k+1)} + \sum_{k=0}^{N-1}{h(n-k)\bar{x}(k+1)} = T(x) + T(\bar{x})
+			\end{align*}
+			
+			$\Rightarrow$ The LSI filter satisfies additivity.
+			
+			Let $\lambda \in \mathbb{R}$ and
+			
+			\begin{align*}
+				T(x) = y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
+			\end{align*}
+			
+			\begin{align*}
+				T(\lambda x) = \sum_{k=0}^{N-1}{h(n-k)\{\lambda x(k+1)\}}
+			\end{align*}
+			
+			\begin{align*}
+			= \lambda\sum_{k=0}^{N-1}{h(n-k) x(k+1)} = \lambda T(x)
+			\end{align*}
+			
+			$\Rightarrow$ The LSI filter satisfies homogeneity.
+			
+			Because the LSI filter satisfies additivity and homogeneity, it is a linear map.
+			
+		\end{enumerate}
 	\end{enumerate}
 \end{document}
