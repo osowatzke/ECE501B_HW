@@ -10,6 +10,10 @@
 \preto\equation{\@fleqnfalse}
 \makeatother
 
+%\makeatletter
+%\preto\align{\@fleqnflase}
+%\makeatother
+
 \title{Homework 3}
 \author{Owen Sowatze}
 \date{September 25, 2023}
@@ -100,7 +104,7 @@
 	
 	Because $I$ is invertible, $ST$ is invertible.
 	
-	$\therefore \exists\ U \in L(V)$ such that $U(ST) = I$ and $(ST)U = I$.
+	$\therefore \exists\ U \in \mathcal{L}(V)$ such that $U(ST) = I$ and $(ST)U = I$.
 	
 	Let $v \in V$ and $Tv = 0$
 	
@@ -152,7 +156,7 @@
 	
 	Because $I$ is invertible, $TS$ is invertible.
 	
-	$\therefore \exists\ U \in L(V)$ such that $U(TS) = I$ and $(TS)U = I$.
+	$\therefore \exists\ U \in \mathcal{L}(V)$ such that $U(TS) = I$ and $(TS)U = I$.
 	
 	Let $v \in V$ and $Sv = 0$
 	
@@ -193,6 +197,12 @@
 			\label{dt_convolution}
 		\end{equation}
 		
+		\setlength{\abovedisplayskip}{0pt}
+		\setlength{\belowdisplayskip}{0pt}
+		\setlength{\abovedisplayshortskip}{0pt}
+		\setlength{\belowdisplayshortskip}{0pt}
+		\setlength{\mathindent}{0pt}
+	
 		where $x(n)$ is an input signal sequence of length N that can be expressed as an N-dimensional vector $x = (x_1, x_2, ..., x_N)^T$, the filter impulse response $h(n)$ is of length $M$, expressed as an M-dimensional vector $h = (h_1, h_2, ..., h_M)$ (typically, $M < N$), and the output signal signal y of length N, $y = (y_1, y_2, ..., y_N)^T$.
 		
 		\pagebreak
@@ -241,6 +251,57 @@
 			
 			\pagebreak
 			\item[b)] Express the LSI filter's linear map $H$ as an $N \times N$ matrix $\mathbf{H}$ such that
+			
+			\begin{align*}
+				y = \mathbf{H}x
+			\end{align*}
+			
+			Here you can assume that $h(m) = 0$ for $m \not\in \{1,2,3,...,M\}$.
+			
+			Hint: Expand an output vector that results from applying the map (operating) on a basis vector of $V$, in the basis of $V$. The coefficients of this expansion produce the column vectors of the matrix. You can use the standard basis.
+
+			Let the $v_1,...,v_n$ be the standard basis vectors of $V$, i.e.
+			
+			$v_1 = (1, 0,...,0)^T$
+			
+			$v_2 = (0, 1,...,0)^T$
+			
+			$\vdots$
+			
+			$v_N = (0, 0,...,1)^T$
+			
+			Now solve for the columns of $\mathbf{H}$ by finding $T(v_1),...,T(v_2)$
+			
+			\begin{align*}
+				T(v_1) = \sum_{k=0}^{N-1}{h(n-k)\delta(k)} = h(n) = (h_1,0,...,h_M,0,...,0)^T
+			\end{align*}
+			
+			\begin{align*}
+				T(v_2) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-1)} = h(n-1) = (0, h_1,...,h_M,0,...,0)^T
+			\end{align*}
+			
+			$\vdots$
+			
+			\begin{align*}
+				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-N)} = h(n-N) = (0, 0,...,0,h_1)^T
+			\end{align*}
+			
+			$\therefore \mathbf{H}$ can be expressed as:
+			
+			\singlespacing
+			\begin{align*}
+				\mathbf{H} =
+				\begin{bmatrix}
+					h_1 		& 0 			& \cdots 	& 0 			& 0\\
+					h_2 		& h_1 		& \cdots 	& 0 			& 0\\
+					\vdots 	& \vdots 	& \ddots 	& \vdots 	& \vdots\\
+					h_M 		& h_{M-1} 	& \cdots 	& 0 			& 0\\
+					0 		& h_M		& \cdots 	& 0 			& 0\\
+					\vdots 	& \vdots 	& \ddots 	& \vdots 	& \vdots\\
+					0 		& 0			& \cdots 	& 0 			& h_1\\
+				\end{bmatrix}
+			\end{align*}
+			\doublespacing
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
