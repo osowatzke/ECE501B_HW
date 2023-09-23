@@ -6,9 +6,29 @@
 \usepackage{amssymb}
 \usepackage{etoolbox}
 
+\newcommand{\zerodisplayskip}{
+	\setlength{\abovedisplayskip}{0pt}
+	\setlength{\belowdisplayskip}{0pt}
+	\setlength{\abovedisplayshortskip}{0pt}
+	\setlength{\belowdisplayshortskip}{0pt}
+	\setlength{\mathindent}{0pt}}
+	
 \makeatletter
 \preto\equation{\@fleqnfalse}
 \makeatother
+
+%\makeatletter
+%\preto\equation{\@fleqnfalse\singlespacing}
+%\patchcmd{\equation}{\doublespacing\disablespaces}
+%\makeatother
+
+%\BeforeBeginEnvironment{align}{\begin{singlespace}}
+%\AfterEndEnvironment{align}{\end{singlespace}\noindent\ignorespaces\disablespaces\disableparskip}
+
+%\makeatletter
+%\renewcommand{\equation{\@fleqnfalse}}{\endequation{\@fleqntrue}}
+%\preto\equation{\@fleqnfalse}
+%\makeatother
 
 %\makeatletter
 %\preto\align{\@fleqnflase}
@@ -20,11 +40,7 @@
 
 \begin{document}
 	
-	\setlength{\abovedisplayskip}{0pt}
-	\setlength{\belowdisplayskip}{0pt}
-	\setlength{\abovedisplayshortskip}{0pt}
-	\setlength{\belowdisplayshortskip}{0pt}
-	\setlength{\mathindent}{0pt}
+	\zerodisplayskip
 	\doublespacing
 	\maketitle
 	
@@ -197,11 +213,11 @@
 			\label{dt_convolution}
 		\end{equation}
 		
-		\setlength{\abovedisplayskip}{0pt}
-		\setlength{\belowdisplayskip}{0pt}
-		\setlength{\abovedisplayshortskip}{0pt}
-		\setlength{\belowdisplayshortskip}{0pt}
-		\setlength{\mathindent}{0pt}
+		%\setlength{\abovedisplayskip}{0pt}
+		%\setlength{\belowdisplayskip}{0pt}
+		%\setlength{\abovedisplayshortskip}{0pt}
+		%\setlength{\belowdisplayshortskip}{0pt}
+		%\setlength{\mathindent}{0pt}
 	
 		where $x(n)$ is an input signal sequence of length N that can be expressed as an N-dimensional vector $x = (x_1, x_2, ..., x_N)^T$, the filter impulse response $h(n)$ is of length $M$, expressed as an M-dimensional vector $h = (h_1, h_2, ..., h_M)$ (typically, $M < N$), and the output signal signal y of length N, $y = (y_1, y_2, ..., y_N)^T$.
 		
@@ -252,9 +268,9 @@
 			\pagebreak
 			\item[b)] Express the LSI filter's linear map $H$ as an $N \times N$ matrix $\mathbf{H}$ such that
 			
-			\begin{align*}
-				y = \mathbf{H}x
-			\end{align*}
+			\begin{center}
+				$y = \mathbf{H}x$
+			\end{center}
 			
 			Here you can assume that $h(m) = 0$ for $m \not\in \{1,2,3,...,M\}$.
 			
@@ -273,7 +289,7 @@
 			Now solve for the columns of $\mathbf{H}$ by finding $T(v_1),...,T(v_2)$
 			
 			\begin{align*}
-				T(v_1) = \sum_{k=0}^{N-1}{h(n-k)\delta(k)} = h(n) = (h_1,0,...,h_M,0,...,0)^T
+				T(v_1) = \sum_{k=0}^{N-1}{h(n-k)\delta(k)} = h(n) = (h_1,...,h_M,0,...,0)^T
 			\end{align*}
 			
 			\begin{align*}
@@ -286,6 +302,7 @@
 				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-N)} = h(n-N) = (0, 0,...,0,h_1)^T
 			\end{align*}
 			
+			\newpage
 			$\therefore \mathbf{H}$ can be expressed as:
 			
 			\singlespacing
@@ -301,6 +318,7 @@
 					0 		& 0			& \cdots 	& 0 			& h_1\\
 				\end{bmatrix}
 			\end{align*}
+			\zerodisplayskip
 			\doublespacing
 		\end{enumerate}
 	\end{enumerate}
