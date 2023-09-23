@@ -5,6 +5,10 @@
 \usepackage{amsmath, nccmath}
 \usepackage{amssymb}
 \usepackage{etoolbox}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{array}
+%\usepackage{tabu}
 
 \newcommand{\zerodisplayskip}{
 	\setlength{\abovedisplayskip}{0pt}
@@ -16,6 +20,10 @@
 \makeatletter
 \preto\equation{\@fleqnfalse}
 \makeatother
+
+%\makeatletter
+%\preto\align{\@fleqntrue}
+%\makeatother
 
 %\makeatletter
 %\preto\equation{\@fleqnfalse\singlespacing}
@@ -319,8 +327,60 @@
 					0 		& 0			& \cdots 	& h_2		& h_1\\
 				\end{bmatrix}
 			\end{align*}
-			\zerodisplayskip
 			\doublespacing
+			\vspace{-1em}
+			
+			\begin{align*}
+				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-N)} = h(n-N) = (0, 0,...,0,h_1)^T
+			\end{align*}
+			
+			\begin{align*}
+				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-N)} = h(n-N) = (0, 0,...,0,h_1)^T
+			\end{align*}
 		\end{enumerate}
+		\item[6.] \textbf{Optical Resonators}: A simple model of light propagation treats it as a collection of geometric rays. There are several mathematical formalisms for dealing with this model, but one is particularly relevant to the material in ECE 501B.
+
+			We begin by assuming that the system is axially symmetric. That is, the light propagates generally along the z-axis, and there is no appreciable difference between the x- and y- directions. Thus, we can take the full 3-dimensional (in the geometric sense) propagation and treat it as a 2-dimensional propagation.
+
+			A ray passing through any plane perpendicular to the z-axis can be characterized by an ordered pair of numbers, usually designated $(r, r')$. The first number, $r$, represents the transverse location of the ray (its distance from the z-axis). The second number, $r'$, represents the slope of the ray with respect to the z-axis.
+			
+			For various optical components (thin lenses, mirrors, propagation through free space, etc.), it is possible to define linear maps between an input ray and the output ray after interaction with the component. Propagating the ray through the entire system is then just a matter of sequentially applying the appropriate maps. (Since the output of any map is another ray, i.e., the output vector space is the same as the input vector space, then the sequential application of an arbitrary number of maps is well-defined.)
+			
+			These maps take the form of $(2 \times 2)$ matrices. Below are the matrix representations of two maps representing different components.
+			
+			\begingroup
+			\renewcommand*{\arraystretch}{0.6}
+			\begin{itemize}
+				\item
+					\begin{tabularx}{0.85\textwidth}{>{\hsize=0.75\hsize}X >{\hsize=0.25\hsize}X}
+						Propagation a distance d down the z-axis: & $\begin{bmatrix}
+							1 & d\\
+							0 & 1
+							\end{bmatrix}$
+					\end{tabularx}
+					
+				\item
+					\begin{tabularx}{0.85\textwidth}{>{\hsize=0.75\hsize}X  >{\hsize=0.25\hsize}X}
+						Reflection off of a concave spherical mirror: & $\begin{bmatrix}
+							 1   & 0\\
+							-2/R & 1
+							\end{bmatrix}$
+					\end{tabularx}
+					
+					\begin{tabularx}{0.85\textwidth}{>{\hsize=0.75\hsize}X  >{\hsize=0.25\hsize}X}
+						$(R = \text{radius of curvature})$ &\\						
+					\end{tabularx}
+			\end{itemize}
+			\endgroup
+				
+			Now, an optical resonator is an optical system that is designed to repeatedly cycle rays back and forth through the system. Optical resonators are used in a variety of applications, but are most famous as one of the critical components in a laser system
+			
+			\item[a)] What is the domain of $r$? What is the domain of $r'$? The set of all rays corresponds to what vector space? What is the dimension of this vector space?
+			
+			\item[b)] Consider an optical resonator consisting of two concave spherical mirrors (with radius of curvature $R$) facing each other and separated by a distance of $D$. Using the relevant matrices, determine the matrix representation of the linear map that maps an input ray to an output ray after one complete round trip through the resonator.
+			
+			\item[c)] A stable resonator is one where, upon propagation, any input ray is eventually mapped back onto itself. Use your result from part (b) to show that, for a resonator of this type, there is no system configuration (other than the physically uninteresting $D = 0$, $R = \pm \infty$) that maps all rays onto themselves after a single round trip.
+			
+			\item[d)] Now find the map for two round trips (don’t repeat work – be clever). Using this map, show that the resonator with $D = R$ is stable.
 	\end{enumerate}
 \end{document}
