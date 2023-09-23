@@ -30,8 +30,9 @@
 %\patchcmd{\equation}{\doublespacing\disablespaces}
 %\makeatother
 
-%\BeforeBeginEnvironment{align}{\begin{singlespace}}
-%\AfterEndEnvironment{align}{\end{singlespace}\noindent\ignorespaces\disablespaces\disableparskip}
+\BeforeBeginEnvironment{align*}{\singlespacing}
+\AfterEndEnvironment{align*}{\doublespacing\vspace{-\baselineskip}}
+%\noindent\ignorespaces\disablespaces\disableparskip}
 
 %\makeatletter
 %\renewcommand{\equation{\@fleqnfalse}}{\endequation{\@fleqntrue}}
@@ -313,7 +314,6 @@
 			\newpage
 			$\therefore \mathbf{H}$ can be expressed as:
 			
-			\singlespacing
 			\begin{align*}
 				\mathbf{H} =
 				\begin{bmatrix}
@@ -327,8 +327,6 @@
 					0 		& 0			& \cdots 	& h_2		& h_1\\
 				\end{bmatrix}
 			\end{align*}
-			\doublespacing
-			\vspace{-1em}
 			
 			\begin{align*}
 				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-N)} = h(n-N) = (0, 0,...,0,h_1)^T
@@ -377,7 +375,58 @@
 			
 			\item[a)] What is the domain of $r$? What is the domain of $r'$? The set of all rays corresponds to what vector space? What is the dimension of this vector space?
 			
+			$r \in \mathbb{R}$
+			
+			$r' \in \mathbb{R}$
+			
+			$V \in \mathbb{R}^2$
+			
+			$dim(V) = 2$
+			
 			\item[b)] Consider an optical resonator consisting of two concave spherical mirrors (with radius of curvature $R$) facing each other and separated by a distance of $D$. Using the relevant matrices, determine the matrix representation of the linear map that maps an input ray to an output ray after one complete round trip through the resonator.
+			
+			\pagebreak
+			Let $T$ be the linear map that maps an input ray to an output ray after propagation a distance $D$ down the z-axis.
+			
+			\begin{align*}
+				\mathcal{M}(T) = \begin{bmatrix}1 & D\\ 0 & 1\end{bmatrix}
+			\end{align*}
+			
+			Let $S$ be the linear maps that maps an input ray to an output ray after reflection off a concave spherical mirror (with radius of curvature $R$).
+			
+			\begin{align*}
+				\mathcal{M}(S) = \begin{bmatrix} 1 & 0\\ -\frac{2}{R} & 1 \end{bmatrix}
+			\end{align*}
+			
+			Let $R_1$ be the linear map that maps an input ray to an output ray after one round trip through the resonator.
+			
+			$\mathcal{M}(R_1) = \mathcal{M}(S(T(ST))) = \mathcal{M}(S)(\mathcal{M}(T)(\mathcal{M}(S)\mathcal{M}(T)))$
+			
+			$ = (\mathcal{M}(S)\mathcal{M}(T))(\mathcal{M}(S)\mathcal{M}(T))$
+			
+			Start by finding $\mathcal{M}(S)\mathcal{M}(T)$:
+			
+			\begin{align*}
+				\mathcal{M}(S)\mathcal{M}(T) = \begin{bmatrix} 1 & 0\\ -\frac{2}{R} & 1 \end{bmatrix} \begin{bmatrix}1 & D\\ 0 & 1\end{bmatrix} = \begin{bmatrix}1 & D\\ -\frac{2}{R} & -\frac{2D}{R} + 1\end{bmatrix}
+			\end{align*}
+			
+			Now solve for $\mathcal{M}(R_1)$:
+			
+			\begin{align*}
+				\mathcal{M}(R_1) = \begin{bmatrix}1 & D\\ -\frac{2}{R} & -\frac{2D}{R} + 1\end{bmatrix}\begin{bmatrix}1 & D\\ -\frac{2}{R} & -\frac{2D}{R} + 1\end{bmatrix}
+			\end{align*}
+			
+			\begin{align*}
+				= \begin{bmatrix}1 - \frac{2D}{R} & D - \frac{2D^2}{R} + D\\ -\frac{2}{R} - \frac{2}{R}(-\frac{2D}{R} + 1) & -\frac{2D}{R} + (-\frac{2D}{R}+1)(-\frac{2D}{R}+1)\end{bmatrix}
+			\end{align*}
+			
+			\begin{align*}
+				= \begin{bmatrix}1 - \frac{2D}{R} & 2D - \frac{2D^2}{R}\\ -\frac{4}{R} +\frac{4D}{R^2} & -\frac{2D}{R} + \frac{4D^2}{R^2} -\frac{4D}{R} + 1\end{bmatrix}
+			\end{align*}
+			
+			\begin{align*}
+				= \begin{bmatrix}1 - \frac{2D}{R} & 2D - \frac{2D^2}{R}\\ -\frac{4}{R} + \frac{4D}{R^2} & 1 - \frac{6D}{R} + \frac{4D^2}{R^2}\end{bmatrix}
+			\end{align*}
 			
 			\item[c)] A stable resonator is one where, upon propagation, any input ray is eventually mapped back onto itself. Use your result from part (b) to show that, for a resonator of this type, there is no system configuration (other than the physically uninteresting $D = 0$, $R = \pm \infty$) that maps all rays onto themselves after a single round trip.
 			
