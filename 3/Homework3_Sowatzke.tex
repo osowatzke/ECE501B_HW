@@ -421,14 +421,19 @@
 			\end{align*}
 			
 			\begin{align*}
-				= \begin{bmatrix}1 - \frac{2D}{R} & 2D - \frac{2D^2}{R}\\ -\frac{4}{R} +\frac{4D}{R^2} & -\frac{2D}{R} + \frac{4D^2}{R^2} -\frac{4D}{R} + 1\end{bmatrix}
-			\end{align*}
-			
-			\begin{align*}
-				= \begin{bmatrix}1 - \frac{2D}{R} & 2D - \frac{2D^2}{R}\\ -\frac{4}{R} + \frac{4D}{R^2} & 1 - \frac{6D}{R} + \frac{4D^2}{R^2}\end{bmatrix}
+				= \begin{bmatrix}1 - \frac{2D}{R} & 2D - \frac{2D^2}{R}\\ -\frac{4}{R} +\frac{4D}{R^2} & -\frac{2D}{R} + \frac{4D^2}{R^2} -\frac{4D}{R} + 1\end{bmatrix} = \begin{bmatrix}1 - \frac{2D}{R} & 2D - \frac{2D^2}{R}\\ -\frac{4}{R} + \frac{4D}{R^2} & 1 - \frac{6D}{R} + \frac{4D^2}{R^2}\end{bmatrix}
 			\end{align*}
 			
 			\item[c)] A stable resonator is one where, upon propagation, any input ray is eventually mapped back onto itself. Use your result from part (b) to show that, for a resonator of this type, there is no system configuration (other than the physically uninteresting $D = 0$, $R = \pm \infty$) that maps all rays onto themselves after a single round trip.
+			
+			\pagebreak
+			For the input to the system to be the same as the output, the matrix representation of $R_1$ must be given as follows:
+			
+			\begin{align*}
+				\mathcal{M}(R_1) = \begin{bmatrix}1 & 0\\ 0 & 1\end{bmatrix}
+			\end{align*}
+			
+			To make the terms on the main diagonal $1$, $D = 0$ or $R = \pm\infty$. However, only $R = \pm\infty$ will make the term lower left corner $0$. Furthermore, only $D = 0$ will make the term in the upper right corner $0$. $\therefore$ the system is only stable if $D=0$ and $R=\pm\infty$.			
 			
 			\item[d)] Now find the map for two round trips (don’t repeat work – be clever). Using this map, show that the resonator with $D = R$ is stable.
 	\end{enumerate}
