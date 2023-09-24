@@ -6,20 +6,23 @@
 \usepackage{amssymb}
 \usepackage{etoolbox}
 \usepackage{tabularx}
+\usepackage{parskip}
 
-\newcommand{\zerodisplayskip}{
-	\setlength{\abovedisplayskip}{0pt}
-	\setlength{\belowdisplayskip}{0pt}
-	\setlength{\abovedisplayshortskip}{0pt}
-	\setlength{\belowdisplayshortskip}{0pt}
+\newcommand{\zerodisplayskip}{%
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}%
 	\setlength{\mathindent}{0pt}}
 	
 \makeatletter
 \preto\equation{\@fleqnfalse}
 \makeatother
 
-\BeforeBeginEnvironment{align*}{\singlespacing}
-\AfterEndEnvironment{align*}{\doublespacing\vspace{-\baselineskip}}
+%\AtBeginEnvironment{align*}{\useshortskip}
+
+\BeforeBeginEnvironment{align*}{\vspace{-\baselineskip}\begin{singlespace}}
+\AfterEndEnvironment{align*}{\end{singlespace}}%\zerodisplayskip\noindent\ignorespaces}%\vspace{-\baselineskip}}
 
 \title{Homework 3}
 \author{Owen Sowatze}
@@ -29,7 +32,12 @@
 	
 	\zerodisplayskip
 	\doublespacing
+	%\parskip=0pt
+	%\parsep=0pt
+	%\topsep=0pt
+	%\partopsep=0pt
 	\maketitle
+	%\setlength{\jot}{10pt}
 	
 	\begin{enumerate}[nolistsep]
 		\item[1.] Give an example of a function $\varphi : \mathbb{R}^2 \rightarrow \mathbb{R}$ such that
@@ -145,50 +153,101 @@
 			
 				For the LSI filter to be a linear map it must satisfy additivity and homogeneity.
 			
-				Let:
+				Let
 			
+				$T(x) = (y(1), y(2), ..., y(N))^T$
+				
+				where
+				
 				\begin{align*}
-					T(x) = y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
+					y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
 				\end{align*}
-			
+				
+				And let
+				
+				$T(x') = (y'(1), y'(2), ..., y'(N))^T$
+				
+				where
+				
 				\begin{align*}
-					T(\bar{x}) = \bar{y}(n) = \sum_{k=0}^{N-1}{h(n-k)\bar{x}(k+1)}
+					y'(n) = \sum_{k=0}^{N-1}{h(n-k)x'(k+1)}
 				\end{align*}
-			
+				
+				Define $T(x + x')$ as follows:
+				
+				$T(x + x') = T(x'') = (y''(1), y''(2), ..., y''(N))^T$
+				
+				where
+				
 				\begin{align*}
-					T(x + \bar{x}) = \sum_{k=0}^{N-1}{h(n-k)\{x(k+1) + \bar{x}(k+1)\}}
+					y''(n) = \sum_{k=0}^{N-1}{h(n-k)x''(k+1)}
 				\end{align*}
-			
+				
+				\vspace{-12pt}
+				
 				\begin{align*}
-				 	= \sum_{k=0}^{N-1}{h(n-k)x(k+1)} + \sum_{k=0}^{N-1}{h(n-k)\bar{x}(k+1)} = T(x) + T(\bar{x})
+					= \sum_{k=0}^{N-1}{h(n-k)\{x(k+1) + x'(k+1)\}}
 				\end{align*}
-			
+				
+				\vspace{-12pt}
+				
+				\begin{align*}
+					= \sum_{k=0}^{N-1}{h(n-k)x(k+1)} + \sum_{k=0}^{N-1}{h(n-k)x'(k+1)} = y(n) + y'(n)
+				\end{align*}
+				
+				Because $y''(n) = y(n) + y'(n)$
+				
+				$T(x + x') = (y(1) + y'(1), y(2) + y'(2), ..., y(N) + y'(N))^T$
+				
+				$ = (y(1), y(2), ..., y(N)))^T + (y'(1), y'(2), ..., y'(N)))^T = T(x) + T(x')$
+				
 				$\Rightarrow$ The LSI filter satisfies additivity.
 			
-				Let $\lambda \in \mathbb{R}$ and
-			
+				Let $\lambda \in \mathbb{R}$ and let
+				
+				$T(x) = (y(1), y(2), ..., y(N))^T$
+				
+				where
+				
 				\begin{align*}
-					T(x) = y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
+					y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
 				\end{align*}
-			
+				
+				Define $T(\lambda x)$ as follows:
+				
+				$T(\lambda x) = T(x') = (y'(1), y'(2), ..., y'(N))^T$
+				
+				where
+				
 				\begin{align*}
-					T(\lambda x) = \sum_{k=0}^{N-1}{h(n-k)\{\lambda x(k+1)\}}
+					y'(n) = \sum_{k=0}^{N-1}{h(n-k)x'(k+1)} = \sum_{k=0}^{N-1}{h(n-k)\{\lambda x(k+1)\}}
 				\end{align*}
-			
+				
+				\vspace{-12pt}
+				
 				\begin{align*}
-				= \lambda\sum_{k=0}^{N-1}{h(n-k) x(k+1)} = \lambda T(x)
+					= \lambda\sum_{k=0}^{N-1}{h(n-k)x(k+1)} = \lambda y(n)
 				\end{align*}
-			
+				
+				Because $y'(n) = \lambda y(n)$
+				
+				$T(\lambda x) = (\lambda y(1), \lambda y(2), ..., \lambda y(N))^T$
+				
+				$= \lambda(y(1), y(2), ..., y(N))^T = \lambda T(x)$
+				
 				$\Rightarrow$ The LSI filter satisfies homogeneity.
-			
+				
 				Because the LSI filter satisfies additivity and homogeneity, it is a linear map.
 			
 			\item[b)] Express the LSI filter's linear map $H$ as an $N \times N$ matrix $\mathbf{H}$ such that
 			
-			\centerline{	$y = \mathbf{H}x$}
+			\begin{center}
+				$y = \mathbf{H}x$
+			\end{center}
 			
 			Here you can assume that $h(m) = 0$ for $m \not\in \{1,2,3,...,M\}$.
 			
+			\pagebreak
 			Hint: Expand an output vector that results from applying the map (operating) on a basis vector of $V$, in the basis of $V$. The coefficients of this expansion produce the column vectors of the matrix. You can use the standard basis.
 
 			Let the $v_1,...,v_n$ be the standard basis vectors of $V$, i.e.
@@ -197,29 +256,43 @@
 			
 			$v_2 = (0, 1,...,0)^T$
 			
-			$\vdots$
+			$\qquad\quad\vdots$
 			
 			$v_N = (0, 0,...,1)^T$
 			
-			Now solve for the columns of $\mathbf{H}$ by finding $T(v_1),...,T(v_2)$
+			Now solve for the columns of $\mathbf{H}$ by finding $T(v_1),...,T(v_n)$
+
+			$T(v_1) = (y(1), y(2),...,y(N))^T$
+			
+			where
 			
 			\begin{align*}
-				T(v_1) = \sum_{k=0}^{N-1}{h(n-k)\delta(k)} = h(n) = (h_1,...,h_M,0,...,0)^T
+				y(n) = \sum_{k=0}^{N-1}{h(n-k)\delta(k)} = h(n)
 			\end{align*}
+			
+			$\therefore T(v_1) = (h_1,...,h_M,0,...,0)^T$
+			
+			$T(v_2) = (y(1), y(2),...,y(N))^T$
+			
+			where
 			
 			\begin{align*}
-				T(v_2) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-1)} = h(n-1) = (0, h_1,...,h_M,0,...,0)^T
+				y(n) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-1)} = h(n-1)
 			\end{align*}
 			
-			$\vdots$
+			$\therefore T(v_2) = (0, h_1,...,h_M,0,...,0)^T$
+			
+			$\qquad\qquad\vdots$
+			
+			$T(v_N) = (y(1), y(2),...,y(N))^T$
+			
+			where
 			
 			\begin{align*}
-				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-(N-1))} = h(n-(N-1))
+				y(n) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-(N-1))} = h(n-(N-1))
 			\end{align*}
 			
-			\begin{align*}
-				 = (0, 0,...,0,h_1)^T
-			\end{align*}
+			$\therefore T(v_N) = (0, 0, ..., 0, h_1)^T$
 			
 			\newpage
 			$\therefore \mathbf{H}$ can be expressed as:
@@ -277,7 +350,7 @@
 			
 			\item[a)] What is the domain of $r$? What is the domain of $r'$? The set of all rays corresponds to what vector space? What is the dimension of this vector space?
 			
-			$r \in \mathbb{R}$, $r' \in \mathbb{R}$, $V \in \mathbb{R}^2$, $\text{dim}(V) = 2$
+			$r \in \mathbb{R}$, $r' \in \mathbb{R}$, $V = \mathbb{R}^2$, $\text{dim}(V) = 2$
 			
 			\item[b)] Consider an optical resonator consisting of two concave spherical mirrors (with radius of curvature $R$) facing each other and separated by a distance of $D$. Using the relevant matrices, determine the matrix representation of the linear map that maps an input ray to an output ray \textit{after one complete round trip through the resonator}.
 			
@@ -293,6 +366,7 @@
 				\mathcal{M}(S) = \begin{bmatrix} 1 & 0\\ -\frac{2}{R} & 1 \end{bmatrix}
 			\end{align*}
 			
+			\pagebreak
 			Let $R_1$ be the linear map that maps an input ray to an output ray after one round trip through the resonator.
 			
 			$\mathcal{M}(R_1) = \mathcal{M}(S(T(ST))) = \mathcal{M}(S)(\mathcal{M}(T)(\mathcal{M}(S)\mathcal{M}(T)))$
@@ -311,9 +385,13 @@
 				\mathcal{M}(R_1) = \begin{bmatrix}1 & D\\ -\frac{2}{R} & -\frac{2D}{R} + 1\end{bmatrix}\begin{bmatrix}1 & D\\ -\frac{2}{R} & -\frac{2D}{R} + 1\end{bmatrix}
 			\end{align*}
 			
+			\vspace{-12pt}
+			
 			\begin{align*}
 				= \begin{bmatrix}1 - \frac{2D}{R} & D - \frac{2D^2}{R} + D\\ -\frac{2}{R} - \frac{2}{R}(-\frac{2D}{R} + 1) & -\frac{2D}{R} + (-\frac{2D}{R}+1)(-\frac{2D}{R}+1)\end{bmatrix}
 			\end{align*}
+			
+			\vspace{-12pt}
 			
 			\begin{align*}
 				= \begin{bmatrix}1 - \frac{2D}{R} & 2D - \frac{2D^2}{R}\\ -\frac{4}{R} +\frac{4D}{R^2} & -\frac{2D}{R} + \frac{4D^2}{R^2} -\frac{4D}{R} + 1\end{bmatrix} = \begin{bmatrix}1 - \frac{2D}{R} & 2D - \frac{2D^2}{R}\\ -\frac{4}{R} + \frac{4D}{R^2} & 1 - \frac{6D}{R} + \frac{4D^2}{R^2}\end{bmatrix}
@@ -330,7 +408,6 @@
 			To make the terms on the main diagonal $1$, $D = 0$ or $R = \pm\infty$. However, only $R = \pm\infty$ will make the term lower left corner $0$. Furthermore, only $D = 0$ will make the term in the upper right corner $0$.
 			
 			$\therefore$ the system is only stable if $D=0$ and $R=\pm\infty$.			
-			
 			\pagebreak
 			\item[d)] Now find the map for two round trips (don’t repeat work – be clever). Using this map, show that the resonator with $D = R$ is stable.
 			
@@ -344,9 +421,13 @@
 				\mathcal{M}(R_1) = \begin{bmatrix}A_{11} & A_{12}\\ A_{21} & A_{22}\end{bmatrix}
 			\end{align*}
 			
+			\vspace{-12pt}
+			
 			\begin{align*}
 				\mathcal{M}(R_2) = \mathcal{M}(R_1)\mathcal{M}(R_1) = \begin{bmatrix}A_{11} & A_{12}\\ A_{21} & A_{22}\end{bmatrix}\begin{bmatrix}A_{11} & A_{12}\\ A_{21} & A_{22}\end{bmatrix}
 			\end{align*}
+			
+			\vspace{-12pt}
 			
 			\begin{align*}
 				= \begin{bmatrix}A_{11}^2 + A_{12}A_{21} & A_{11}A_{12} + A_{12}A_{22}\\ A_{21}A_{11} + A_{22}A_{21} & A_{21}A_{12} + A_{22}^2\end{bmatrix}
@@ -379,6 +460,5 @@
 			\end{align*}
 			
 			Because the matrix representation of $R_2$ is the identity matrix, the optical resonator with $D=R$ is stable.
-			
 	\end{enumerate}
 \end{document}
