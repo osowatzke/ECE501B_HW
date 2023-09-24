@@ -93,15 +93,21 @@
 		\pagebreak
 		\item[2.] Suppose $T \in \mathcal{L}(V,W)$ is injective and $v_1,...,v_n$ is linearly independent in $V$. Prove that $Tv_1,...,Tv_n$ is linearly independent in $W$.
 		
-	$T$ is injective iff $\text{null}\ T = \{0\}$.
-	
-	In other words, the only way to make $T(a_1v_1 + \cdots + a_nv_n)$\newline$= a_1Tv_1 + \cdots + a_nTv_n = 0$ is by forcing $a_1v_1 + \cdots + a_nv_n = 0$ 
-	
-	Because $v_1,...,v_n$ is linearly independent in $V$, the only way to make $a_1v_1 + \cdots + a_nv_n = 0$ is by setting $a_1 = \cdots = a_n = 0$.
-	
-	Combining this information, we can conclude that the only way to make $a_1Tv_1 + \cdots + a_nTv_n = 0$ is by setting $a_1 = \cdots = a_n = 0$.
-	
-	$\therefore Tv_1,...,Tv_n$ is linearly independent in $W$.
+			%Consider $T(a_1v_1 + \cdots a_nv_n)$
+			
+			%Because $v_1,...,v_n$ is linearly independent in $V$, the only choice of \newline $a_1,...,a_n \in \mathbb{F}$ that makes $a_1v_1 + \cdots + a_nv_n = 0$ is $a_1 = \cdots = a_n = 0$
+			
+			Consider the choices of $a_1,...,a_n \in \mathbb{F}$ that make $a_1Tv_1 + \cdots a_nTv_n = 0$.
+			
+			%$a_1Tv_1 + \cdots + a_nTv_n = T(a_1v_1 + \cdots + a_nv_n)$
+			
+			Because $T$ is injective, the only way to make $T(a_1v_1 + \cdots + a_nv_n) = a_1Tv_1 + \cdots + a_nTv_n = 0$ is by setting $a_1v_1 + \cdots + a_nv_n = 0$.
+			
+			Furthermore, because $v_1,...,v_n$ are linearly independent in $V$, the only way to make $a_1v_1 + \cdots + a_nv_n = 0$ is by setting	$a_1 = \cdots = a_n = 0$.
+			
+			$\therefore$ the only way to make $a_1Tv_1 + \cdots + a_nTv_n = 0$ where $a_1,...,a_n \in \mathbb{F}$ is by setting $a_1 = \cdots = a_n = 0$.
+			
+			As a result, $Tv_1,...,Tv_n$ must be linearly independent in $W$.
 	
 		\item[3.] Suppose $v_1,...v_n$ spans $V$ and $T \in \mathcal{L}(V,W)$. Prove that the list\newline $Tv_1,...,Tv_n$ spans $\text{range}\ T$.
 
