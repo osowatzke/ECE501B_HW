@@ -5,10 +5,7 @@
 \usepackage{amsmath, nccmath}
 \usepackage{amssymb}
 \usepackage{etoolbox}
-\usepackage[utf8]{inputenc}
 \usepackage{tabularx}
-\usepackage{array}
-%\usepackage{tabu}
 
 \newcommand{\zerodisplayskip}{
 	\setlength{\abovedisplayskip}{0pt}
@@ -21,27 +18,8 @@
 \preto\equation{\@fleqnfalse}
 \makeatother
 
-%\makeatletter
-%\preto\align{\@fleqntrue}
-%\makeatother
-
-%\makeatletter
-%\preto\equation{\@fleqnfalse\singlespacing}
-%\patchcmd{\equation}{\doublespacing\disablespaces}
-%\makeatother
-
 \BeforeBeginEnvironment{align*}{\singlespacing}
 \AfterEndEnvironment{align*}{\doublespacing\vspace{-\baselineskip}}
-%\noindent\ignorespaces\disablespaces\disableparskip}
-
-%\makeatletter
-%\renewcommand{\equation{\@fleqnfalse}}{\endequation{\@fleqntrue}}
-%\preto\equation{\@fleqnfalse}
-%\makeatother
-
-%\makeatletter
-%\preto\align{\@fleqnflase}
-%\makeatother
 
 \title{Homework 3}
 \author{Owen Sowatze}
@@ -93,13 +71,7 @@
 		\pagebreak
 		\item[2.] Suppose $T \in \mathcal{L}(V,W)$ is injective and $v_1,...,v_n$ is linearly independent in $V$. Prove that $Tv_1,...,Tv_n$ is linearly independent in $W$.
 		
-			%Consider $T(a_1v_1 + \cdots a_nv_n)$
-			
-			%Because $v_1,...,v_n$ is linearly independent in $V$, the only choice of \newline $a_1,...,a_n \in \mathbb{F}$ that makes $a_1v_1 + \cdots + a_nv_n = 0$ is $a_1 = \cdots = a_n = 0$
-			
 			Consider the choices of $a_1,...,a_n \in \mathbb{F}$ that make $a_1Tv_1 + \cdots a_nTv_n = 0$.
-			
-			%$a_1Tv_1 + \cdots + a_nTv_n = T(a_1v_1 + \cdots + a_nv_n)$
 			
 			Because $T$ is injective, the only way to make $T(a_1v_1 + \cdots + a_nv_n) = a_1Tv_1 + \cdots + a_nTv_n = 0$ is by setting $a_1v_1 + \cdots + a_nv_n = 0$.
 			
