@@ -99,165 +99,93 @@
 		
 		\item[4.] Suppose $V$ is finite-dimensional and $S,T \in \mathcal{L}(V)$. Prove that $ST = I$ if any only if $TS = I$.
 		
-	Proof of if ($\Rightarrow$):
-	
-	Let $ST = I$
-	
-	$I$ is invertible because $IA = I$ and $AI = I$, where $A = I$.
-	
-	Because $I$ is invertible, $ST$ is invertible.
-	
-	$\therefore \exists\ U \in \mathcal{L}(V)$ such that $U(ST) = I$ and $(ST)U = I$.
-	
-	Let $v \in V$ and $Tv = 0$
-	
-	$v = Iv = U(ST)v = US(Tv) = 0$
-	
-	$\therefore \text{null}\ T = \{0\} \Rightarrow T$ is injective.
-	
-	$\text{dim}\ V = \text{dim null}\ T + \text{dim range}\ T$
-	
-	$\Rightarrow \text{dim range}\ T = \text{dim}\ V \Rightarrow \text{range}\ T = V \Rightarrow T$ is surjective. 
-	
-	Because $T$ is injective and surjective, it is invertible.
-	
-	%Let $w \in V$
-	
-	%$w = Iw = (ST)Uw = S(TUw)$
-	
-	%$w \in \text{range}\ S$
-	
-	%Because $w$ is an arbitrarily chosen vector in $V$, $\text{range}\ S = V$.
-	
-	%$\Rightarrow S$ is surjective.
-	
-	%$\text{dim}\ V = \text{dim null}\ S + \text{dim range}\ S \Rightarrow \text{dim null}\ S = 0$
-	
-	%$\Rightarrow \text{null}\ S = \{0\} \Rightarrow S$ is injective.
-	
-	%Because $S$ is injective and surjective, it is invertible.
-	
-	Since $T$ is invertible, we can write $ST = I$ as
-	
-	$(ST)T^{-1} = IT^{-1}$
-	
-	$S(TT^{-1}) = T^{-1}$
-	
-	$SI = T^{-1}$
-	
-	$S = T^{-1}$
-	
-	$TS = TT^{-1}$
-	
-	$TS = I$
-	
-	Proof of only if ($\Leftarrow$):
-	
-	Let $TS = I$
-	
-	$I$ is invertible because $IA = I$ and $AI = I$, where $A = I$.
-	
-	Because $I$ is invertible, $TS$ is invertible.
-	
-	$\therefore \exists\ U \in \mathcal{L}(V)$ such that $U(TS) = I$ and $(TS)U = I$.
-	
-	Let $v \in V$ and $Sv = 0$
-	
-	$v = Iv = U(TS)v = UT(Sv) = 0$
-	
-	$\therefore \text{null}\ S = \{0\} \Rightarrow S$ is injective.
-	
-	$\text{dim}\ V = \text{dim null}\ S + \text{dim range}\ S$
-	
-	$\Rightarrow \text{dim range}\ S = \text{dim}\ V \Rightarrow \text{range}\ S = V \Rightarrow S$ is surjective.
-	
-	Because $S$ is injective and surjective, it is invertible.
-	
-	Since $S$ is invertible, we can write $TS = I$ as
-	
-	$(TS)S^{-1} = IS^{-1}$
-	
-	$T(SS^{-1}) = S^{-1}$
-	
-	$TI = S^{-1}$
-	
-	$T = S^{-1}$
-	
-	$ST = SS^{-1}$
-	
-	$ST = I$
-	
-	\item[5.] \textbf{Linear Filters:} Filters are commonly used in various applications, such as signal processing and communications, to condition the signal(s) for a particular purpose. Linear shift-invariant (LSI) filters, a special subset of filters, are designed to accomplish various spectral filtering operations, e.g., suppressing the high-frequencies in a signal, i.e., a low-pass filter, or rejecting a particular narrow band of frequencies, i.e., a notch-filter. In the continuous time-domain, a LSI filter operation is mathematically expressed as a convolution integral,
-	
-		\begin{equation}
-			y(t) = \int{h(t-\tau)x(\tau)d\tau}
-		\end{equation}
-		
-		where $x(t)$ is the input signal, $h(t)$ is the filter’s impulse response function, and $y(t)$ is the filter’s output signal. In the discrete-time setting or in the sampled, digital domain, the LSI filtering operation can be expressed as a convolution sum,
-	
-		\begin{equation}
-			y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
-			\label{dt_convolution}
-		\end{equation}
-		
-		%\setlength{\abovedisplayskip}{0pt}
-		%\setlength{\belowdisplayskip}{0pt}
-		%\setlength{\abovedisplayshortskip}{0pt}
-		%\setlength{\belowdisplayshortskip}{0pt}
-		%\setlength{\mathindent}{0pt}
-	
-		where $x(n)$ is an input signal sequence of length N that can be expressed as an N-dimensional vector $x = (x_1, x_2, ..., x_N)^T$, the filter impulse response $h(n)$ is of length $M$, expressed as an M-dimensional vector $h = (h_1, h_2, ..., h_M)$ (typically, $M < N$), and the output signal signal y of length N, $y = (y_1, y_2, ..., y_N)^T$.
-		
-		\pagebreak
-		\begin{enumerate}
-			\item[a)] Show that a LSI filter, as defined in Equation (\ref{dt_convolution}), is a linear map $T : V \rightarrow W$, where $V = W = \mathbb{R}^N$ and $x,y \in \mathbb{R}^N$.
+			Statement A: $ST = I$
 			
-			For the LSI filter to be a linear map it must satisfy additivity and homogeneity.
-			
-			Let:
-			
-			\begin{align*}
-				T(x) = y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
-			\end{align*}
-			
-			\begin{align*}
-				T(\bar{x}) = \bar{y}(n) = \sum_{k=0}^{N-1}{h(n-k)\bar{x}(k+1)}
-			\end{align*}
-			
-			\begin{align*}
-				T(x + \bar{x}) = \sum_{k=0}^{N-1}{h(n-k)\{x(k+1) + \bar{x}(k+1)\}}
-			\end{align*}
-			
-			\begin{align*}
-				 = \sum_{k=0}^{N-1}{h(n-k)x(k+1)} + \sum_{k=0}^{N-1}{h(n-k)\bar{x}(k+1)} = T(x) + T(\bar{x})
-			\end{align*}
-			
-			$\Rightarrow$ The LSI filter satisfies additivity.
-			
-			Let $\lambda \in \mathbb{R}$ and
-			
-			\begin{align*}
-				T(x) = y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
-			\end{align*}
-			
-			\begin{align*}
-				T(\lambda x) = \sum_{k=0}^{N-1}{h(n-k)\{\lambda x(k+1)\}}
-			\end{align*}
-			
-			\begin{align*}
-			= \lambda\sum_{k=0}^{N-1}{h(n-k) x(k+1)} = \lambda T(x)
-			\end{align*}
-			
-			$\Rightarrow$ The LSI filter satisfies homogeneity.
-			
-			Because the LSI filter satisfies additivity and homogeneity, it is a linear map.
+			Statement B: $TS = I$
 			
 			\pagebreak
+			Proof of ($A \Rightarrow B$):
+			
+			Let $ST = I$
+			
+			$\Rightarrow T(ST) = TI \Rightarrow (TS)T = T \Rightarrow (TS)T - T = 0$
+			
+			$\Rightarrow (TS)T - IT = 0 \Rightarrow (TS - I)T = 0$
+			
+			$\therefore TS = I$
+			
+			Proof of ($B \Rightarrow A$):
+			
+			Let $TS = I$
+			
+			$\Rightarrow S(TS) = SI \Rightarrow (ST)S = S \Rightarrow (ST)S - S = 0$
+			
+			$\Rightarrow (ST)S - IS = 0 \Rightarrow (ST - I)S = 0$
+			
+			$\therefore ST = I$
+	
+		\item[5.] \textbf{Linear Filters:} Filters are commonly used in various applications, such as signal processing and communications, to condition the signal(s) for a particular purpose. Linear shift-invariant (LSI) filters, a special subset of filters, are designed to accomplish various spectral filtering operations, e.g., suppressing the high-frequencies in a signal, i.e., a low-pass filter, or rejecting a particular narrow band of frequencies, i.e., a notch-filter. In the continuous time-domain, a LSI filter operation is mathematically expressed as a convolution integral,
+	
+			\begin{equation}
+				y(t) = \int{h(t-\tau)x(\tau)d\tau}
+			\end{equation}
+		
+			where $x(t)$ is the input signal, $h(t)$ is the filter’s impulse response function, and $y(t)$ is the filter’s output signal. In the discrete-time setting or in the sampled, digital domain, the LSI filtering operation can be expressed as a convolution sum,
+	
+			\begin{equation}
+				y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
+				\label{dt_convolution}
+			\end{equation}
+	
+			\pagebreak
+			where $x(n)$ is an input signal sequence of length N that can be expressed as an N-dimensional vector $x = (x_1, x_2, ..., x_N)^T$, the filter impulse response $h(n)$ is of length $M$, expressed as an M-dimensional vector $h = (h_1, h_2, ..., h_M)$ (typically, $M < N$), and the output signal signal y of length N, $y = (y_1, y_2, ..., y_N)^T$.
+		
+			\begin{enumerate}
+				\item[a)] Show that a LSI filter, as defined in Equation (\ref{dt_convolution}), is a linear map $T : V \rightarrow W$, where $V = W = \mathbb{R}^N$ and $x,y \in \mathbb{R}^N$.
+			
+				For the LSI filter to be a linear map it must satisfy additivity and homogeneity.
+			
+				Let:
+			
+				\begin{align*}
+					T(x) = y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
+				\end{align*}
+			
+				\begin{align*}
+					T(\bar{x}) = \bar{y}(n) = \sum_{k=0}^{N-1}{h(n-k)\bar{x}(k+1)}
+				\end{align*}
+			
+				\begin{align*}
+					T(x + \bar{x}) = \sum_{k=0}^{N-1}{h(n-k)\{x(k+1) + \bar{x}(k+1)\}}
+				\end{align*}
+			
+				\begin{align*}
+				 	= \sum_{k=0}^{N-1}{h(n-k)x(k+1)} + \sum_{k=0}^{N-1}{h(n-k)\bar{x}(k+1)} = T(x) + T(\bar{x})
+				\end{align*}
+			
+				$\Rightarrow$ The LSI filter satisfies additivity.
+			
+				Let $\lambda \in \mathbb{R}$ and
+			
+				\begin{align*}
+					T(x) = y(n) = \sum_{k=0}^{N-1}{h(n-k)x(k+1)}
+				\end{align*}
+			
+				\begin{align*}
+					T(\lambda x) = \sum_{k=0}^{N-1}{h(n-k)\{\lambda x(k+1)\}}
+				\end{align*}
+			
+				\begin{align*}
+				= \lambda\sum_{k=0}^{N-1}{h(n-k) x(k+1)} = \lambda T(x)
+				\end{align*}
+			
+				$\Rightarrow$ The LSI filter satisfies homogeneity.
+			
+				Because the LSI filter satisfies additivity and homogeneity, it is a linear map.
+			
 			\item[b)] Express the LSI filter's linear map $H$ as an $N \times N$ matrix $\mathbf{H}$ such that
 			
-			\begin{center}
-				$y = \mathbf{H}x$
-			\end{center}
+			\centerline{	$y = \mathbf{H}x$}
 			
 			Here you can assume that $h(m) = 0$ for $m \not\in \{1,2,3,...,M\}$.
 			
@@ -286,7 +214,11 @@
 			$\vdots$
 			
 			\begin{align*}
-				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-N)} = h(n-N) = (0, 0,...,0,h_1)^T
+				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-(N-1))} = h(n-(N-1))
+			\end{align*}
+			
+			\begin{align*}
+				 = (0, 0,...,0,h_1)^T
 			\end{align*}
 			
 			\newpage
@@ -305,14 +237,6 @@
 					0 		& 0			& \cdots 	& h_2		& h_1\\
 				\end{bmatrix}
 			\end{align*}
-			
-			\begin{align*}
-				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-N)} = h(n-N) = (0, 0,...,0,h_1)^T
-			\end{align*}
-			
-			\begin{align*}
-				T(v_N) = \sum_{k=0}^{N-1}{h(n-k)\delta(k-N)} = h(n-N) = (0, 0,...,0,h_1)^T
-			\end{align*}
 		\end{enumerate}
 		\item[6.] \textbf{Optical Resonators}: A simple model of light propagation treats it as a collection of geometric rays. There are several mathematical formalisms for dealing with this model, but one is particularly relevant to the material in ECE 501B.
 
@@ -329,7 +253,7 @@
 			\begin{itemize}
 				\item
 					\begin{tabularx}{0.85\textwidth}{>{\hsize=0.75\hsize}X >{\hsize=0.25\hsize}X}
-						Propagation a distance d down the z-axis: & $\begin{bmatrix}
+						Propagation a distance $d$ down the z-axis: & $\begin{bmatrix}
 							1 & d\\
 							0 & 1
 							\end{bmatrix}$
@@ -337,7 +261,7 @@
 					
 				\item
 					\begin{tabularx}{0.85\textwidth}{>{\hsize=0.75\hsize}X  >{\hsize=0.25\hsize}X}
-						Reflection off of a concave spherical mirror: & $\begin{bmatrix}
+						Reflection off of a \textit{concave} spherical mirror: & $\begin{bmatrix}
 							 1   & 0\\
 							-2/R & 1
 							\end{bmatrix}$
@@ -349,21 +273,14 @@
 			\end{itemize}
 			\endgroup
 				
-			Now, an optical resonator is an optical system that is designed to repeatedly cycle rays back and forth through the system. Optical resonators are used in a variety of applications, but are most famous as one of the critical components in a laser system
+			Now, an \textit{optical resonator} is an optical system that is designed to repeatedly cycle rays back and forth through the system. \textit{Optical resonators} are used in a variety of applications, but are most famous as one of the critical components in a laser system
 			
 			\item[a)] What is the domain of $r$? What is the domain of $r'$? The set of all rays corresponds to what vector space? What is the dimension of this vector space?
 			
-			$r \in \mathbb{R}$
+			$r \in \mathbb{R}$, $r' \in \mathbb{R}$, $V \in \mathbb{R}^2$, $\text{dim}(V) = 2$
 			
-			$r' \in \mathbb{R}$
+			\item[b)] Consider an optical resonator consisting of two concave spherical mirrors (with radius of curvature $R$) facing each other and separated by a distance of $D$. Using the relevant matrices, determine the matrix representation of the linear map that maps an input ray to an output ray \textit{after one complete round trip through the resonator}.
 			
-			$V \in \mathbb{R}^2$
-			
-			$dim(V) = 2$
-			
-			\item[b)] Consider an optical resonator consisting of two concave spherical mirrors (with radius of curvature $R$) facing each other and separated by a distance of $D$. Using the relevant matrices, determine the matrix representation of the linear map that maps an input ray to an output ray after one complete round trip through the resonator.
-			
-			\pagebreak
 			Let $T$ be the linear map that maps an input ray to an output ray after propagation a distance $D$ down the z-axis.
 			
 			\begin{align*}
@@ -404,15 +321,17 @@
 			
 			\item[c)] A stable resonator is one where, upon propagation, any input ray is eventually mapped back onto itself. Use your result from part (b) to show that, for a resonator of this type, there is no system configuration (other than the physically uninteresting $D = 0$, $R = \pm \infty$) that maps all rays onto themselves after a single round trip.
 			
-			\pagebreak
 			For the input to the system to be the same as the output, the matrix representation of $R_1$ must be given as follows:
 			
 			\begin{align*}
 				\mathcal{M}(R_1) = \begin{bmatrix}1 & 0\\ 0 & 1\end{bmatrix}
 			\end{align*}
 			
-			To make the terms on the main diagonal $1$, $D = 0$ or $R = \pm\infty$. However, only $R = \pm\infty$ will make the term lower left corner $0$. Furthermore, only $D = 0$ will make the term in the upper right corner $0$. $\therefore$ the system is only stable if $D=0$ and $R=\pm\infty$.			
+			To make the terms on the main diagonal $1$, $D = 0$ or $R = \pm\infty$. However, only $R = \pm\infty$ will make the term lower left corner $0$. Furthermore, only $D = 0$ will make the term in the upper right corner $0$.
 			
+			$\therefore$ the system is only stable if $D=0$ and $R=\pm\infty$.			
+			
+			\pagebreak
 			\item[d)] Now find the map for two round trips (don’t repeat work – be clever). Using this map, show that the resonator with $D = R$ is stable.
 			
 			Let $R_2$ be the system that map an input ray to an output ray after two complete round trips through the resonator.
