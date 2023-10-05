@@ -79,7 +79,7 @@ box on;
 grid on;
 
 % Label plot
-title('Final Value of V Over Multiple Runs');
+title('Final Value of v Over Multiple Runs');
 xlabel('Run')
 ylabel('Value')
 legendStr = cellfun(@(x) sprintf('Element %d',x), num2cell(1:5), 'UniformOutput', false);
@@ -100,6 +100,49 @@ w = V(:,idx);
 
 % Normalize the resulting eigenvector
 w = w/max(abs(w));
+
+%% part e)
+% Reset the random number generator seed to recreate data from part a)
+rng(501);
+
+% Create random vector in R^5
+v = rand(5,1);
+
+% Normalize vector
+v = v/max(abs(v));
+
+% Apply linear map 25 times
+v = applyLinearMap(T, v, 25);
+
+% Number of applications of T to consider when plotting
+app = [1, 5, 10];
+
+% Create a figure
+figure(3);
+clf;
+hold on;
+
+% Plot elements of random vector for given number of applications
+color = cell(5,1);
+for i = 1:5
+    lineH = plot(app,v(i,app+1),'-s','Linewidth',1.5);
+    color{i} = get(lineH, 'Color');
+end
+
+% Plot Eigenvector Corresponding to Maximum Eigenvalue for Reference
+for i = 1:5
+    plot([app(1) app(end)],w(i)*ones(1,2),'--','Linewidth',1.5,'Color',color{i});
+end
+box on;
+grid on;
+
+% Label plot
+title('Comparison of v to Most Dominant Eigenvector');
+xlabel('Number of Applications of T')
+ylabel('Value')
+legendStr = cellfun(@(x) sprintf('v(%d)',x), num2cell(1:5), 'UniformOutput', false);
+legendStr2 = cellfun(@(x) sprintf('w(%d)',x), num2cell(1:5), 'UniformOutput', false);
+legend([legendStr, legendStr2]);
 
 %% Local Functions
 % Function applies linear map T to vector multiple times
