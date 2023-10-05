@@ -1,0 +1,47 @@
+\documentclass[fleqn]{article}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{amsmath, nccmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+
+\newcommand{\zerodisplayskip}{
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}%
+	\setlength{\mathindent}{0pt}}
+
+\makeatletter
+	\newenvironment{equationCenter}{\@fleqnfalse\begin{equation*}}{\end{equation*}}
+\makeatother
+
+\title{Homework 4}
+\author{Owen Sowatzke}
+\date{October 16, 2023}
+
+\begin{document}
+	\offinterlineskip
+	\setlength{\lineskip}{12pt}
+	\zerodisplayskip
+	\maketitle
+	
+	\begin{enumerate}[nolistsep]
+		\item Define $T \in \mathcal{L}(\mathbb{F}^2)$ by
+		
+			\begin{equationCenter}
+				T(w,z) = (z,w)
+			\end{equationCenter}
+			
+			Find all eigenvalues and eigenvectors of $T$.
+	
+			$Tv = {\lambda}v$
+			%
+			$\Rightarrow T(w,z) = \lambda(w,z)$
+			%
+			$\Rightarrow(z,w) = \lambda(w,z)$
+			%
+			$\Rightarrow(z,w) = ({\lambda}w,{\lambda}z)$
+	
+	\end{enumerate}
+\end{document}
