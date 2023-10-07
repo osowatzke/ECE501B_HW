@@ -141,6 +141,58 @@
 					%
 					$\Rightarrow q_2 = LC_a\ddot{q_2} + LC_b\ddot{q_2} - LC_b\ddot{q_1} \Rightarrow q_2 = - LC_b\ddot{q_1} + L(C_a + C_b)\ddot{q_2}$
 					
+				\item Algebraically rearrange these equations into the following matrix form:
+				
+					\begin{equationCenter}
+						\begin{bmatrix}\ddot{q_1} \\ \ddot{q_2}\end{bmatrix} = M \begin{bmatrix}q_1 \\ q_2\end{bmatrix}
+					\end{equationCenter}
+					
+					where $M$ is a $2 \times 2$ matrix.
+					
+					\pagebreak
+					\begin{equation*}
+						q_1 = L(C_a + C_b)\ddot{q_1} - LC_b\ddot{q_2} \Rightarrow LC_b\ddot{q_2} = L(C_a + C_b)\ddot{q_1} - q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \ddot{q_2} = \frac{C_a + C_b}{C_b}\ddot{q_1} - \frac{1}{LC_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						q_2 = - LC_b\ddot{q_1} + L(C_a + C_b)\ddot{q_2}
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow q_2 = - LC_b\ddot{q_1} + L(C_a + C_b)\left(\frac{C_a + C_b}{C_b}\ddot{q_1} - \frac{1}{LC_b}q_1\right)
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow q_2 = - LC_b\ddot{q_1} + \frac{L(C_a + C_b)^2}{C_b}\ddot{q_1} - \frac{C_a + C_b}{C_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow q_2 = - LC_b\ddot{q_1} + \frac{L(C_a^2 + 2C_aC_b + C_b^2)}{C_b}\ddot{q_1} - \frac{C_a + C_b}{C_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow q_2 = \frac{L(C_a^2 + 2C_aC_b + C_b^2) - LC_b^2}{C_b}\ddot{q_1} - \frac{C_a + C_b}{C_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow q_2 = \frac{L(C_a^2 + 2C_aC_b)}{C_b}\ddot{q_1} - \frac{C_a + C_b}{C_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow q_2 = \frac{LC_a(C_a + 2C_b)}{C_b}\ddot{q_1} - \frac{C_a + C_b}{C_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \frac{LC_a(C_a + 2C_b)}{C_b}\ddot{q_1} = \frac{C_a + C_b}{C_b}q_1 + q_2
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \ddot{q_1} = \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_1 + \frac{1}{LC_a(C_a + 2C_b)}q_2
+					\end{equation*}
 			\end{enumerate}
 	\end{enumerate}
 \end{document}
