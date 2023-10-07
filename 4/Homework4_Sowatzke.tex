@@ -191,7 +191,35 @@
 					\end{equation*}
 					%
 					\begin{equation*}
-						\Rightarrow \ddot{q_1} = \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_1 + \frac{1}{LC_a(C_a + 2C_b)}q_2
+						\Rightarrow \ddot{q_1} = \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_1 + \frac{C_b}{LC_a(C_a + 2C_b)}q_2
+					\end{equation*}
+					%
+					\begin{equation*}
+						\ddot{q_2} = \frac{C_a + C_b}{C_b}\ddot{q_1} - \frac{1}{LC_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \ddot{q_2} = \frac{C_a + C_b}{C_b}\left(\frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_1 + \frac{C_b}{LC_a(C_a + 2C_b)}q_2\right) - \frac{1}{LC_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \ddot{q_2} = \frac{(C_a + C_b)^2}{LC_aC_b(C_a + 2C_b)}q_1 + \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_2 - \frac{1}{LC_b}q_1
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \ddot{q_2} = \frac{(C_a + C_b)^2 - C_a(C_a + 2C_b)}{LC_aC_b(C_a + 2C_b)}q_1 + \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_2
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \ddot{q_2} = \frac{C_a^2 + 2C_aC_b + C_b^2 - C_a^2 - 2C_aC_b}{LC_aC_b(C_a + 2C_b)}q_1 + \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_2
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \ddot{q_2} = \frac{C_b^2}{LC_aC_b(C_a + 2C_b)}q_1 + \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_2
+					\end{equation*}
+					%
+					\begin{equation*}
+						\Rightarrow \ddot{q_2} = \frac{C_b}{LC_a(C_a + 2C_b)}q_1 + \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_2
 					\end{equation*}
 			\end{enumerate}
 	\end{enumerate}
