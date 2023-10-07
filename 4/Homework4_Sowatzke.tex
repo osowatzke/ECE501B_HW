@@ -118,6 +118,29 @@
 					$q_1 = LC_a(\ddot{q_1} - \ddot{q_3})$
 					
 					$q_2 = LC_a(\ddot{q_2} + \ddot{q_3})$
+					
+				\item Using $V=q/C$, derive a relationship between $q_1$, $q_2$, and $q_3$. Take multiple time derivatives to convert this into a relationship between $\ddot{q_1}$, $\ddot{q_2}$, and $\ddot{q_3}$. Use this result to eliminate $\ddot{q_3}$ from your expressions for $q_1$ and $q_2$.
+				
+					\begin{equation*}
+						\frac{q_1}{C_a} + \frac{q_3}{C_b} = \frac{q_2}{C_a} \Rightarrow \frac{\ddot{q_1}}{C_a} + \frac{\ddot{q_3}}{C_b} = \frac{\ddot{q_2}}{C_a}
+					\end{equation*}
+					%
+					\begin{equation*}
+						 \Rightarrow \frac{\ddot{q_3}}{C_b} = \frac{\ddot{q_2}}{C_a} - \frac{\ddot{q_1}}{C_a} \Rightarrow \ddot{q_3} = \frac{C_b}{C_a}(\ddot{q_2} - \ddot{q_1})
+					\end{equation*}
+					%
+					\begin{equation*}
+						q_1 = LC_a\left(\ddot{q_1} - \frac{C_b}{C_a}(\ddot{q_2} - \ddot{q_1})\right) \Rightarrow q_1 = LC_a\ddot{q_1} - LC_b(\ddot{q_2} - \ddot{q_1})
+					\end{equation*}
+					%
+					$\Rightarrow q_1 = LC_a\ddot{q_1} - LC_b\ddot{q_2} + LC_b\ddot{q_1} \Rightarrow q_1 = L(C_a + C_b)\ddot{q_1} - LC_b\ddot{q_2}$
+					
+					\begin{equation*}
+						q_2 = LC_a\left(\ddot{q_2} + \frac{C_b}{C_a}(\ddot{q_2} - \ddot{q_1})\right) \Rightarrow q_2 = LC_a\ddot{q_2} + LC_b(\ddot{q_2} - \ddot{q_1})
+					\end{equation*}
+					%
+					$\Rightarrow q_2 = LC_a\ddot{q_2} + LC_b\ddot{q_2} - LC_b\ddot{q_1} \Rightarrow q_2 = - LC_b\ddot{q_1} + L(C_a + C_b)\ddot{q_2}$
+					
 			\end{enumerate}
 	\end{enumerate}
 \end{document}
