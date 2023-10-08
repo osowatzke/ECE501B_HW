@@ -222,12 +222,28 @@
 						\Rightarrow \ddot{q_2} = \frac{C_b}{LC_a(C_a + 2C_b)}q_1 + \frac{C_a + C_b}{LC_a(C_a + 2C_b)}q_2
 					\end{equation*}
 					%
+					$\therefore$ we can express the equations in the following form:
 					\begin{equation*}
-						\therefore M = \begin{bmatrix}
+						\begin{bmatrix}\ddot{q_1} \\ \ddot{q_2}\end{bmatrix} = M \begin{bmatrix}q_1 \\ q_2\end{bmatrix}
+					\end{equation*}
+					
+					where:
+					
+					\begin{equation*}
+						M = \begin{bmatrix}
 							\frac{C_a + C_b}{LC_a(C_a + 2C_b)} &  \frac{C_b}{LC_a(C_a + 2C_b)} \\
 							\frac{C_b}{LC_a(C_a + 2C_b)} & \frac{C_a + C_b}{LC_a(C_a + 2C_b)}
 						\end{bmatrix}
 					\end{equation*}
+				\item Show that $M$ is a linear map from $\mathbb{R}^2 \rightarrow \mathbb{R}^2$.
+				
+					$M$ maps $\begin{bmatrix}q_1 \\ q_2 \end{bmatrix} \in \mathbb{R}^2$ to $\begin{bmatrix}\ddot{q_1} \\ \ddot{q_2} \end{bmatrix} \in \mathbb{R}^2$.
+					
+					$\therefore$ $M$ is a map from $\mathbb{R}^2 \rightarrow \mathbb{R}^2$.
+					
+					For $M$ to be a linear map, it must satisfy additivity and homogeneity.
+					
+					
 			\end{enumerate}
 	\end{enumerate}
 \end{document}
