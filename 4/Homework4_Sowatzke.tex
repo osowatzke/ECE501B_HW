@@ -292,6 +292,33 @@
 					$\Rightarrow$ $M$ satisfies homogeneity.
 					
 					Because $M$ satisifies both additivity and homogeneity, it is a linear map from $\mathbb{R}^2 \rightarrow \mathbb{R}^2$
+					
+				\item To proceed, we make the \textit{Anastz} (a fancy German word that roughly means "guess solution") that $q_1$ and $q_2$, will have a time-dependence that is \textit{harmonic} (sinusoidal). Let $q_1 = A_1e^{j{\omega}t}$ and $q_1 = A_2e^{j{\omega}t}$. Substitute these values into your matrix equation, take the derivatives, and simplify. Your result should involve the vector $(A_1, A_2)$ on both sides of the equation. Note that the form of your result is now a standard eigenvalue equation.
+				
+				\begin{equation*}
+					\begin{bmatrix}\ddot{q_1} \\ \ddot{q_2}\end{bmatrix} = M\begin{bmatrix}q_1 \\ q_2\end{bmatrix}
+				\end{equation*}
+				
+				Let $q_1 = A_1e^{j{\omega}t}$ and $q_1 = A_2e^{j{\omega}t}$:
+				
+				\begin{equation*}
+					\Rightarrow \begin{bmatrix}A_1(j\omega)^2e^{j{\omega}t} \\ A_2(j\omega)^2e^{j{\omega}t}\end{bmatrix} = M\begin{bmatrix}A_1e^{j{\omega}t} \\ A_2e^{j{\omega}t}\end{bmatrix}
+				\end{equation*}
+				%
+				\begin{equation*}
+					\Rightarrow - {\omega}^2\begin{bmatrix} A_1e^{j{\omega}t} \\ A_2e^{j{\omega}t}\end{bmatrix} = M\begin{bmatrix}A_1e^{j{\omega}t} \\ A_2e^{j{\omega}t}\end{bmatrix}
+				\end{equation*}
+				%
+				\newpage
+				Because $e^{j{\omega}t}$ is common to all terms, we can remove it from the equation.
+				
+				\begin{equation*}
+					\Rightarrow - {\omega}^2\begin{bmatrix} A_1 \\ A_2\end{bmatrix} = M\begin{bmatrix}A_1 \\ A_2\end{bmatrix}
+				\end{equation*}
+				
+				Let $\lambda = -{\omega}^2$ and $v = \begin{bmatrix} A_1 \\ A_2 \end{bmatrix}$
+				
+				$\Rightarrow {\lambda}v = Mv$ (the standard eigenvalue equation)
 			\end{enumerate}
 	\end{enumerate}
 \end{document}
