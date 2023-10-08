@@ -122,27 +122,41 @@ figure(3);
 clf;
 hold on;
 
-% Plot elements of random vector for given number of applications
-color = cell(5,1);
+% Plot error in each element after application of T
 for i = 1:5
-    lineH = plot(app,v(i,app+1),'-s','Linewidth',1.5);
-    color{i} = get(lineH, 'Color');
-end
-
-% Plot Eigenvector Corresponding to Maximum Eigenvalue for Reference
-for i = 1:5
-    plot([app(1) app(end)],w(i)*ones(1,2),'--','Linewidth',1.5,'Color',color{i});
+    plot(app,abs(v(i,app+1)-w(i)),'-s','Linewidth',1.5);
 end
 box on;
 grid on;
 
 % Label plot
-title('Comparison of v to Most Dominant Eigenvector');
+title('Error Between v and w after Repeated Applications of T');
 xlabel('Number of Applications of T')
-ylabel('Value')
-legendStr = cellfun(@(x) sprintf('v(%d)',x), num2cell(1:5), 'UniformOutput', false);
-legendStr2 = cellfun(@(x) sprintf('w(%d)',x), num2cell(1:5), 'UniformOutput', false);
-legend([legendStr, legendStr2]);
+ylabel('Error')
+legendStr = cellfun(@(x) sprintf('Element %d',x), num2cell(1:5), 'UniformOutput', false);
+legend(legendStr);
+
+% % Plot elements of random vector for given number of applications
+% color = cell(5,1);
+% for i = 1:5
+%     lineH = plot(app,v(i,app+1),'-s','Linewidth',1.5);
+%     color{i} = get(lineH, 'Color');
+% end
+% 
+% % Plot Eigenvector Corresponding to Maximum Eigenvalue for Reference
+% for i = 1:5
+%     plot([app(1) app(end)],w(i)*ones(1,2),'--','Linewidth',1.5,'Color',color{i});
+% end
+% box on;
+% grid on;
+% 
+% % Label plot
+% title('Comparison of v to Most Dominant Eigenvector');
+% xlabel('Number of Applications of T')
+% ylabel('Value')
+% legendStr = cellfun(@(x) sprintf('v(%d)',x), num2cell(1:5), 'UniformOutput', false);
+% legendStr2 = cellfun(@(x) sprintf('w(%d)',x), num2cell(1:5), 'UniformOutput', false);
+% legend([legendStr, legendStr2]);
 
 %% Local Functions
 % Function applies linear map T to vector multiple times
