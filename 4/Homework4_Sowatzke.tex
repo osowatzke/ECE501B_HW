@@ -243,7 +243,55 @@
 					
 					For $M$ to be a linear map, it must satisfy additivity and homogeneity.
 					
+					Rewrite $M$ as follows:
 					
+					\begin{equation*}
+						M = \begin{bmatrix}
+							A_{11} & A_{12} \\ A_{21} & A_{22}
+						\end{bmatrix}
+					\end{equation*}
+					
+					Check whether $M$ satisfies additivity:
+					
+					Let $v = \begin{bmatrix}q_1 \\ q_2\end{bmatrix} \in \mathbb{R}^2$ and $\bar{v} = \begin{bmatrix}\bar{q}_1 \\ \bar{q}_2\end{bmatrix} \in \mathbb{R}^2$
+					
+					\begin{equation*}
+						M(v + \bar{v}) = \begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22}\end{bmatrix}\begin{bmatrix} q_1 + \bar{q}_1 \\ q_2 + \bar{q}_2 \end{bmatrix} = \begin{bmatrix} A_{11}(q_1 + \bar{q}_1) + A_{12}(q_2 + \bar{q}_2) \\ A_{21}(q_1 + \bar{q}_1) + A_{22}(q_2 + \bar{q}_2) \end{bmatrix}
+					\end{equation*}
+					%
+					\begin{equation*}
+						= \begin{bmatrix}(A_{11}q_1 + A_{12}q_2) + (A_{11}\bar{q}_1 + A_{12}\bar{q}_2) \\ (A_{21}q_1 + A_{22}q_2) + (A_{21}\bar{q}_1 + A_{22}\bar{q}_2)\end{bmatrix}
+					\end{equation*}
+					%
+					\begin{equation*}
+						= \begin{bmatrix}A_{11}q_1 + A_{12}q_2 \\ A_{21}q_1 + A_{22}q_2 \end{bmatrix} + \begin{bmatrix}A_{11}\bar{q}_1 + A_{12}\bar{q}_2 \\ A_{21}\bar{q}_1 + A_{22}\bar{q}_2 \end{bmatrix}
+					\end{equation*}
+					%
+					\begin{equation*}
+						= \begin{bmatrix}A_{11} & A_{12} \\ A_{21} & A_{22}\end{bmatrix}\begin{bmatrix}q_1 \\ q_2\end{bmatrix} +  \begin{bmatrix}A_{11} & A_{12} \\ A_{21} & A_{22}\end{bmatrix}\begin{bmatrix}\bar{q}_1 \\ \bar{q}_2\end{bmatrix} = Mv + M\bar{v}
+					\end{equation*}
+					%
+					$\Rightarrow$ $M$ satisfies additivity.
+					
+					Check whether $M$ satisifies homogeneity:
+					
+					Let $v = \begin{bmatrix}q_1 \\ q_2\end{bmatrix} \in \mathbb{R}^2$ and $\lambda \in \mathbb{R}$.
+					
+					\begin{equation*}
+						M({\lambda}v) = \begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22}\end{bmatrix}\begin{bmatrix} {\lambda}q_1 \\ {\lambda}q_2\end{bmatrix} = \begin{bmatrix} A_{11}({\lambda}q_1) + A_{12}({\lambda}q_2) \\ A_{21}({\lambda}q_1) + A_{22}({\lambda}q_2) \end{bmatrix}
+					\end{equation*}
+					%					
+					\begin{equation*}
+						= \begin{bmatrix} {\lambda}A_{11}q_1 + {\lambda}A_{12}q_2 \\ {\lambda}A_{21}q_1 + {\lambda}A_{22}q_2 \end{bmatrix} = \begin{bmatrix} \lambda(A_{11}q_1 + A_{12}q_2)\\ \lambda(A_{21}q_1 + A_{22}q_2)\end{bmatrix} = \lambda\begin{bmatrix}A_{11}q_1 + A_{12}q_2 \\ A_{21}q_1 + A_{22}q_2\end{bmatrix}
+					\end{equation*}
+					%
+					\begin{equation*}
+						= \lambda\begin{bmatrix}A_{11} & A_{12}\\ A_{21} & A_{22}\end{bmatrix}\begin{bmatrix}q_1 \\ q_2\end{bmatrix} = {\lambda}Mv
+					\end{equation*}
+					%
+					$\Rightarrow$ $M$ satisfies homogeneity.
+					
+					Because $M$ satisifies both additivity and homogeneity, it is a linear map from $\mathbb{R}^2 \rightarrow \mathbb{R}^2$
 			\end{enumerate}
 	\end{enumerate}
 \end{document}
