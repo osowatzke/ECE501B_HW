@@ -79,7 +79,7 @@ box on;
 grid on;
 
 % Label plot
-title('Final Value of v Over Multiple Runs');
+title('Final Value of v for Multiple Runs');
 xlabel('Run')
 ylabel('Value')
 legendStr = cellfun(@(x) sprintf('Element %d',x), num2cell(1:5), 'UniformOutput', false);

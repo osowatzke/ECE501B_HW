@@ -373,6 +373,14 @@
 					
 				\item Make a plot that compares the results from 25 applications of T to 5 different random initial vectors. Comment on the results.
 				
+					\begin{figure}[H]				
+							\centerline{\fbox{\includegraphics[width=0.5\textwidth]{final_value_multiple_runs.png}}}
+							\caption{Final Value of v for Multiple Runs.}
+							\label{final_value_multiple_runs}
+					\end{figure}
+					
+					The final value of v is the same for each run (i.e. the starting value of v does not influence the result).
+					
 				\item In class, we are just starting to learn how to find eigenvectors and eigenvalues of a linear map. However, for this exercise, we will allow you to use the numerical routine in MATLAB. The form of the command in [V,D] = eig(T). The routine will return two matrices. V is a matrix whose column whose columns are the eigenvectors of T, and D is a diagonal matrix whose values are the corresponding eigenvalues, i.e., the eigenvalue in column n is associated with the eigenvector in column n. Modify your script to find the eigenvalues and eigenvectors of T. Locate the eigenvalue with the largest absolute value and call its corresponding eigenvector w. Normalize w.
 				
 				\item Make a plot that compares the normalized version of w to your results for 1, 5, and 10 applications of T to a given random initial vector. Comment on the results and argue intuitively about how they are related to the concept of an invariant subspace.
