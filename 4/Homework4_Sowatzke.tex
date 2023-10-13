@@ -369,7 +369,9 @@
 							\label{multiple_apps_of_T}
 					\end{figure}
 				
-					The random vector can be written as a linear combination of the eigenvectors. After multiple applications of T, v converges to the eigenvector corresponding to the largest eigenvalue. The eigenvector components corresponding to the smaller eigenvalues are exponentially reduced in size by each application of T.
+					After multiple applications of T, the random vector converges to a stable result.
+					
+					%The random vector can be written as a linear combination of the eigenvectors. After multiple applications of T, v converges to the eigenvector corresponding to the largest eigenvalue. The eigenvector components corresponding to the smaller eigenvalues are exponentially reduced in size by each application of T.
 					
 				\item Make a plot that compares the results from 25 applications of T to 5 different random initial vectors. Comment on the results.
 				
@@ -385,6 +387,30 @@
 				
 				\item Make a plot that compares the normalized version of w to your results for 1, 5, and 10 applications of T to a given random initial vector. Comment on the results and argue intuitively about how they are related to the concept of an invariant subspace.
 				
+					\begin{figure}[H]				
+							\centerline{\fbox{\includegraphics[width=0.5\textwidth]{comparison_to_eigenvalue.png}}}
+							\caption{Error Between v and w after Repeated Applications of T.}
+							\label{comparison_to_eigenvalue}
+					\end{figure}
+				
+					The random input vector converges to w (the eigenvector corresponding to the largest eigenvalue) after multiple applications of T. 
+					
+					T has 5 distinct eigenvalues and 5 corresponding linearly independent eigenvectors. Therefore, the random input vector, denoted as $v$, can be written as a linear combination of the eigenvectors $v_1,...,v_5$.
+					
+					$v = a_1v_1 + \cdots + a_5v_5$.
+					
+					Because $T$ is a linear map,
+					
+					$Tv = T(a_1v_1 + \cdots + a_5v_5) = a_1Tv_1 + \cdots + a_5Tv_5$
+					
+					The span of each eigenvector is an invariant subspace. Therefore, $Tv_i = \lambda_i v_i$, where $\lambda_i$ is the corresponding eigenvalue. In other words, every time the vector is mapped through T, each of its eigenvector components will be scaled by their corresponding eigenvalues.
+					
+					$Tv = a_1\lambda_1v_1 + \cdots + a_5\lambda_5v_5$
+					
+					After $N$ applications of $T$, each of the eigenvector components ($a_iv_i$) will be scaled by $\lambda_i^N$. Denote the largest eigenvalue as $\lambda_m$ and the corresponding scaling factor as $a_m$.  Assuming a non-zero $a_m$, the magnitude of the $a_m\lambda_m^N$ term will eventually become much larger than the magnitude of the other $a_i\lambda_i^N$ terms. Normalizing $v$ between each application of $T$ is equivalent to normalizing the output. Therefore, the output will approach $w$, the normalized version of $v_m$, as $N$ gets large.
+					
+	% v = Each weighted eigenvector component of the input vector is a member of an invariant subspace. As such, each of these components is simply scaled by the application of T. Specifically, each weighted eigenvector is scaled by its respective eigenvector. is  applying T only scales these components. eigenvector is  $\mathbb{R}^5$, and as such, it is mapped back into that subspace. After multiple applications of T, v converges to the eigenvector corresponding to the largest eigenvalue. The eigenvector components corresponding to the smaller eigenvalues are exponentially reduced in size by each application of T
+					
 				\item Submit a printout of your final MATLAB code, the plots, and the commentary.
 			\end{enumerate}
 	\end{enumerate}

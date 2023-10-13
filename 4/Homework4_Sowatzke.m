@@ -18,7 +18,8 @@ T = [1  0 -1  1  1;
 v = rand(5,1);
 
 % Normalize vector
-v = v/max(abs(v));
+[~,maxIdx] = max(abs(v));
+v = v/v(maxIdx);
 
 % Apply linear map 25 times
 v = applyLinearMap(T, v, 25);
@@ -57,7 +58,8 @@ for i = 1:length(w)
     v = rand(5,1);
     
     % normalize vector
-    v = v/max(abs(v));
+    [~,maxIdx] = max(abs(v));
+    v = v/v(maxIdx);
     
     % create arrays of random output v
     v = applyLinearMap(T, v, 25);
@@ -99,7 +101,8 @@ lambda = diag(D);
 w = V(:,idx);
 
 % Normalize the resulting eigenvector
-w = w/max(abs(w));
+[~,maxIdx] = max(abs(w));
+w = w/w(maxIdx);
 
 %% part e)
 % Reset the random number generator seed to recreate data from part a)
@@ -109,7 +112,8 @@ rng(501);
 v = rand(5,1);
 
 % Normalize vector
-v = v/max(abs(v));
+[~,maxIdx] = max(abs(v));
+v = v/v(maxIdx);
 
 % Apply linear map 25 times
 v = applyLinearMap(T, v, 25);
@@ -136,27 +140,31 @@ ylabel('Error')
 legendStr = cellfun(@(x) sprintf('Element %d',x), num2cell(1:5), 'UniformOutput', false);
 legend(legendStr);
 
-% % Plot elements of random vector for given number of applications
-% color = cell(5,1);
-% for i = 1:5
-%     lineH = plot(app,v(i,app+1),'-s','Linewidth',1.5);
-%     color{i} = get(lineH, 'Color');
-% end
-% 
-% % Plot Eigenvector Corresponding to Maximum Eigenvalue for Reference
-% for i = 1:5
-%     plot([app(1) app(end)],w(i)*ones(1,2),'--','Linewidth',1.5,'Color',color{i});
-% end
-% box on;
-% grid on;
-% 
-% % Label plot
-% title('Comparison of v to Most Dominant Eigenvector');
-% xlabel('Number of Applications of T')
-% ylabel('Value')
-% legendStr = cellfun(@(x) sprintf('v(%d)',x), num2cell(1:5), 'UniformOutput', false);
-% legendStr2 = cellfun(@(x) sprintf('w(%d)',x), num2cell(1:5), 'UniformOutput', false);
-% legend([legendStr, legendStr2]);
+figure(4);
+clf;
+hold on;
+
+% Plot elements of random vector for given number of applications
+color = cell(5,1);
+for i = 1:5
+    lineH = plot(app,v(i,app+1),'-s','Linewidth',1.5);
+    color{i} = get(lineH, 'Color');
+end
+
+% Plot Eigenvector Corresponding to Maximum Eigenvalue for Reference
+for i = 1:5
+    plot([app(1) app(end)],w(i)*ones(1,2),'--','Linewidth',1.5,'Color',color{i});
+end
+box on;
+grid on;
+
+% Label plot
+title('Comparison of v to Most Dominant Eigenvector');
+xlabel('Number of Applications of T')
+ylabel('Value')
+legendStr = cellfun(@(x) sprintf('v(%d)',x), num2cell(1:5), 'UniformOutput', false);
+legendStr2 = cellfun(@(x) sprintf('w(%d)',x), num2cell(1:5), 'UniformOutput', false);
+legend([legendStr, legendStr2]);
 
 %% Local Functions
 % Function applies linear map T to vector multiple times
@@ -172,6 +180,7 @@ function v = applyLinearMap(T, v, numApplications)
         v(:,i+1) = T*v(:,i);
     
         % Normalize result
-        v(:,i+1) = v(:,i+1)/max(abs(v(:,i+1)));
+        [~,maxIdx] = max(abs(v(:,i+1)));
+        v(:,i+1) = v(:,i+1)/v(maxIdx,i+1);
     end
 end
