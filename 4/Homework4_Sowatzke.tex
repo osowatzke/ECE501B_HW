@@ -79,7 +79,7 @@
 			
 			$\lambda_2 = -1 \Rightarrow z = -w \Rightarrow v_2 = (w, -w)$
 			
-		\item Suppose $T \in \mathcal{L}$ and $\text{dim range}\ T = k$. Prove that $T$ has at most $k + 1$ distinct eigenvalues.
+		\item Suppose $T \in \mathcal{L}(V)$ and $\text{dim range}\ T = k$. Prove that $T$ has at most $k + 1$ distinct eigenvalues.
 	
 			Let $v_j$ be an eigenvector of $T$. Then, $Tv_j = {\lambda_j}v_j$.
 			
@@ -89,20 +89,18 @@
 				\Rightarrow \frac{1}{\lambda_j}T(v_j) = v_j \Rightarrow T\left(\frac{v_j}{\lambda_j}\right) = v_j	 \Rightarrow v_j \in \mathcal{R}(T)			
 			\end{equation*}
 			
-			There are at most $k$ linearly independent eigenvectors $v_j$.
-			
-			For $\lambda_j$ to be distinct eigenvalues, each $v_j$ must be linearly independent.
+			There are at most $k$ linearly independent eigenvectors $v_j$ that satisfy this expression. The eigenvalues corresponding to linearly independent eigenvectors are distinct.
 			
 			$\therefore$ there can be at most $k$ distinct nonzero eigenvalues $\lambda_j$.
 			
 			\pagebreak
 			Consider $\lambda_j = 0$:
 			
-			For $\lambda_j=0$, there must be a nonzero eigenvector $v_j$ s.t.
+			For $\lambda_j=0$, there must be a nonzero eigenvector $v_j$ such that
 			
 			$Tv_j = 0 \Rightarrow v_j \in n(T)$
 			
-			Let $n(T) \neq \{0\} \Rightarrow \exists\ v_j \neq 0$ s.t. $Tv_j = 0$
+			Let $n(T) \neq \{0\} \Rightarrow \exists\ v_j \neq 0$ such that $Tv_j = 0$
 			
 			For this case, $\exists\ \lambda_j = 0$
 			
