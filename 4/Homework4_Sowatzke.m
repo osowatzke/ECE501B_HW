@@ -1,9 +1,18 @@
+% Author: O. Sowatzke
+%
+% Updated: 10/16/2023
+%
+% Subject: Script contains code which produces results for Question 4 of 
+% Homework #4
+%
+
 %% Initial Setup
 % clear variables and close open figures
 clear;
 close all;
 
-% set random number generator seed to get repeatable results
+% set random number generator seed to get repeatable results for each
+% run of this script
 rng(501);
 
 % Linear Map T
@@ -139,32 +148,6 @@ xlabel('Number of Applications of T')
 ylabel('Error')
 legendStr = cellfun(@(x) sprintf('Element %d',x), num2cell(1:5), 'UniformOutput', false);
 legend(legendStr);
-
-figure(4);
-clf;
-hold on;
-
-% Plot elements of random vector for given number of applications
-color = cell(5,1);
-for i = 1:5
-    lineH = plot(app,v(i,app+1),'-s','Linewidth',1.5);
-    color{i} = get(lineH, 'Color');
-end
-
-% Plot Eigenvector Corresponding to Maximum Eigenvalue for Reference
-for i = 1:5
-    plot([app(1) app(end)],w(i)*ones(1,2),'--','Linewidth',1.5,'Color',color{i});
-end
-box on;
-grid on;
-
-% Label plot
-title('Comparison of v to Most Dominant Eigenvector');
-xlabel('Number of Applications of T')
-ylabel('Value')
-legendStr = cellfun(@(x) sprintf('v(%d)',x), num2cell(1:5), 'UniformOutput', false);
-legendStr2 = cellfun(@(x) sprintf('w(%d)',x), num2cell(1:5), 'UniformOutput', false);
-legend([legendStr, legendStr2]);
 
 %% Local Functions
 % Function applies linear map T to vector multiple times
