@@ -8,6 +8,9 @@
 \usepackage{float}
 \usepackage{changepage}
 \usepackage{environ,capt-of}
+\usepackage{matlab-prettifier}
+%\usepackage{textcomp}
+%\usepackage{xcolor}
 
 \newcommand{\zerodisplayskip}{
 	\setlength{\abovedisplayskip}{0pt}%
@@ -410,6 +413,16 @@
 	% v = Each weighted eigenvector component of the input vector is a member of an invariant subspace. As such, each of these components is simply scaled by the application of T. Specifically, each weighted eigenvector is scaled by its respective eigenvector. is  applying T only scales these components. eigenvector is  $\mathbb{R}^5$, and as such, it is mapped back into that subspace. After multiple applications of T, v converges to the eigenvector corresponding to the largest eigenvalue. The eigenvector components corresponding to the smaller eigenvalues are exponentially reduced in size by each application of T
 					
 				\item Submit a printout of your final MATLAB code, the plots, and the commentary.
+				
+				MATLAB code is included in Appendix \ref{matlab_code} and as separate files in the homework submission. Plots and commentary are included above.
 			\end{enumerate}
 	\end{enumerate}
+	
+	\pagebreak
+	\appendix
+	\section{MATLAB Source Code}
+	\label{matlab_code}
+	\lstset{style=Matlab-editor,basicstyle=\ttfamily\footnotesize}
+	\lstinputlisting{Homework4_Sowatzke.m}
+	\raggedbottom
 \end{document}

@@ -2,8 +2,8 @@
 %
 % Updated: 10/16/2023
 %
-% Subject: Script contains code which produces results for Question 4 of 
-% Homework #4
+% Subject: Script contains code which produces results for
+% Question 4 of Homework #4
 %
 
 %% Initial Setup
@@ -11,8 +11,8 @@
 clear;
 close all;
 
-% set random number generator seed to get repeatable results for each
-% run of this script
+% set random number generator seed to get repeatable results 
+% for each run of this script
 rng(501);
 
 % Linear Map T
@@ -53,7 +53,8 @@ grid on;
 title('Value of v after Multiple Applications of T');
 xlabel('Number of Applications of T')
 ylabel('Value')
-legendStr = cellfun(@(x) sprintf('Element %d',x), num2cell(1:5), 'UniformOutput', false);
+legendStr = cellfun(@(x) sprintf('Element %d',x),...
+    num2cell(1:5), 'UniformOutput', false);
 legend(legendStr);
 
 %% Part c)
@@ -93,7 +94,8 @@ grid on;
 title('Final Value of v for Multiple Runs');
 xlabel('Run')
 ylabel('Value')
-legendStr = cellfun(@(x) sprintf('Element %d',x), num2cell(1:5), 'UniformOutput', false);
+legendStr = cellfun(@(x) sprintf('Element %d',x),...
+    num2cell(1:5), 'UniformOutput', false);
 legend(legendStr);
 
 %% Part d)
@@ -114,9 +116,6 @@ w = V(:,idx);
 w = w/w(maxIdx);
 
 %% part e)
-% Reset the random number generator seed to recreate data from part a)
-rng(501);
-
 % Create random vector in R^5
 v = rand(5,1);
 
@@ -146,7 +145,8 @@ grid on;
 title('Error Between v and w after Repeated Applications of T');
 xlabel('Number of Applications of T')
 ylabel('Error')
-legendStr = cellfun(@(x) sprintf('Element %d',x), num2cell(1:5), 'UniformOutput', false);
+legendStr = cellfun(@(x) sprintf('Element %d',x),...
+    num2cell(1:5), 'UniformOutput', false);
 legend(legendStr);
 
 %% Local Functions
