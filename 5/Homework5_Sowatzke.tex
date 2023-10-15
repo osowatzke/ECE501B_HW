@@ -1,0 +1,91 @@
+\documentclass[fleqn]{article}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{amsmath, nccmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+
+\newcommand{\zerodisplayskip}{
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}%
+	\setlength{\mathindent}{0pt}}
+
+\makeatletter
+	\newenvironment{equationCenter}{\@fleqnfalse\begin{equation*}}{\end{equation*}}
+\makeatother
+
+\title{Homework 5}
+\author{Owen Sowatzke}
+\date{October 23, 2023}
+
+\begin{document}
+	\offinterlineskip
+	\setlength{\lineskip}{12pt}
+	\zerodisplayskip
+	\maketitle
+	
+	\begin{enumerate}[nolistsep]
+		\item Define $T \in \mathcal{L}(\mathbb{F}^3)$ by
+		
+		\begin{equationCenter}
+			T(z_1, z_2, z_3) = (2z_2, 0, 5z_3)
+		\end{equationCenter}
+		
+		Find all eigenvalues and eigenvectors of $T$.
+		
+		\begin{equation*}
+			A = \mathcal{M}(T) = \begin{bmatrix}
+				0 & 2 & 0 \\
+				0 & 0 & 0 \\
+				0 & 0 & 5
+			\end{bmatrix}
+		\end{equation*}
+		
+		$\mathcal{M}(T)$ is an upper triangular matrix, so the eigenvalues of $T$ are $\lambda = 0, 0, 5$.
+		
+		Let $\lambda = 0$:
+		
+		The eigenvectors of $T$ are in the null space of $A - {\lambda}I$.
+		
+		Note that all vectors in the null space of $A - {\lambda}I$ require $z_2 = z_3 = 0$. However, there are no constraints on $z_1$.
+		
+		$\therefore$ there is only one linearly independent eigenvector for the repeated eigenvalue $\lambda=0$.
+		
+		\begin{equation*}
+			v = \begin{bmatrix}
+				1 \\
+				0 \\
+				0
+			\end{bmatrix}
+		\end{equation*}
+		
+		Let $\lambda = 5$:
+		
+		The eigenvectors of $T$ are in the null space of $A - {\lambda}I$.
+		
+		\begin{equation*}
+			A - {\lambda}I = \begin{bmatrix}
+				-5 &  2 & 0 \\
+				 0 & -5 & 0 \\
+				 0 &  0 & 0 \\
+			\end{bmatrix}
+		\end{equation*}
+		
+		Note that all vectors in the null space of $A - {\lambda}I$ require $z_1 = z_2 = 0$.
+		
+		However, there are no constraints on $z_1$
+		
+		$\therefore$ the eigenvector corresponding to $\lambda = 5$ is
+		
+		\begin{equation*}
+			v = \begin{bmatrix}
+				0 \\
+				0 \\
+				1 \\
+			\end{bmatrix}
+		\end{equation*}
+		
+	\end{enumerate}
+\end{document}
