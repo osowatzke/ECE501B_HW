@@ -144,7 +144,7 @@ grid on;
 % Label plot
 title('Error Between v and w after Repeated Applications of T');
 xlabel('Number of Applications of T')
-ylabel('Error')
+ylabel('|Error|')
 legendStr = cellfun(@(x) sprintf('Element %d',x),...
     num2cell(1:5), 'UniformOutput', false);
 legend(legendStr);
