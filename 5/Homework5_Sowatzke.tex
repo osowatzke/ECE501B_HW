@@ -87,5 +87,72 @@
 			\end{bmatrix}
 		\end{equation*}
 		
+		\item Suppose $n$ is a positive integer and $T \in \mathcal{L}(\mathbb{F}^n)$ is defined by
+		
+			\begin{equationCenter}
+				T(x_1,...,x_n) = (x_1 + \cdots + x_n,..., x_1 + \cdots + x_n);
+			\end{equationCenter}
+			
+			in other words, $T$ is the operator whose matrix (with respect to the standard basis) consists of all 1's. Find all eigenvalues and eigenvectors of $T$.
+			
+			$T(x_1,...,x_n) = \lambda(x_1,...,x_n)$
+			
+			$x_1 + \cdots x_n = {\lambda}x_1$
+			
+			$\qquad\quad\vdots$
+			
+			$x_1 + \cdots x_n = {\lambda}x_n$
+			
+			$\Rightarrow {\lambda}x_1 = \cdots = {\lambda}x_n$
+			
+			$\Rightarrow \lambda = 0$ or $x_1 = \cdots = x_n$.
+			
+			Consider $x_1 = \cdots = x_n$:
+			
+			\begin{equation*}
+				\Rightarrow v = \begin{bmatrix}
+					1 	   \\
+					1      \\
+					\vdots \\
+					1      
+				\end{bmatrix}
+			\end{equation*}
+			
+			\begin{equation*}
+				Tv = {\lambda}v = \begin{bmatrix}
+					n 	   \\
+					n      \\
+					\vdots \\
+					n      
+				\end{bmatrix}
+			\end{equation*}
+			
+			$\therefore \lambda = n$.
+			
+			\pagebreak
+			Consider $\lambda = 0$:
+			
+			Let $A = \mathcal{M}(T)$. The eigenvectors corresponding to $\lambda = 0$ are in the null space of $A - {\lambda}I$.
+			
+			Using EROs to reduce $A - {\lambda}I$, we get:
+			
+			\begin{equation*}
+				\begin{bmatrix}
+					1 & 1 & \cdots & 1\\
+					0 & 0 & \cdots & 0\\
+					\vdots & \vdots & \ddots & \vdots\\
+					0 & 0 & \cdots & 0\\    
+				\end{bmatrix}
+			\end{equation*}
+			
+			$\Rightarrow x_1 = -x_2 - \cdots - x_n$
+			
+			$x_2,...,x_n$ are free variables in this expression:
+			
+			$\therefore$ one set of linearly independent eigenvectors corresponding to $\lambda = 0$ are
+			
+			\begin{equation*}
+				v = \begin{bmatrix} 1 \\ -1 \\ 0 \\ \vdots \\ 0 \end{bmatrix},\ ..., \ v = \begin{bmatrix} 1 \\ 0 \\ \vdots \\ 0 \\ -1 \end{bmatrix}
+			\end{equation*}
 	\end{enumerate}
 \end{document}
