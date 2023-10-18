@@ -19,6 +19,7 @@
 \title{Homework 5}
 \author{Owen Sowatzke}
 \date{October 23, 2023}
+\setlength{\jot}{0pt}
 
 \begin{document}
 	\offinterlineskip
@@ -36,7 +37,7 @@
 		Find all eigenvalues and eigenvectors of $T$.
 		
 		\begin{equation*}
-			A = \mathcal{M}(T) = \begin{bmatrix}
+			\mathcal{M}(T) = \begin{bmatrix}
 				0 & 2 & 0 \\
 				0 & 0 & 0 \\
 				0 & 0 & 5
@@ -47,45 +48,41 @@
 		
 		Let $\lambda = 0$:
 		
-		The eigenvectors of $T$ are in the null space of $A - {\lambda}I$.
+		The corresponding eigenvectors are in the null space of $T - {\lambda}I$. With $\lambda = 0$, this is equivalent to all the vectors in the null space of $T$.
 		
-		Note that all vectors in the null space of $A - {\lambda}I$ require $z_2 = z_3 = 0$. However, there are no constraints on $z_1$.
+		Note that all vectors in the null space of $T$ have $z_2 = z_3 = 0$. However, there are no constraints on $z_1$.
 		
-		$\therefore$ there is only one linearly independent eigenvector for the repeated eigenvalue $\lambda=0$.
+		$\therefore$ the eigenvectors for $\lambda = 0$ are all non-zero vectors in the following set:
 		
-		\begin{equation*}
-			v = \begin{bmatrix}
-				1 \\
-				0 \\
-				0
-			\end{bmatrix}
-		\end{equation*}
+		$\{(z_1, 0, 0) : z_1 \in \mathbb{F}\}$
 		
 		Let $\lambda = 5$:
 		
-		The eigenvectors of $T$ are in the null space of $A - {\lambda}I$.
+		The corresponding eigenvectors are in the null space of $T - {\lambda}I$
 		
 		\begin{equation*}
-			A - {\lambda}I = \begin{bmatrix}
+			\mathcal{M}(T - {\lambda}I) = \begin{bmatrix}
 				-5 &  2 & 0 \\
 				 0 & -5 & 0 \\
 				 0 &  0 & 0 \\
 			\end{bmatrix}
 		\end{equation*}
 		
-		Note that all vectors in the null space of $A - {\lambda}I$ require $z_1 = z_2 = 0$.
-		
-		However, there are no constraints on $z_1$
-		
-		$\therefore$ the eigenvector corresponding to $\lambda = 5$ is
-		
 		\begin{equation*}
-			v = \begin{bmatrix}
-				0 \\
-				0 \\
-				1 \\
-			\end{bmatrix}
+			\left\{
+			\begin{aligned}
+				-5z_1 + 2z_2 &= 0 \\
+				-5z_2 &= 0
+			\end{aligned} \right.
 		\end{equation*}
+		
+		$\Rightarrow z_1 = z_2 = 0$
+		
+		Note that there are no constraints on $z_3$.
+		
+		$\therefore$ the eigenvectors for $\lambda = 0$ are all non-zero vectors in the following set:
+		
+		$\{(0, 0, z_3) : z_3 \in \mathbb{F}\}$
 		
 		\item Suppose $n$ is a positive integer and $T \in \mathcal{L}(\mathbb{F}^n)$ is defined by
 		
