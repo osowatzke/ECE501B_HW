@@ -94,44 +94,46 @@
 			
 			$T(x_1,...,x_n) = \lambda(x_1,...,x_n)$
 			
-			$x_1 + \cdots x_n = {\lambda}x_1$
-			
-			$\qquad\quad\vdots$
-			
-			$x_1 + \cdots x_n = {\lambda}x_n$
-			
+			\begin{equation*}
+			\left\{
+			\begin{aligned}
+				x_1 + \cdots &+ x_n &= {\lambda}x_1 \\
+			    &\vdots \\
+				x_1 + \cdots &+ x_n &= {\lambda}x_n
+			\end{aligned} \right.
+		\end{equation*}
+		
 			$\Rightarrow {\lambda}x_1 = \cdots = {\lambda}x_n$
 			
-			$\Rightarrow \lambda = 0$ or $x_1 = \cdots = x_n$.
+			$\Rightarrow x_1 = \cdots = x_n$ or $\lambda = 0$.
 			
-			Consider $x_1 = \cdots = x_n$:
+			$T(x_1,...,x_n) = (x_1 + \cdots + x_n, ..., x_1 + \cdots + x_n)$
 			
-			\begin{equation*}
-				\Rightarrow v = \begin{bmatrix}
-					1 	   \\
-					1      \\
-					\vdots \\
-					1      
-				\end{bmatrix}
-			\end{equation*}
+			$\Rightarrow T(x_1,...,x_n) = (x_1 + \cdots + x_1, ..., x_n + \cdots + x_n)$
 			
-			\begin{equation*}
-				Tv = {\lambda}v = \begin{bmatrix}
-					n 	   \\
-					n      \\
-					\vdots \\
-					n      
-				\end{bmatrix}
-			\end{equation*}
+			$\Rightarrow T(x_1,...,x_n) = (nx_1, ..., nx_n)$
 			
-			$\therefore \lambda = n$.
+			$\Rightarrow T(x_1,...,x_n) = n(x_1, ..., x_n)$
+			
+			$\therefore \lambda = n$ and the corresponding eigenvectors are all non-zero vectors in the following set:
+			
+			$\{(x_1,...,x_n) : x_1 = \cdots = x_n\}$ 
 			
 			\pagebreak
 			Consider $\lambda = 0$:
 			
-			Let $A = \mathcal{M}(T)$. The eigenvectors corresponding to $\lambda = 0$ are in the null space of $A - {\lambda}I$.
+			The corresponding eigenvectors are in the null space of $T - {\lambda}I$. For $\lambda = 0$, this is equivalent to the eigenvectors being in the null space of $T$.
 			
-			Using EROs to reduce $A - {\lambda}I$, we get:
+			\begin{equation*}
+				\mathcal{M}(T) = \begin{bmatrix}
+					1 & 1 & \cdots & 1\\
+					1 & 1 & \cdots & 1\\
+					\vdots & \vdots & \ddots & \vdots\\
+					1 & 1 & \cdots & 1\\    
+				\end{bmatrix}
+			\end{equation*}
+			
+			Using EROs to reduce $\mathcal{M}(T)$, we get:
 			
 			\begin{equation*}
 				\begin{bmatrix}
@@ -142,15 +144,11 @@
 				\end{bmatrix}
 			\end{equation*}
 			
-			$\Rightarrow x_1 = -x_2 - \cdots - x_n$
+			$\Rightarrow x_1 + \cdots + x_n = 0$
 			
-			$x_2,...,x_n$ are free variables in this expression:
-			
-			$\therefore$ one set of linearly independent eigenvectors corresponding to $\lambda = 0$ are
-			
-			\begin{equation*}
-				v = \begin{bmatrix} 1 \\ -1 \\ 0 \\ \vdots \\ 0 \end{bmatrix},\ ..., \ v = \begin{bmatrix} 1 \\ 0 \\ \vdots \\ 0 \\ -1 \end{bmatrix}
-			\end{equation*}
+			$\therefore$ the eigenvectors for $\lambda = 0$ are all non-zero vectors in the following set:
+		
+		$\{(x_1, ..., x_n) : x_1 + \cdots + x_n = 0\}$
 			
 			\item Find all eigenvalues and eigenvectors of the backward shift operator \newline $T \in \mathcal{L}(F^{\infty})$ defined by
 			
