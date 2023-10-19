@@ -166,8 +166,64 @@
 				 
 				 $\therefore \lambda \in \mathbb{F}$
 				 
-				 For each given eigenvector, all non-zero vectors in the following set are eigenvectors:
+				 For each eigenvalue $\lambda$, all non-zero vectors in the following set are eigenvectors:
 				 
 				 $\{(x_1,{\lambda}x_1,{\lambda}^2x_1, ...) : x_1 \in \mathbb{F}\}$
-	\end{enumerate}
+				 
+			\item Suppose $V$ is finite dimensional and $S,T \in \mathcal{L}(V)$. Prove that $ST$ and $TS$ have the same eigenvalues.
+			
+			\pagebreak
+			All eigenvalues ($\lambda$) of $ST$ satisfy the following expression, where $v$ is the corresponding eigenvector.
+			
+			$(ST)v = {\lambda}v$
+			
+			$T((ST)v) = T({\lambda}v)$
+			
+			$TS(Tv) = \lambda(Tv)$
+			
+			If $Tv \neq 0$, then $Tv$ is an eigenvector of $TS$ and $\lambda$ is the corresponding eigenvalue.
+			
+			Consider $Tv = 0$, then $(ST)v = S(Tv) = 0$. If $v$ is an eigenvector of $ST$ it must be nonzero. Thus, $(ST)v = {\lambda}v \Rightarrow \lambda = 0$.
+			
+			For $\lambda = 0$ to also be a eigenvalue of $TS$, $TS$ must not be injective because there exists a nonzero eigenvector $v$ such that $(TS)v = 0$.
+			
+			If we can show that $TS$ is not invertible, we can conclude that $TS$ is not injective and $\lambda = 0$ is an eigenvalue of $TS$.
+			
+			Given that $Tv = 0$ with $v \neq 0$, then $T$ is not injective. Since $T \in \mathcal{L}(V)$, $T$ is also not invertible. 
+			
+			Using a contrapositive, we can prove that if $T$ is not invertible, then $TS$ is not invertible.
+			
+			Statement A: $T$ is not invertible.
+			
+			Statement B: $TS$ is not invertible.
+			
+			Need to show that ${\sim}B \Rightarrow {\sim}A$
+			
+			Assume ${\sim}B$ ($TS$ is not invertible).
+			
+			Then, $\exists$ $R \in \mathcal{L}(V)$ such that $R(TS) = I$ and $(TS)R = I$.
+			
+			Consider $v \in V$.
+			
+			$(TS)Rv = Iv$
+			
+			$T(SRv) = v$
+			
+			$\therefore v \in \mathcal{R}(T)$ and $T$ is surjective.
+			
+			For $L \in \mathcal{L}(V)$, this implies that $T$ is invertible.
+			
+			Since we have proved ${\sim}B \Rightarrow {\sim}A$, we know that $A \Rightarrow B$ is also true.
+			
+			In other words, when $T$ is not invertible, $TS$ is not invertible.
+			
+			$\Rightarrow TS$ is not injective (i.e. $\exists\ v \neq 0$ such that $(TS)v = 0$).
+			
+			$\therefore$ when $\lambda = 0$ is an eigenvalue of $ST$, $\lambda = 0$ is also an eigenvalue of $TS$.
+			
+			Regardless of whether $Tv = 0$, all eigenvalues of $ST$ are also eigenvalues of $TS$. 
+			
+			The roles of $ST$ and $TS$ can be reversed to show that all eigenvalues of $TS$ are also eigenvalues of $ST$. $\therefore$ we can conclude that $ST$ and $TS$ have the same eigenvalues.
+			
+		\end{enumerate}	
 \end{document}
