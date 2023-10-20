@@ -225,5 +225,31 @@
 			
 			The roles of $ST$ and $TS$ can be reversed to show that all eigenvalues of $TS$ are also eigenvalues of $ST$. $\therefore$ we can conclude that $ST$ and $TS$ have the same eigenvalues.
 			
+			\item Suppose $V$ is finite-dimensional, $T \in \mathcal{L}(V)$ has $\text{dim}\ V$ distinict eigenvalues, and $S \in \mathcal{L}(V)$ has the same eigenvectors as $T$ (not necessarily with the same eigenvalues). Prove that $ST = TS$.
+			
+			Because $T$ has $\text{dim}\ V$ distinct eigenvalues, it has $\text{dim}\ V$ linearly independent eigenvectors. In other words, its eigenvectors form a basis for $V$. If we let the eigenvectors of $T$ be $v_1,...,v_n$, then any $v \in V$ can be written as follows:
+			
+			$v = a_1v_1 + \cdots + a_nv_n$
+			
+			Let $\lambda_{S_1},...,\lambda_{S_n}$ be the eigenvalues of $S$, and let $\lambda_{T_1},...,\lambda_{T_n}$ be the eigenvalues of $T$. Then, 
+			
+			$Tv = T(av_1 + \cdots + av_n) = a_1Tv_1 + \cdots + a_1Tv_1 = a_1\lambda_{T_1}v_1 + \cdots + a_n\lambda_{T_n}v_n$
+			
+			$Sv = S(av_1 + \cdots + av_n) = a_1Sv_1 + \cdots + a_1Sv_1 = a_1\lambda_{S_1}v_1 + \cdots + a_n\lambda_{S_n}v_n$
+			
+			Now solve for $(ST)v$ and $(TS)v$:
+			
+			$(ST)v = S(Tv) = S(a_1\lambda_{T_1}v_1 + \cdots + a_n\lambda_{T_n}v_n)$
+			
+			$ = a_1\lambda_{T_1}Sv_1 + \cdots + a_n\lambda_{T_n}Sv_n = a_1\lambda_{T_1}\lambda_{S_1}v_1 + \cdots + a_n\lambda_{T_n}\lambda_{S_n}v_n$
+			
+			\pagebreak
+			$(TS)v = T(Sv) = T(a_1\lambda_{S_1}v_1 + \cdots + a_n\lambda_{S_n}v_n)$
+			
+			$ = a_1\lambda_{S_1}Tv_1 + \cdots + a_n\lambda_{S_n}Tv_n = a_1\lambda_{S_1}\lambda_{T_1}v_1 + \cdots + a_n\lambda_{S_n}\lambda_{T_n}v_n$
+			
+			For any $v \in V$, $(ST)v = (TS)v$.
+			
+			$\therefore$ we can conclude that $ST = TS$.			
 		\end{enumerate}	
 \end{document}
