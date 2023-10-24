@@ -4,6 +4,10 @@
 \usepackage{amssymb}
 \usepackage{enumitem}
 \usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{changepage}
+\usepackage{environ,capt-of}
 
 \newcommand{\zerodisplayskip}{
 	\setlength{\abovedisplayskip}{0pt}%
@@ -15,6 +19,20 @@
 \makeatletter
 	\newenvironment{equationCenter}{\@fleqnfalse\begin{equation*}}{\end{equation*}}
 \makeatother
+
+\let\oldfigure\figure% Store original figure float environment
+\let\endoldfigure\endfigure
+\RenewEnviron{figure}[1][H]{% Update figure environment
+  %\par\vspace{\intextsep}% Assume in-text placement, so insert appropriate vertical spacing
+  \noindent
+  % \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
+  \patchcmd{\BODY}{\caption}{\captionof{figure}}{}{}% Replace \caption with \captionof{figure} inside \BODY
+  % Set "figure"
+  \begin{minipage}{\linewidth}
+    \BODY
+  \end{minipage}
+  %\par\vspace{\intextsep}% Assume in-text placement, so insert appropriate vertical spacing
+}
 
 \title{Homework 6}
 \author{Owen Sowatzke}
@@ -71,5 +89,10 @@
 			
 			\textit{Hint:} Draw the triangle formed by $u$, $v$, and $u-v$; then use the law of cosines.
 			
+			\begin{figure}[H]				
+			\centerline{\fbox{\includegraphics[width=0.5\textwidth]{triangle_prob2.png}}}
+			\caption{Triangle Formed by $u$, $v$, and $u - v$}
+			\label{triangle_prob2}
+			\end{figure}
 	\end{enumerate}
 \end{document}
