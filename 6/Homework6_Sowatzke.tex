@@ -11,7 +11,11 @@
 	\setlength{\abovedisplayshortskip}{0pt}%
 	\setlength{\belowdisplayshortskip}{0pt}%
 	\setlength{\mathindent}{0pt}}
-	
+
+\makeatletter
+	\newenvironment{equationCenter}{\@fleqnfalse\begin{equation*}}{\end{equation*}}
+\makeatother
+
 \title{Homework 6}
 \author{Owen Sowatzke}
 \date{October 30, 2023}
@@ -57,6 +61,15 @@
 			
 			Because these results are not equivalent, the provided function does not satisfy first slot additivity. $\therefore$ it is not an inner product on $\mathbb{R}^2$.
 			
-		\item 
+		\item Suppose, $u$, $v$ are nonzero vectors in $\mathbb{R}^2$. Prove that
+		
+			\begin{equationCenter}
+				\langle u,v \rangle = \Vert u \Vert \Vert v \Vert \cos \theta
+			\end{equationCenter}
+			
+			where $\theta$ is the angle between $u$ and $v$ (thinking of $u$ and $v$ as arrows with initial point at the origin).
+			
+			\textit{Hint:} Draw the triangle formed by $u$, $v$, and $u-v$; then use the law of cosines.
+			
 	\end{enumerate}
 \end{document}
