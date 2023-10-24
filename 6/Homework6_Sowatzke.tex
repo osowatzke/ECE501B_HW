@@ -94,5 +94,28 @@
 			\caption{Triangle Formed by $u$, $v$, and $u - v$}
 			\label{triangle_prob2}
 			\end{figure}
+			
+			By the law of cosines:
+			
+			${\Vert u - v \Vert}^2 = {\Vert u \Vert}^2 + {\Vert v \Vert}^2  - 2{\Vert u \Vert}{\Vert v \Vert}\cos\theta$
+			
+			Note that ${\Vert u - v \Vert}^2$ can also be expressed as an inner product.
+			
+			${\Vert u - v \Vert}^2 = \langle u - v, u - v \rangle = \langle u, u - v \rangle + \langle -v, u-v \rangle$
+			
+			$ = \langle u, u - v \rangle - \langle v, u-v \rangle = (\langle u, u \rangle + \langle u, -v \rangle) - (\langle v, u \rangle + \langle v, -v\rangle)$
+			
+			$ = (\langle u, u \rangle - \langle u, v \rangle) - (\langle v, u \rangle - \langle v, v\rangle) = \langle u, u \rangle - \langle u, v \rangle - \langle v, u \rangle + \langle v, v\rangle$
+			
+			$ = \langle u, u \rangle - \langle u, v \rangle - {\langle u, v \rangle}^* + \langle v, v\rangle = \langle u, u \rangle - \langle u, v \rangle - {\langle u, v \rangle} + \langle v, v\rangle$
+			
+			$ = {\Vert u \Vert}^2 - 2\langle u, v \rangle + {\Vert v \Vert}^2$
+			
+			Substituting the expression for ${\Vert u - v \Vert}^2$ into the first expression, we get
+			
+			${\Vert u \Vert}^2 - 2\langle u, v \rangle + {\Vert v \Vert}^2 = {\Vert u \Vert}^2 + {\Vert v \Vert}^2  - 2{\Vert u \Vert}{\Vert v \Vert}\cos\theta$
+			
+			$\Rightarrow - 2\langle u, v \rangle = - 2{\Vert u \Vert}{\Vert v \Vert}\cos\theta \Rightarrow \langle u, v \rangle = {\Vert u \Vert}{\Vert v \Vert}\cos\theta$
+			
 	\end{enumerate}
 \end{document}
