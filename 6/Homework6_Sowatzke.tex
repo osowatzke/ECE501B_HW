@@ -23,8 +23,40 @@
 	\maketitle
 	
 	\begin{enumerate}[nolistsep]
-		\item Show that the function that takes $\left(\left(x_1, x_2\right),\left(y_1,y_2\right)\right) \in \mathbb{R}^2 \times \mathbb{R}^2$ to \newline $|x_1y_1| + |x_2y_2|$ is not an inner product on $\mathbb{R}^2$.
+		\item Show that the function that takes $((x_1, x_2),(y_1,y_2)) \in \mathbb{R}^2 \times \mathbb{R}^2$ to \newline $|x_1y_1| + |x_2y_2|$ is not an inner product on $\mathbb{R}^2$.
 		
+			To be an inner product the function must satisfy the following properties: positivity, definiteness, additivity in first slot, homogeneity in first slot, and conjuage symmetry.
 			
+			Check whether the function satisfies first slot additivity.
+			
+			Consider the following function input:
+			
+			$((x_1, x_2) + (\bar{x}_1, \bar{x}_2),(y_1,y_2)) = ((x_1 + \bar{x}_1, x_2 + \bar{x}_2),(y_1,y_2))$
+			
+			The output of the function given this input will be
+			
+			$|(x_1 + \bar{x}_1)y_1| + |(x_2 + \bar{x}_2)y_2| = |x_1y_1 + \bar{x}_1y_1| + |x_2y_2 + \bar{x}_2y_2|$
+			
+			To satisfy first slot additivity, we need the function output to be
+			
+			$(|x_1y_1| + |x_2y_2|) + (|\bar{x}_1y_1| + |\bar{x}_2y_2|)$
+			
+			Note that this is not necessarily equal to the function output.
+			
+			Consider the following counter example:
+			
+			Let $(x_1,x_2) = (1,1)$, $(\bar{x}_1,\bar{x}_1) = (-1,-1)$, and $(y_1,y_2) = (1,1)$.
+			
+			Then, the function output will be:
+			
+			$|(1 - 1)1| + |(1 - 1)1| = |(0)1| + |(0)1| = 0 + 0 = 0$
+			
+			To satisfy first slot additivity, the function output would need to be:
+			
+			$(|1(1)| + |1(1)|) + (|(-1)1| + |(-1)1|) = (1 + 1) + (1 + 1) = 4$
+			
+			Because these results are not equivalent, the provided function does not satisfy first slot additivity. $\therefore$ it is not an inner product on $\mathbb{R}^2$.
+			
+		\item 
 	\end{enumerate}
 \end{document}
