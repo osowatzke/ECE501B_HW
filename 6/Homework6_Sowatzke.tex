@@ -149,5 +149,35 @@
 				\begin{equation*}
 					 = \sqrt{\frac{1}{2}(52 - 18)} = \sqrt{\frac{1}{2}(34)} = \sqrt{17}
 				\end{equation*}
+				
+			\item Suppose $V$ is a real inner product space. Prove that
+			
+				\begin{equationCenter}
+					\langle u, v\rangle = \frac{{\Vert u + v \Vert}^2 - {\Vert u - v \Vert}^2}{4}
+				\end{equationCenter}
+				
+				for all $u, v \in V$.
+				
+				${\Vert u + v \Vert}^2 - {\Vert u - v \Vert}^2 = \langle u + v, u + v \rangle - \langle u - v, u - v \rangle$
+				
+				$ = \langle u, u + v \rangle + \langle v, u + v \rangle - (\langle u, u - v\rangle + \langle -v, u - v \rangle)$
+				
+				$ = \langle u, u + v \rangle + \langle v, u + v \rangle - (\langle u, u - v\rangle - \langle v, u - v \rangle)$
+					
+				$ = \langle u, u \rangle + \langle u, v \rangle + \langle v, u \rangle + \langle v, v \rangle - [\langle u, u\rangle + \langle u, -v\rangle - (\langle v, u \rangle + \langle v, -v \rangle)]$
+				
+				$ = \langle u, u \rangle + \langle u, v \rangle + \langle v, u \rangle + \langle v, v \rangle - [\langle u, u\rangle - \langle u, v\rangle - (\langle v, u \rangle - \langle v, v \rangle)]$
+				
+				$ = \langle u, u \rangle + \langle u, v \rangle + \langle v, u \rangle + \langle v, v \rangle - \langle u, u\rangle + \langle u, v\rangle + \langle v, u \rangle - \langle v, v \rangle$
+				
+				$ = 2\langle u, v \rangle + 2 \langle v, u \rangle = 2(\langle u, v \rangle + \langle v, u \rangle) = 2(\langle u, v \rangle + {\langle u, v \rangle}^*)$
+				
+				$ = 2(\langle u, v \rangle + \langle u, v \rangle) = 2(2\langle u, v \rangle) = 4\langle u, v \rangle$
+				
+				Dividing both sides of the equation by 4, we can derive the following result:
+				
+				\begin{equation*}
+					\langle u, v\rangle = \frac{{\Vert u + v \Vert}^2 - {\Vert u - v \Vert}^2}{4}
+				\end{equation*}
 	\end{enumerate}
 \end{document}
