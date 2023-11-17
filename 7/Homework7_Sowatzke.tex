@@ -1,0 +1,54 @@
+\documentclass[fleqn]{article}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{amsmath, nccmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\newcommand{\zerodisplayskip}{
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}%
+	\setlength{\mathindent}{0pt}}
+	
+\newcommand{\norm}[1]{\left \lVert #1 \right \rVert}
+
+\title{Homework 7}
+\author{Owen Sowatzke}
+\date{November 29, 2023}
+
+\begin{document}
+	\offinterlineskip
+	\setlength{\lineskip}{12pt}
+	\zerodisplayskip
+	\maketitle
+	
+	\begin{enumerate}[nolistsep]
+		\item On $\mathcal{P}_2(\mathbf{R})$, consider the inner product given by
+		
+		\begin{equation*}
+			\langle p, q \rangle = \int_{0}^{1}{p(x)q(x)dx}
+		\end{equation*}
+		
+		Apply the Gram-Schmidt Procedure to the basis $1, x, x^2$ to produce an orthonormal basis of $\mathcal{P}_2(\mathbf{R})$.
+		
+		Let $p_1(x) = 1$, $p_2(x) = x$, and $p_3(x) = x^2$.
+		
+		\begin{equation*}
+			v_1(x) = \frac{p_1(x)}{\norm{p_1(x)}}
+		\end{equation*}  
+		
+		\begin{equation*}
+			\norm{p_1(x)}^2 = \langle p_1(x), p_1(x) \rangle = \int_{0}^{1}{dx} = \left.x\right\vert_{0}^{1} = 1
+		\end{equation*}
+		
+		\begin{equation*}
+			\Rightarrow \norm{p_1(x)} = 1			
+		\end{equation*}
+		
+		\begin{equation*}
+			\mathbf{\therefore v_1(x) = 1}
+		\end{equation*}
+		
+	\end{enumerate}
+\end{document}
