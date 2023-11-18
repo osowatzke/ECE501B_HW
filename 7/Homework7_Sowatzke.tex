@@ -24,13 +24,13 @@
 	\maketitle
 	
 	\begin{enumerate}[nolistsep]
-		\item On $\mathcal{P}_2(\mathbf{R})$, consider the inner product given by
+		\item On $\mathcal{P}_2(\mathbb{R})$, consider the inner product given by
 		
 		\begin{equation*}
 			\langle p, q \rangle = \int_{0}^{1}{p(x)q(x)dx}
 		\end{equation*}
 		
-		Apply the Gram-Schmidt Procedure to the basis $1, x, x^2$ to produce an orthonormal basis of $\mathcal{P}_2(\mathbf{R})$.
+		Apply the Gram-Schmidt Procedure to the basis $1, x, x^2$ to produce an orthonormal basis of $\mathcal{P}_2(\mathbb{R})$.
 		
 		Let $p_1(x) = 1$, $p_2(x) = x$, and $p_3(x) = x^2$.
 		
@@ -138,5 +138,107 @@
 		\end{equation*}
 		
 		for every $p \in \mathcal{P}_2(\mathbb{R})$.
+		
+		Define:
+		
+		\begin{equation*}
+			\varphi(v) = \int_{0}^{1}{p(x)(\cos{{\pi}x})dx}
+		\end{equation*}
+		
+		Using the basis vectors on $\mathcal{P}_2(\mathbb{R})$ found in problem 1, we can rewrite $\varphi(v)$ as follows:
+		
+		$\varphi(v) = \varphi(\langle v, e_1 \rangle e_1 + \langle v, e_2 \rangle e_2 + \langle v, e_3 \rangle e_3)$
+		
+		$ = \langle v, e_1 \rangle \varphi(e_1) + \langle v, e_2 \rangle \varphi(e_2) + \langle v, e_3 \rangle \varphi(e_3)$
+		
+		$ = \langle v, e_1(\varphi(e_1))^{*} + e_2(\varphi(e_2))^{*} + e_3(\varphi(e_3))^{*} \rangle$
+		
+		$\therefore$ the polynomial $q(x)$ is defined as follows:
+		
+		$q(x) = e_1(\varphi(e_1))^{*} + e_2(\varphi(e_2))^{*} + e_3(\varphi(e_3))^{*}$
+		
+		where:
+		
+		\begin{equation*}
+			\varphi(e_1) = \int_{0}^{1}{(\cos{{\pi}x})dx} = \left.\frac{1}{\pi}sin({\pi}x)\right\vert_{0}^{1} = 0
+		\end{equation*}
+		
+		\begin{equation*}
+			\varphi(e_2) = \int_{0}^{1}{\sqrt{3}(2x - 1)(\cos{{\pi}x}dx})
+		\end{equation*}
+		
+		\begin{equation*}
+			 = 2\sqrt{3}\int_{0}^{1}{x(\cos{{\pi}x})dx} - \sqrt{3}\int_{0}^{1}{(\cos{{\pi}x})dx}
+		\end{equation*}
+		
+		Let:
+		
+		\begin{equation*}
+			u = x \Rightarrow du = dx
+		\end{equation*}
+		
+		\begin{equation*}
+			dv = \cos{{\pi}x} \Rightarrow v = \frac{1}{\pi}sin({\pi}x)
+		\end{equation*}
+		
+		\begin{equation*}
+			\int_{0}^{1}{x(\cos{{\pi}x})dx} = \left.\frac{x}{\pi}sin({\pi}x)\right\vert_{0}^{1} - \int_{0}^{1}{\frac{1}{\pi}sin({\pi}x)dx}
+		\end{equation*}
+		
+		\begin{equation*}
+			= \left.\left(\frac{x}{\pi}sin({\pi}x) + \frac{1}{{\pi}^2}cos({\pi}x)\right)\right\vert_{0}^{1} = -\frac{1}{{\pi}^2} - \frac{1}{{\pi}^2} = -\frac{2}{{\pi}^2}
+		\end{equation*}
+		
+		\begin{equation*}
+			\int_{0}^{1}{(\cos{{\pi}x})dx} = 0
+		\end{equation*}
+		
+		\begin{equation*}
+			\therefore \varphi(e_2) = -\frac{4\sqrt{3}}{{\pi}^2}
+		\end{equation*}
+		
+		\begin{equation*}
+			\varphi(e_3) = \int_{0}^{1}{\sqrt{5}(6x^2 - 6x + 1)(\cos{{\pi}x})dx}
+		\end{equation*}
+		
+		\begin{equation*}
+			= 6\sqrt{5}\int_{0}^{1}{x^2(\cos{{\pi}x})dx} - 6\sqrt{5}\int_{0}^{1}{x(\cos{{\pi}x})dx} + \sqrt{5}\int_{0}^{1}{(\cos{{\pi}x})dx}
+		\end{equation*}
+		
+		Let:
+		
+		\begin{equation*}
+			u = x^2 \Rightarrow du = 2xdx
+		\end{equation*}
+		
+		\begin{equation*}
+			dv = \cos{{\pi}x} \Rightarrow v = \frac{1}{\pi}\sin({\pi}x)
+		\end{equation*}
+		
+		\begin{equation*}
+			\int_{0}^{1}{x^2(\cos{{\pi}x})dx} = \left.\frac{x^2}{\pi}sin({\pi}x)\right\vert_{0}^{1} - \frac{2}{\pi}\int_{0}^{1}{x\sin({\pi}x)dx}
+		\end{equation*}
+		
+		Let:
+		
+		\begin{equation*}
+			u = x \Rightarrow du = dx
+		\end{equation*}
+		
+		\begin{equation*}
+			dv = \sin{({\pi}x)} \Rightarrow v = -\frac{1}{\pi}\cos{({\pi}x)}
+		\end{equation*}
+		
+		\begin{equation*}
+			\int_{0}^{1}{x\sin({\pi}x)dx} = -\left.\frac{x}{\pi}\cos{({\pi}x)}\right\vert_{0}^{1} + \int_{0}^{1}{\frac{1}{\pi}\cos{({\pi}x)}dx}
+		\end{equation*}
+		
+		\begin{equation*}
+			= \left.\left(-\frac{x}{\pi}\cos{({\pi}x)} + \frac{1}{{\pi}^2}\sin{({\pi}x)}dx}\right)\right\vert_{0}^{1}
+		\end{equation*}
+		
+		\begin{equation*}
+			\Rightarrow \int_{0}^{1}{x^2(\cos{{\pi}x})dx} = \left.\frac{x^2}{\pi}sin({\pi}x)\right\vert_{0}^{1} - \frac{2}{\pi}\int_{0}^{1}{x\sin({\pi}x)dx}
+		\end{equation*}
 	\end{enumerate}
 \end{document}
