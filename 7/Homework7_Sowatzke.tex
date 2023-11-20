@@ -13,6 +13,10 @@
 	
 \newcommand{\norm}[1]{\left \lVert #1 \right \rVert}
 
+\makeatletter
+	\newenvironment{equationCenter}{\@fleqnfalse\begin{equation*}}{\end{equation*}}
+\makeatother
+
 \title{Homework 7}
 \author{Owen Sowatzke}
 \date{November 29, 2023}
@@ -345,5 +349,40 @@
 		$\Leftrightarrow \text{null}\ T^{\dag} = \{0\}$
 		
 		$\Leftrightarrow T^{\dag}$ is injective
+		
+		\item \textbf{Markov Chain:} Consider a system with $N$ possible states that evolves in discrete time steps. If the transition from one state, $a$, to another state, $b$, is a purely random event that occurs with probability $P_{ab}$, then the system is known as a \textit{Markov Chain}, or \textit{Finite State Machine}. Note that the probabilistic definition means that the evolution of the system is independent of the prior states of the system (not counting the current state). For this reason, Markov Chains are said to be \textit{memoryless}.
+		
+		Consider the case with $N=3$. The transition probabilities can be collected in matrix form as:
+		
+		\begin{equationCenter}
+			T = \begin{bmatrix}
+				P_{11} & P_{21} & P_{31} \\
+				P_{12} & P_{22} & P_{32} \\
+				P_{13} & P_{23} & P_{33}
+			\end{bmatrix}
+		\end{equationCenter}
+		
+		Here, the notation $P_{12}$ means "the probability that a system in state one transitions to state
+two." Note that the numbers in any column of the matrix must sum to 1, since these numbers correspond to the sum of all possible transition probabilities from a given state.
+
+		Now imagine that we don't have exact knowledge of the starting state of the system, but only know the relative probabilities of the different states. These probabilities can be collected in a vector
+		
+		\begin{equationCenter}
+			v_0 = \begin{bmatrix}
+				P_1 \\ P_2 \\ P_3
+			\end{bmatrix}
+		\end{equationCenter}
+		
+		Note that the elements in $v_0$ must also sum to 1.
+		
+		\begin{enumerate}
+			\item Show that the update procedure for the probabilistic state description can be written as:
+			
+			\begin{equationCenter}
+				v_n = Tv_{n-1}
+			\end{equationCenter}
+			
+			Note that, given our definitions of matrix multiplication, this means that time evolution by one time step is a linear operator, which has the matrix representation $T$ in the standard basis.
+		\end{enumerate}
 	\end{enumerate}
 \end{document}
