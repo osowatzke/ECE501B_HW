@@ -383,6 +383,24 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			\end{equationCenter}
 			
 			Note that, given our definitions of matrix multiplication, this means that time evolution by one time step is a linear operator, which has the matrix representation $T$ in the standard basis.
+			
+			\item Show that if $T$ and $v_0$ start properly normalized, that the state vector at any time step is also properly normalized.
+			
+			\item Consider the specific case where
+			
+			\begin{equationCenter}
+				T = \begin{bmatrix}
+					0.6 & 0.3 & 0.1\\
+					0.2 & 0.2 & 0.5\\
+					0.2 & 0.5 & 0.4
+				\end{bmatrix}
+			\end{equationCenter}
+			
+			Compute the operator for time evolution by \textit{three} timesteps.
+			
+			\item Using the same specific $T$, compute $v_{\infty}$. Be clever and use MATLAB to apply what you learned in a previous homework assignment.
+			
+			\item Explain, in terms of how application of $T$ modifies state probabilities, why this is a such a special set of probabilities. Make sure you discuss the connection to an invariant subspace.
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
