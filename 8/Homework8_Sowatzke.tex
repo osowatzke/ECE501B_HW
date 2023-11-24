@@ -40,6 +40,55 @@
 		\begin{enumerate}[nolistsep]
 			\item Show that T is not self-adjoint.
 			
+			Let $p(x) = a_0 + a_1x + a_2x^2$ and $q(x) = b_0 + b_1x + b_2x^2$
+			
+			For $T$ to be self-adjoint, we need $\langle Tp, q \rangle = \langle p, Tq \rangle$
+			
+			\begin{equation*}
+				\langle Tp, q \rangle = \int_{0}^{1}{a_1x(b_0 + b_1x + b_2x^2)dx}
+			\end{equation*}
+			
+			\begin{equation*}
+				= a_1\int_{0}^{1}{(b_0x + b_1x^2 + b_2x^3)dx}
+			\end{equation*}
+			
+			\begin{equation*}
+				= a_1\left.\left(\frac{b_0x^2}{2} + \frac{b_1x^3}{3} + \frac{b_2x^4}{4}\right)\right\vert_{0}^{1}
+			\end{equation*}
+			
+			\begin{equation*}
+				= a_1\left(\frac{b_0}{2} + \frac{b_1}{3} + \frac{b_2}{4}\right)
+			\end{equation*}
+			
+			\begin{equation*}
+				\langle p, Tq \rangle = \int_{0}^{1}{(a_0 + a_1x + a_2x^2)b_1xdx}
+			\end{equation*}
+			
+			\begin{equation*}
+				= b_1\int_{0}^{1}{(a_0x + a_1x^2 + a_2x^3)dx}
+			\end{equation*}
+			
+			\begin{equation*}
+				= b_1\left.\left(\frac{a_0x^2}{2} + \frac{a_1x^3}{3} + \frac{a_2x^4}{4}\right)\right\vert_{0}^{1}
+			\end{equation*}
+			
+			\begin{equation*}
+				= b_1\left(\frac{a_0}{2} + \frac{a_1}{3} + \frac{a_2}{4}\right)
+			\end{equation*}
+			
+			Consider $p(x) = 1$ and $q(x) = x$
+			
+			\begin{equation*}
+				\langle Tp, q \rangle = 0
+			\end{equation*}
+			
+			\begin{equation*}
+				\langle p, Tq \rangle = \frac{1}{2}
+			\end{equation*}
+			
+			$\therefore \langle Tp, q \rangle \neq \langle p, Tq \rangle$
+			
+			$\Rightarrow T$ is not self-adjoint.
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
