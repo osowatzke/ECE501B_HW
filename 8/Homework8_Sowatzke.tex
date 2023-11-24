@@ -1,0 +1,46 @@
+\documentclass[fleqn]{article}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{amsmath, nccmath, bm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\newcommand{\zerodisplayskip}{
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}%
+	\setlength{\mathindent}{0pt}}
+	
+\newcommand{\norm}[1]{\left \lVert #1 \right \rVert}
+
+\makeatletter
+	\newenvironment{equationCenter}{\@fleqnfalse\begin{equation*}}{\end{equation*}}
+\makeatother
+
+\title{Homework 8}
+\author{Owen Sowatzke}
+\date{December 6, 2023}
+
+\begin{document}
+
+	\offinterlineskip
+	\setlength{\lineskip}{12pt}
+	\zerodisplayskip
+	\maketitle
+	
+	\begin{enumerate}[nolistsep]
+		\item Make $\mathcal{P}_2(\mathbb{R})$ into an inner product space by defining
+		
+		\begin{equationCenter}
+			\langle p, q\rangle = \int_{0}^{1}{p(x)q(x)dx}
+		\end{equationCenter}
+		
+		Define $T \in \mathcal{L}(\mathcal{P}_2(\mathbb{R}))$ by $T(a_0 + a_1x + a_2x^2) = a_1x$
+		
+		\begin{enumerate}[nolistsep]
+			\item Show that T is not self-adjoint.
+			
+		\end{enumerate}
+	\end{enumerate}
+\end{document}
+
