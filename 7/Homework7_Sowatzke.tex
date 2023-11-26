@@ -17,6 +17,8 @@
 	\newenvironment{equationCenter}{\@fleqnfalse\begin{equation*}}{\end{equation*}}
 \makeatother
 
+\setcounter{MaxMatrixCols}{20}
+
 \title{Homework 7}
 \author{Owen Sowatzke}
 \date{November 29, 2023}
@@ -569,6 +571,63 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			\textbf{HINT 2:} Think of a player’s location as their “state.” How are different states connected? Think back to earlier homework problems for inspiration.
 			
 			We can view each player's position as a Markov chain, where the state vector determines the probability of a player being on a given tile during their turn. The best properties to own are the properties that players are most likely to land on. Because the players will circle the board many times, we are interested in the state vector, $v_{\infty}$. We can solve for the probabilities in this state vector by doing an eigenvalue decomposition of the transition matrix. The eigenvector corresponding to the largest eigenvalue should give us, $v_\infty$. To determine the best properties to buy, we simply need to sort the elements of this state vector from largest to smallest (ignoring non-property tiles).
+			
+			Considering the effects from part (b) alone, the transition matrix $T$ will be given by:
+			
+			\begin{equation*}
+				T = \begin{bmatrix}
+					0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0\\[3pt]
+					0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0\\[3pt]
+					0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0\\[3pt]
+					0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0\\[3pt]
+					0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0\\[3pt]
+					0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0
+				\end{bmatrix}
+			\end{equation*}
+			
+			Now modify the transition matrix to account for part (g).
+			
+			\begin{equation*}
+				T = \begin{bmatrix}
+					0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0\\[3pt]
+					0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0\\[3pt]
+					0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0\\[3pt]
+					0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\[3pt]
+					0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0\\[3pt]
+					0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0
+				\end{bmatrix}
+			\end{equation*}
+			
+			Now consider the effects of part (h). 5\% turns that would end on square 6 or square 12, end up on square 1 instead. Therefore, each entry in row 6 and row 12 of the transition matrix need to be scaled by $\frac{19}{20}$. The corresponding entries in the row 1 of the transition matrix then need to be incremented by row 6 and row 12 scaled by $\frac{1}{20}$. The resulting transition matrix $T$ is shown below:
+			
+			\begin{equation*}
+				T = \begin{bmatrix}
+					\frac{1}{120} & \frac{1}{120} & \frac{1}{120} & \frac{1}{120} & \frac{1}{120} & \frac{1}{120} & \frac{21}{120} & \frac{21}{120} & \frac{21}{120} & \frac{21}{120} & \frac{21}{120} & \frac{21}{120}\\[3pt]
+					\frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6}\\[3pt]
+					\frac{19}{120} & \frac{19}{120} & \frac{19}{120} & \frac{19}{120} & \frac{19}{120} & 0 & 0 & 0 & 0 & 0 & 0 & \frac{19}{120}\\[3pt]
+					\frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0 & 0\\[3pt]
+					0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0 & 0\\[3pt]
+					0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0 & 0 & 0\\[3pt]
+					0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\[3pt]
+					0 & 0 & 0 & 0 & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & \frac{1}{6} & 0 & 0\\[3pt]
+					0 & 0 & 0 & 0 & 0 & \frac{19}{120} & \frac{19}{120} & \frac{19}{120} & \frac{19}{120} & \frac{19}{120} & \frac{19}{120} & 0
+				\end{bmatrix}
+			\end{equation*}
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
