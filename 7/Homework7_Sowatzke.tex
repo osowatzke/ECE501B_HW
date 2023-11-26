@@ -538,5 +538,35 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			
 			The solution of the previous section was an eigenvector, which does not change direction upon application of $T$. In other words, the solution is an element of an invariant subspace. Because the result will always be normalized, the solution also remains at a fixed value.
 		\end{enumerate}
+		
+		\item \textbf{Game Strategy:} Consider a multiplayer board game that takes place on the following board and with the following rules:
+		
+		The board contains six squares that are “property” (the shaded squares) and six squares that are “not property” (the un-shaded squares).
+		
+		\begin{enumerate}
+			\item The game starts with the players on square 1. Each player starts with a fixed number of points (money). The specific number of points (money) does not matter.
+			
+			\item When it is a player’s turn, they roll a single, six-sided die and move forward that many squares from their current position.
+
+			\item If a player ends their turn on an unowned property square, they may choose to purchase that property, provided they have enough points (money) to do so. All property squares have the same cost (the specific cost does not matter).
+
+			\item If a player ends their turn on a property square that is already owned, that player must pay a penalty to the owner of the property (the specific value of the penalty does not matter). If a player does not have enough points (money) to pay the penalty, they are out of the game.
+			
+			\item When a player reaches (or passes) square one, they receive bonus points (the specific value of the bonus does not matter).
+
+			\item Play continues until all the players except one have been eliminated. The remaining player is the winner of the game.
+
+			\item No turn can end on square 10. If a player’s roll would have them finish their turn on square 10, then they move to square 4 and end their turn at square 4.
+
+			\item If a player’s roll would have them finish their turn on squares 6 or 12, then they draw a card from a small deck of cards. The card indicates a “special” event that happens to that player. The majority of the cards only affect the player’s point (money) total and the player ends their turn on that square. However, there is a 5\% chance of drawing a card that indicates that the player should move to square 1. In this case, the player moves to square 1, collects the relevant bonus, and ends their turn at square 1.
+
+			(Some of you may recognize the above game as a very simplified version of the game \textit{Monopoly.})
+
+			Obviously, you must own properties to win the game. But which properties should one own? The different properties will have different impacts on the probability of your eventual victory. Use the tools you have learned in this course to develop a simple strategy for this game. Specifically, rank the properties in the order of how beneficial they would be for you to own in your quest to win the game. (Rank the properties from the most beneficial property to the least beneficial.) Be sure to explain the methodology by which you arrived at your strategy.
+			
+			\textbf{HINT:} Assume the various costs/penalties/etc. are such that the players will circle the board many times before being eliminated from the game.
+			
+			\textbf{HINT 2:} Think of a player’s location as their “state.” How are different states connected? Think back to earlier homework problems for inspiration
+		\end{enumerate}
 	\end{enumerate}
 \end{document}
