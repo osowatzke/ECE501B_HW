@@ -384,8 +384,70 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			
 			Note that, given our definitions of matrix multiplication, this means that time evolution by one time step is a linear operator, which has the matrix representation $T$ in the standard basis.
 			
+			The update procedure can be expanded as follows:
+			
+			\begin{equation*}
+				\begin{bmatrix}
+					P_{1}^{n} \\
+					P_{2}^{n} \\
+					P_{3}^{n}
+				\end{bmatrix} = \begin{bmatrix}
+					P_{11} & P_{21} & P_{31} \\
+					P_{12} & P_{22} & P_{32} \\
+					P_{13} & P_{23} & P_{33}
+				\end{bmatrix}\begin{bmatrix}
+					P_{1}^{n-1} \\
+					P_{2}^{n-1} \\
+					P_{3}^{n-1}
+				\end{bmatrix}
+			\end{equation*}
+			
+			Each of the state probabilities can be expressed as follows:
+			
+			\begin{equation*}
+				\begin{cases}
+					P_{1}^{n} = P_{11}P_{1}^{n-1} + P_{21}P_{2}^{n-1} + P_{31}P_{3}^{n-1} \\
+					P_{2}^{n} = P_{12}P_{1}^{n-1} + P_{22}P_{2}^{n-1} + P_{32}P_{3}^{n-1} \\
+					P_{3}^{n} = P_{13}P_{1}^{n-1} + P_{23}P_{2}^{n-1} + P_{33}P_{3}^{n-1}
+				\end{cases}
+			\end{equation*}
+			
+			Note each of the above equations is simply a restatement of the theorem of total probability.
+			
+			\begin{equation*}
+				P(A) = \sum_{n}{P(A|B_n)P(B_n)}
+			\end{equation*}
+			
+			This is the expected result. Therefore, the update procedure can be written as $v_n = Tv_{n-1}$.
+			
 			\item Show that if $T$ and $v_0$ start properly normalized, that the state vector at any time step is also properly normalized.
 			
+			For the state vector to be properly normalized, the sum of each of its elements must equal 1.
+			
+			\begin{equation*}
+				Tv_0 = \begin{bmatrix}
+					P_{11} & P_{21} & P_{31} \\
+					P_{12} & P_{22} & P_{32} \\
+					P_{13} & P_{23} & P_{33}
+				\end{bmatrix}\begin{bmatrix}
+					P_1 \\
+					P_2 \\
+					P_3
+				\end{bmatrix}
+			\end{equation*}
+			
+			Consider the sum of the elements in $Tv_0$:
+			
+			$(P_{11}P_{1} + P_{21}P_{2} + P_{31}P_{3}) + (P_{12}P_{1} + P_{22}P_{2} + P_{32}P_{3})$
+			
+			$ + (P_{13}P_{1} + P_{23}P_{2} + P_{33}P_{1})$
+			
+			$ = P_{1}(P_{11} + P_{12} + P_{13}) + P_{2}(P_{21} + P_{22} + P_{23}) + P_{3}(P_{31} + P_{32} + P_{33})$
+			
+			$ = P_{1} + P_{2} + P_{3} = 1$
+			
+			$\therefore$, the state vector at the next time step is properly normalized. Note, by the same proof, the state vector at the next time step will also be properly normalized. By induction, we can conclude that the state vector at any time step will be properly normalized.
+			 
 			\item Consider the specific case where
 			
 			\begin{equationCenter}
@@ -398,7 +460,79 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			
 			Compute the operator for time evolution by \textit{three} timesteps.
 			
+			\begin{equation*}
+				T^3 = \begin{bmatrix}
+					0.6 & 0.3 & 0.1\\
+					0.2 & 0.2 & 0.5\\
+					0.2 & 0.5 & 0.4
+				\end{bmatrix}\begin{bmatrix}
+					0.6 & 0.3 & 0.1\\
+					0.2 & 0.2 & 0.5\\
+					0.2 & 0.5 & 0.4
+				\end{bmatrix}\begin{bmatrix}
+					0.6 & 0.3 & 0.1\\
+					0.2 & 0.2 & 0.5\\
+					0.2 & 0.5 & 0.4
+				\end{bmatrix}
+			\end{equation*}
+			
+			\begin{equation*}
+				= \begin{bmatrix}
+					0.44 & 0.29 & 0.25\\
+					0.26 & 0.35 & 0.32\\
+					0.3  & 0.36 & 0.43
+				\end{bmatrix}\begin{bmatrix}
+					0.6 & 0.3 & 0.1\\
+					0.2 & 0.2 & 0.5\\
+					0.2 & 0.5 & 0.4
+				\end{bmatrix} = \begin{bmatrix}
+					0.372 & 0.315 & 0.289\\
+					0.29  & 0.308 & 0.329\\
+					0.338 & 0.377 & 0.382
+				\end{bmatrix}
+			\end{equation*}
+			
 			\item Using the same specific $T$, compute $v_{\infty}$. Be clever and use MATLAB to apply what you learned in a previous homework assignment.
+			
+			As the number of applications of $T$ approaches $\infty$, the state vector will converge to the eigenvector corresponding to the largest eigenvalue (This is true for any initial state vector).
+			
+			Find the eigenvalues and eigenvectors of $T$ using MATLAB:
+			
+			The eigenvalues of $T$ are $\lambda_1 = 1$, $\lambda_2 = 0.4162$, and $\lambda_3 = -0.2162$. The corresponding eigenvectors are
+			
+			\begin{equation*}
+				v_1 = \begin{bmatrix}
+					0.5596 \\
+					0.5353 \\
+					0.6326 \\
+				\end{bmatrix}, 
+				v_2 = \begin{bmatrix}
+					0.8129 \\
+					-0.3405 \\
+					-0.4724 \\
+				\end{bmatrix},
+				v_3 = \begin{bmatrix}
+					0.2209 \\
+					-0.7912 \\
+					0.5703
+				\end{bmatrix}
+			\end{equation*}
+				
+			$\therefore v_1$ will correspond to the final state vector. Note that we must normalizes $v_1$ for it to be a valid state vector.
+			
+			$0.5596 + 0.5353 + 0.6326 = 1.7275$
+			
+			\begin{equation*}
+				v_{\infty} = \frac{1}{1.7275}\begin{bmatrix}
+					0.5596 \\
+					0.5353 \\
+					0.6326
+				\end{bmatrix} = \begin{bmatrix}
+					0.3239 \\
+					0.3099 \\
+					0.3662
+				\end{bmatrix}
+			\end{equation*}
 			
 			\item Explain, in terms of how application of $T$ modifies state probabilities, why this is a such a special set of probabilities. Make sure you discuss the connection to an invariant subspace.
 		\end{enumerate}
