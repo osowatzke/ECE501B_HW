@@ -566,7 +566,9 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			
 			\textbf{HINT:} Assume the various costs/penalties/etc. are such that the players will circle the board many times before being eliminated from the game.
 			
-			\textbf{HINT 2:} Think of a player’s location as their “state.” How are different states connected? Think back to earlier homework problems for inspiration
+			\textbf{HINT 2:} Think of a player’s location as their “state.” How are different states connected? Think back to earlier homework problems for inspiration.
+			
+			We can view each player's position as a Markov chain, where the state vector determines the probability of a player being on a given tile during their turn. The best properties to own are the properties that players are most likely to land on. Because the players will circle the board many times, we are interested in the state vector, $v_{\infty}$. We can solve for the probabilities in this state vector by doing an eigenvalue decomposition of the transition matrix. The eigenvector corresponding to the largest eigenvalue should give us, $v_\infty$. To determine the best properties to buy, we simply need to sort the elements of this state vector from largest to smallest (ignoring non-property tiles).
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
