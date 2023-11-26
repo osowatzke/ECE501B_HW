@@ -102,7 +102,11 @@
 			
 			This matrix equals its conjugate transpose, even though $T$ is not self-adjoint. Explain why this is not a contradiction.
 			
-			% According to 7.10, $T^{\dag}$ is the conjugate transpose of $T$ when the 
+			According to 7.10, $T^{\dag}$ is the conjugate transpose of the matrix representation of $T$ only when the matrix representation is given with respect to an orthonormal basis. The basis $(1,x,x^2)$ is not orthonormal as illustrated below:
+			
+			\begin{equation*}
+				\langle 1, x \rangle = \int_{0}^{1}{xdx} = \left.\frac{x^2}{2}\right\vert_{0}^{1} = \frac{1}{2} \neq 0
+			\end{equation*}
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
