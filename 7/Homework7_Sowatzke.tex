@@ -443,7 +443,7 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			
 			$(P_{11}P_{1} + P_{21}P_{2} + P_{31}P_{3}) + (P_{12}P_{1} + P_{22}P_{2} + P_{32}P_{3})$
 			
-			$ + (P_{13}P_{1} + P_{23}P_{2} + P_{33}P_{1})$
+			$ + (P_{13}P_{1} + P_{23}P_{2} + P_{33}P_{3})$
 			
 			$ = P_{1}(P_{11} + P_{12} + P_{13}) + P_{2}(P_{21} + P_{22} + P_{23}) + P_{3}(P_{31} + P_{32} + P_{33})$
 			
@@ -615,7 +615,7 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 				\end{bmatrix}
 			\end{equation*}
 			
-			Now consider the effects of part (h). 5\% turns that would end on square 6 or square 12, end up on square 1 instead. Therefore, each entry in row 6 and row 12 of the transition matrix need to be scaled by $\frac{19}{20}$. The corresponding entries in the row 1 of the transition matrix then need to be incremented by row 6 and row 12 scaled by $\frac{1}{20}$. The resulting transition matrix $T$ is shown below:
+			Now consider the effects of part (h). 5\% of turns that would end on square 6 or square 12, end up on square 1 instead. Therefore, row 1 of the transition matrix needs to be incremented by row 6 scaled by $\frac{1}{20}$ and row 12 scaled by $\frac{1}{20}$. Then, each entry in row 6 and row 12 needs to be scaled by $\frac{19}{20}$. The resulting transition matrix $T$ is shown below:
 			
 			\begin{equation*}
 				T = \begin{bmatrix}
@@ -671,7 +671,7 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			 		0.0717
 			 	\end{bmatrix}
 			 \end{equation*}			
-			 If we sort the entries in the final state vector, we should be able to rank the properties in order of how beneficial they are to own. Looking at $v_{\infty}$, we determine the following ordering: $\mathbf{\{9, 8, 5, 11, 2, 3\}}$
+			 If we sort the entries in the final state vector, we should be able to rank the properties in order of how beneficial they are to own. Looking at $v_{\infty}$, we determine the following ordering: $\mathbf{\{9, 8, 5, 11, 2, 3\}}.$
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
