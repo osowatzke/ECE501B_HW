@@ -449,7 +449,7 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			
 			$ = P_{1} + P_{2} + P_{3} = 1$
 			
-			$\therefore$, the state vector at the next time step is properly normalized. Note, by the same proof, the state vector at the next time step will also be properly normalized. By induction, we can conclude that the state vector at any time step will be properly normalized.
+			$\therefore$, the state vector $v_1$ is properly normalized. Note, by the same proof, the state vector at the next time step will also be properly normalized. By induction, we can conclude that the state vector at any time step will be properly normalized.
 			 
 			\item Consider the specific case where
 			
@@ -521,7 +521,7 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 				\end{bmatrix}
 			\end{equation*}
 				
-			$\therefore v_1$ will correspond to the final state vector. Note that we must normalizes $v_1$ for it to be a valid state vector.
+			$\therefore v_1$ will correspond to the final state vector. Note that we must normalize $v_1$ for it to be a valid state vector.
 			
 			$0.5596 + 0.5353 + 0.6326 = 1.7275$
 			
@@ -539,7 +539,7 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 			
 			\item Explain, in terms of how application of $T$ modifies state probabilities, why this is a such a special set of probabilities. Make sure you discuss the connection to an invariant subspace.
 			
-			The solution of the previous section was an eigenvector, which does not change direction upon application of $T$. In other words, the solution is an element of an invariant subspace. Because the result will always be normalized, the solution also remains at a fixed value.
+			The solution of the previous section was an eigenvector, which does not change direction upon application of $T$. In other words, the solution is an element of an invariant subspace. Because the eigenvalue corresponding to $v_{\infty}$ is 1, the result will remain fixed at a final value.
 		\end{enumerate}
 		
 		\item \textbf{Game Strategy:} Consider a multiplayer board game that takes place on the following board and with the following rules:
@@ -653,7 +653,7 @@ two." Note that the numbers in any column of the matrix must sum to 1, since the
 				\end{bmatrix}
 			\end{equation*}
 			
-			Because the state vector represents the probability of being on a given tile at an instant in time. We must normalize the eigenvector so that the sum of its entries is 1. After normalization, the resulting eigenvector is the equivalent to $v_{\infty}$.
+			Because the state vector represents the probability of being on a given tile at an instant in time, we must normalize the eigenvector so that the sum of its entries is 1. After normalization, the resulting eigenvector is the equivalent to $v_{\infty}$.
 			
 			 \begin{equation*}
 			 	v_{\infty} = \begin{bmatrix}
