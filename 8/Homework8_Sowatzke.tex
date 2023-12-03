@@ -110,6 +110,112 @@
 		\end{enumerate}
 		
 		\item Suppose $\text{dim}\ V \geq 2$. Show that the set of normal operators on $V$ is not a subspace of $\mathcal{L}(V)$.
+		For a normal operator, $TT^{\dag} = T^{\dag}T$
+		
+		For the set of normal operators to be a subspace, it must
+		
+		\begin{itemize}
+			\item Contain the zero-vector
+			\item Be closed under addition
+			\item Be closed under scalar multiplication	
+		\end{itemize}
+		
+		Provide a counter-example which shows that the set is not closed under addition.
+		
+		Start by considering operators on $T \in \mathcal{L}(\mathbb{R}^2)$.
+		
+		\begin{equation*}
+			\mathcal{M}(T) = \begin{bmatrix}
+				a_{11} & a_{12} \\
+				a_{21} & a_{22}
+			\end{bmatrix}
+		\end{equation*}
+		
+		Consider $a_{11}$, $a_{12}$, $a_{21}$, and $a_{22}$ that make $T$ normal.
+		
+		\begin{equation*}
+			\begin{bmatrix}
+				a_{11} & a_{12} \\
+				a_{21} & a_{22}
+			\end{bmatrix}\begin{bmatrix}
+				a_{11} & a_{21} \\
+				a_{12} & a_{22}
+			\end{bmatrix} = \begin{bmatrix}
+				a_{11} & a_{21} \\
+				a_{12} & a_{22}
+			\end{bmatrix}\begin{bmatrix}
+				a_{11} & a_{12} \\
+				a_{21} & a_{22}
+			\end{bmatrix}
+		\end{equation*} 
+		
+		\begin{equation*}
+			\begin{bmatrix}
+				a_{11}^2 + a_{12}^2 & a_{11}a_{21} + a_{12}a_{22} \\
+				a_{11}a_{21} + a_{12}a_{22} & a_{21}^2 + a_{22}^2
+			\end{bmatrix} = \begin{bmatrix}
+				a_{11}^2 + a_{21}^2 & a_{11}a_{12} + a_{21}a_{22} \\
+				a_{11}a_{12} + a_{21}a_{22} & a_{12}^2 + a_{22}^2
+			\end{bmatrix}
+		\end{equation*}
+		
+		$T$ is normal when each element of the above matrices are equal.
+		
+		Set $a_{11} = a_{22} = 0$. Then, $T$ is normal when $a_{12}^2 = a_{21}^2$.
+		
+		Define an operator $S \in \mathcal{L}(V)$ by setting $a_{12} = -1$, $a_{21} = 1$, and all other elements of the matrix representation to $0$.
+		
+		\begin{equation*}
+			S(a_1e_1 + \cdots + a_ne_n) = a_2e_1 - a_1e_2
+		\end{equation*}
+		
+		Verify that the operator $S$ will be normal.
+		
+		\begin{equation*}
+			S^{\dag}(a_1e_1 + \cdots + a_ne_n) = -a_2e_1 + a_1e_2
+		\end{equation*}
+		
+		\begin{equation*}
+			SS^{\dag}(a_1e_1 + \cdots + a_ne_n) = a_1e_1 + a_2e_2
+		\end{equation*}
+		
+		\begin{equation*}
+			S^{\dag}S(a_1e_1 + \cdots + a_ne_n) = a_1e_1 + a_2e_2
+		\end{equation*}
+		
+		Because $SS^{\dag} = S^{\dag}S$, $S$ is normal.
+		
+		Now define a new operator $T \in \mathcal{L}(V)$ by setting $a_{12} = 1$, $a_{21} = 1$, and all other elements of the matrix representation to $0$.
+		
+		\begin{equation*}
+			T(a_1e_1 + \cdots + a_ne_n) = a_2e_1 + a_1e_2
+		\end{equation*}
+		
+		The operator $T$ is self-adjoint. As such, it is also normal.
+		
+		Now check whether $S + T$ is normal.
+		
+		\begin{equation*}
+			(S + T)(a_1e_1 + \cdots + a_ne_n) = 2a_2e_1
+		\end{equation*}
+		
+		\begin{equation*}
+			(S + T)^{\dag}(a_1e_1 + \cdots + a_ne_n) = 2a_1e_2
+		\end{equation*}
+			
+		\begin{equation*}
+			(S + T)(S + T)^{\dag}(a_1e_1 + \cdots + a_ne_n) = 4a_1e_1
+		\end{equation*}
+		
+		\begin{equation*}
+			(S + T)^{\dag}(S + T)(a_1e_1 + \cdots + a_ne_n) = 4a_2e_2
+		\end{equation*}
+		
+		\begin{equation*}
+			(S + T)(S + T)^{\dag} \neq (S + T)^{\dag}(S + T)
+		\end{equation*}
+		
+		So, the set of normal operators on $V$ is not closed under addition, and as a result, it is not a subspace.
 		
 		\item Suppose $T \in \mathcal{L}(V)$ is normal. Prove that
 		
