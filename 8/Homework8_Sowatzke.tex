@@ -215,7 +215,9 @@
 			(S + T)(S + T)^{\dag} \neq (S + T)^{\dag}(S + T)
 		\end{equation*}
 		
-		So, the set of normal operators on $V$ is not closed under addition, and as a result, it is not a subspace.
+		$\Rightarrow S + T$ is not normal.
+		
+		$\therefore$, the set of normal operators on $V$ is not closed under addition, and as a result, they do not form a subspace.
 		
 		\item Suppose $T \in \mathcal{L}(V)$ is normal. Prove that
 		
@@ -223,7 +225,50 @@
 				\text{range}\ T = \text{range}\ T^{\dag}
 			\end{equationCenter}
 			
+			Let $v \in \text{null}\ T \Rightarrow \norm{Tv} = \norm{T^{\dag}v} = 0 \Rightarrow v \in \text{null}\ T^{\dag}$
+			
+			Because $(T^{\dag})^{\dag} = T$, if $v \in \text{null}\ T^{\dag} \Rightarrow v \in \text{null}\ T$
+			
+			$\therefore \text{null}\ T = \text{null}\ T^{\dag}$
+			
+			$\text{range}\ T = (\text{null}\ T^{\dag})^{\perp} = (\text{null}\ T)^{\perp} = \text{range}\ T^{\dag}$
+			
 		\item Suppose $T \in \mathcal{L}(\mathbb{C}^2)$ is defined by $T(x,y) = (-4y, x)$. Find the singular values of $T$.
+		
+		\begin{equation*}
+			\mathcal{M}(T) = \begin{bmatrix}
+				0 & -4\\
+				1 & 0
+			\end{bmatrix}
+		\end{equation*}
+		
+		\begin{equation*}
+			\mathcal{M}(T^{\dag}) = \mathcal{M}(T^{\dag})^{*T} = \begin{bmatrix}
+				0 & 1\\
+				-4 & 0
+			\end{bmatrix}
+		\end{equation*}
+		
+		\begin{equation*}
+			\mathcal{M}(TT^{\dag}) = \mathcal{M}(T^{\dag})\mathcal{M}(T) = \begin{bmatrix}
+				0 & 1\\
+				-4 & 0
+			\end{bmatrix}\begin{bmatrix}
+				0 & -4\\
+				1 & 0
+			\end{bmatrix} = \begin{bmatrix}
+				1 & 0\\
+				0 & 16
+			\end{bmatrix}
+		\end{equation*}
+		
+		Because the matrix representation of $TT^{\dag}$ is diagonal, the eigenvalues are on the main diagonal.
+		
+		$\lambda_1 = 1$, $\lambda_2 = 16$
+		
+		The singular values are the positive square roots of the eigenvalues, given from smallest to largest.
+		
+		$\mathbf{\therefore \sigma_1 = 4,\ \sigma_2 = 1}$
 	\end{enumerate}
 \end{document}
 
